@@ -43,11 +43,49 @@
                 </p>
               </form>
               <p class="text-center text-muted">Not registered yet?</p>
-              <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a></p>
+              <div class="text-center">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                  </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div id="register-modal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true" class="modal fade">
+            <div class="modal-dialog ">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Customer Register</h5>
+                  <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                        <h1>New account</h1>
+                        <p class="lead">Not our registered customer yet?</p>
+                        <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
+                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                        <hr>
+                        <form action="customer-orders.html" method="post">
+                                <div class="form-group">
+                                  <label for="name">Name</label>
+                                  <input id="name" type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input id="email" type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                  <label for="password">Password</label>
+                                  <input id="password" type="password" class="form-control">
+                                </div>
+                                <div class="text-center">
+                                  <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                                </div>
+                              </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
             <i class="fa fa-close" aria-hidden="true"></i>
@@ -91,7 +129,7 @@
             <!-- Logo -->
             <div class="logo">
                 <!-- <a href="index.html"><img src="img/core-img/logo.png" alt=""></a> -->
-                <h1>Farm LungRun</h1>
+                <a href="index.html" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
@@ -104,8 +142,8 @@
             </nav>
             <!-- Button Group -->
             <div class="amado-btn-group mt-30 mb-100">
-                <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal" >Login</a>
-                <a href="#" class="btn amado-btn active">Register</a>
+                <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal">Login</a>
+                <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#register-modal">Register</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
@@ -113,11 +151,9 @@
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
             <!-- Social Button -->
-            <div class="social-info d-flex justify-content-between">
-                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <div class="social-info d-flex ">
+             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><br>Farm LungRun</a>
+             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i><br>Ig.FarmLungRun</a>
             </div>
         </header>
         <!-- Header Area End -->
@@ -191,57 +227,20 @@
                     </a>
                 </div>
 
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="img/bg-img/6.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $320</p>
-                            <h4>Small Table</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="img/bg-img/7.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $318</p>
-                            <h4>Metallic Chair</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="img/bg-img/8.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $318</p>
-                            <h4>Modern Rocking Chair</h4>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Single Catagory -->
-                <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
-                        <img src="img/bg-img/9.jpg" alt="">
-                        <!-- Hover Content -->
-                        <div class="hover-content">
-                            <div class="line"></div>
-                            <p>From $318</p>
-                            <h4>Home Deco</h4>
-                        </div>
-                    </a>
-                </div>
+                <c:forEach items="${product}" var="p" varStatus="n">
+                        <div class="single-products-catagory clearfix">
+                                <a href="shop.html">
+                                    <img src="img/bg-img/9.jp g" alt="">
+                                    <!-- Hover Content -->
+                                    <div class="hover-content">
+                                        <div class="line"></div>
+                                        <p>From ${price}</p>
+                                        <h4>${productname}</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </c:forEach>
+                        
             </div>
         </div>
         <!-- Product Catagories Area End -->
