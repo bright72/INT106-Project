@@ -11,3 +11,20 @@
     /* ---------------------------------------
     ##### - PLACE YOUR CUSTOM CSS HERE - #####
     --------------------------------------- */
+
+#top #login-modal .modal-header {
+    background: #1e7e34;
+  }
+  
+  #top #login-modal .modal-header h5 {
+    color: #fff;
+  }
+  
+  #top #login-modal a {
+    color: #1e7e34;
+  }
+  
+  #top #login-modal p {
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
