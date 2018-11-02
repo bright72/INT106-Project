@@ -57,7 +57,7 @@ public class Orders implements Serializable {
     @JoinColumn(name = "CUSTOMERID", referencedColumnName = "CUSTOMERID")
     @ManyToOne(optional = false)
     private Account customerid;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orders")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderid")
     private List<Orderdetail> orderdetailList;
 
     public Orders() {

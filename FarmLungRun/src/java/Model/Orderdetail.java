@@ -9,8 +9,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -28,15 +28,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Orderdetail.findAll", query = "SELECT o FROM Orderdetail o")
-    , @NamedQuery(name = "Orderdetail.findByOrderid", query = "SELECT o FROM Orderdetail o WHERE o.orderdetailPK.orderid = :orderid")
-    , @NamedQuery(name = "Orderdetail.findByProductcode", query = "SELECT o FROM Orderdetail o WHERE o.orderdetailPK.productcode = :productcode")
+    , @NamedQuery(name = "Orderdetail.findByOrderdetailid", query = "SELECT o FROM Orderdetail o WHERE o.orderdetailid = :orderdetailid")
     , @NamedQuery(name = "Orderdetail.findByQuantity", query = "SELECT o FROM Orderdetail o WHERE o.quantity = :quantity")
     , @NamedQuery(name = "Orderdetail.findByPriceeach", query = "SELECT o FROM Orderdetail o WHERE o.priceeach = :priceeach")})
 public class Orderdetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @EmbeddedId
-    protected OrderdetailPK orderdetailPK;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "ORDERDETAILID")
+    private Integer orderdetailid;
     @Basic(optional = false)
     @NotNull
     @Column(name = "QUANTITY")
@@ -46,36 +48,32 @@ public class Orderdetail implements Serializable {
     @NotNull
     @Column(name = "PRICEEACH")
     private BigDecimal priceeach;
-    @JoinColumn(name = "ORDERID", referencedColumnName = "ORDERID", insertable = false, updatable = false)
+    @JoinColumn(name = "ORDERID", referencedColumnName = "ORDERID")
     @ManyToOne(optional = false)
-    private Orders orders;
-    @JoinColumn(name = "PRODUCTCODE", referencedColumnName = "PRODUCTCODE", insertable = false, updatable = false)
+    private Orders orderid;
+    @JoinColumn(name = "PRODUCTCODE", referencedColumnName = "PRODUCTCODE")
     @ManyToOne(optional = false)
-    private Product product;
+    private Product productcode;
 
     public Orderdetail() {
     }
 
-    public Orderdetail(OrderdetailPK orderdetailPK) {
-        this.orderdetailPK = orderdetailPK;
+    public Orderdetail(Integer orderdetailid) {
+        this.orderdetailid = orderdetailid;
     }
 
-    public Orderdetail(OrderdetailPK orderdetailPK, int quantity, BigDecimal priceeach) {
-        this.orderdetailPK = orderdetailPK;
+    public Orderdetail(Integer orderdetailid, int quantity, BigDecimal priceeach) {
+        this.orderdetailid = orderdetailid;
         this.quantity = quantity;
         this.priceeach = priceeach;
     }
 
-    public Orderdetail(int orderid, int productcode) {
-        this.orderdetailPK = new OrderdetailPK(orderid, productcode);
+    public Integer getOrderdetailid() {
+        return orderdetailid;
     }
 
-    public OrderdetailPK getOrderdetailPK() {
-        return orderdetailPK;
-    }
-
-    public void setOrderdetailPK(OrderdetailPK orderdetailPK) {
-        this.orderdetailPK = orderdetailPK;
+    public void setOrderdetailid(Integer orderdetailid) {
+        this.orderdetailid = orderdetailid;
     }
 
     public int getQuantity() {
@@ -94,26 +92,26 @@ public class Orderdetail implements Serializable {
         this.priceeach = priceeach;
     }
 
-    public Orders getOrders() {
-        return orders;
+    public Orders getOrderid() {
+        return orderid;
     }
 
-    public void setOrders(Orders orders) {
-        this.orders = orders;
+    public void setOrderid(Orders orderid) {
+        this.orderid = orderid;
     }
 
-    public Product getProduct() {
-        return product;
+    public Product getProductcode() {
+        return productcode;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProductcode(Product productcode) {
+        this.productcode = productcode;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (orderdetailPK != null ? orderdetailPK.hashCode() : 0);
+        hash += (orderdetailid != null ? orderdetailid.hashCode() : 0);
         return hash;
     }
 
@@ -124,7 +122,7 @@ public class Orderdetail implements Serializable {
             return false;
         }
         Orderdetail other = (Orderdetail) object;
-        if ((this.orderdetailPK == null && other.orderdetailPK != null) || (this.orderdetailPK != null && !this.orderdetailPK.equals(other.orderdetailPK))) {
+        if ((this.orderdetailid == null && other.orderdetailid != null) || (this.orderdetailid != null && !this.orderdetailid.equals(other.orderdetailid))) {
             return false;
         }
         return true;
@@ -132,7 +130,7 @@ public class Orderdetail implements Serializable {
 
     @Override
     public String toString() {
-        return "Model.Orderdetail[ orderdetailPK=" + orderdetailPK + " ]";
+        return "Model.Orderdetail[ orderdetailid=" + orderdetailid + " ]";
     }
     
 }
