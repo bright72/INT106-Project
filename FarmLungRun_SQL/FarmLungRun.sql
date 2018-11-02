@@ -1,3 +1,16 @@
+drop table account;
+
+create table account (
+customerid int NOT NULL,
+encryptedPassword varchar(20) Not null,
+fname varchar(30) Not null,
+lname varchar(50) Not null,
+address varchar(100),
+province varchar(20),
+country varchar(20),
+postalCode varchar(10),
+PRIMARY KEY(customerid));
+
 drop table orders;
 
 create table orders (
