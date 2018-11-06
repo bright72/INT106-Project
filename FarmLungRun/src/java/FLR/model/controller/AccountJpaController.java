@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model.Controller;
+package FLR.model.controller;
 
-import Model.Account;
-import Model.Controller.exceptions.IllegalOrphanException;
-import Model.Controller.exceptions.NonexistentEntityException;
-import Model.Controller.exceptions.PreexistingEntityException;
-import Model.Controller.exceptions.RollbackFailureException;
+import FLR.model.Account;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Model.Orders;
+import FLR.model.Orders;
+import FLR.model.controller.exceptions.IllegalOrphanException;
+import FLR.model.controller.exceptions.NonexistentEntityException;
+import FLR.model.controller.exceptions.PreexistingEntityException;
+import FLR.model.controller.exceptions.RollbackFailureException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -24,7 +24,7 @@ import javax.transaction.UserTransaction;
 
 /**
  *
- * @author INT303
+ * @author SARUNSUMETPANICH
  */
 public class AccountJpaController implements Serializable {
 
@@ -55,12 +55,12 @@ public class AccountJpaController implements Serializable {
             account.setOrdersList(attachedOrdersList);
             em.persist(account);
             for (Orders ordersListOrders : account.getOrdersList()) {
-                Account oldCustomeridOfOrdersListOrders = ordersListOrders.getCustomerid();
-                ordersListOrders.setCustomerid(account);
+                Account oldUsernameOfOrdersListOrders = ordersListOrders.getUsername();
+                ordersListOrders.setUsername(account);
                 ordersListOrders = em.merge(ordersListOrders);
-                if (oldCustomeridOfOrdersListOrders != null) {
-                    oldCustomeridOfOrdersListOrders.getOrdersList().remove(ordersListOrders);
-                    oldCustomeridOfOrdersListOrders = em.merge(oldCustomeridOfOrdersListOrders);
+                if (oldUsernameOfOrdersListOrders != null) {
+                    oldUsernameOfOrdersListOrders.getOrdersList().remove(ordersListOrders);
+                    oldUsernameOfOrdersListOrders = em.merge(oldUsernameOfOrdersListOrders);
                 }
             }
             utx.commit();
@@ -70,7 +70,7 @@ public class AccountJpaController implements Serializable {
             } catch (Exception re) {
                 throw new RollbackFailureException("An error occurred attempting to roll back the transaction.", re);
             }
-            if (findAccount(account.getCustomerid()) != null) {
+            if (findAccount(account.getUsername()) != null) {
                 throw new PreexistingEntityException("Account " + account + " already exists.", ex);
             }
             throw ex;
@@ -86,7 +86,7 @@ public class AccountJpaController implements Serializable {
         try {
             utx.begin();
             em = getEntityManager();
-            Account persistentAccount = em.find(Account.class, account.getCustomerid());
+            Account persistentAccount = em.find(Account.class, account.getUsername());
             List<Orders> ordersListOld = persistentAccount.getOrdersList();
             List<Orders> ordersListNew = account.getOrdersList();
             List<String> illegalOrphanMessages = null;
@@ -95,7 +95,7 @@ public class AccountJpaController implements Serializable {
                     if (illegalOrphanMessages == null) {
                         illegalOrphanMessages = new ArrayList<String>();
                     }
-                    illegalOrphanMessages.add("You must retain Orders " + ordersListOldOrders + " since its customerid field is not nullable.");
+                    illegalOrphanMessages.add("You must retain Orders " + ordersListOldOrders + " since its username field is not nullable.");
                 }
             }
             if (illegalOrphanMessages != null) {
@@ -111,12 +111,12 @@ public class AccountJpaController implements Serializable {
             account = em.merge(account);
             for (Orders ordersListNewOrders : ordersListNew) {
                 if (!ordersListOld.contains(ordersListNewOrders)) {
-                    Account oldCustomeridOfOrdersListNewOrders = ordersListNewOrders.getCustomerid();
-                    ordersListNewOrders.setCustomerid(account);
+                    Account oldUsernameOfOrdersListNewOrders = ordersListNewOrders.getUsername();
+                    ordersListNewOrders.setUsername(account);
                     ordersListNewOrders = em.merge(ordersListNewOrders);
-                    if (oldCustomeridOfOrdersListNewOrders != null && !oldCustomeridOfOrdersListNewOrders.equals(account)) {
-                        oldCustomeridOfOrdersListNewOrders.getOrdersList().remove(ordersListNewOrders);
-                        oldCustomeridOfOrdersListNewOrders = em.merge(oldCustomeridOfOrdersListNewOrders);
+                    if (oldUsernameOfOrdersListNewOrders != null && !oldUsernameOfOrdersListNewOrders.equals(account)) {
+                        oldUsernameOfOrdersListNewOrders.getOrdersList().remove(ordersListNewOrders);
+                        oldUsernameOfOrdersListNewOrders = em.merge(oldUsernameOfOrdersListNewOrders);
                     }
                 }
             }
@@ -129,7 +129,7 @@ public class AccountJpaController implements Serializable {
             }
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                Integer id = account.getCustomerid();
+                String id = account.getUsername();
                 if (findAccount(id) == null) {
                     throw new NonexistentEntityException("The account with id " + id + " no longer exists.");
                 }
@@ -142,7 +142,7 @@ public class AccountJpaController implements Serializable {
         }
     }
 
-    public void destroy(Integer id) throws IllegalOrphanException, NonexistentEntityException, RollbackFailureException, Exception {
+    public void destroy(String id) throws IllegalOrphanException, NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             utx.begin();
@@ -150,7 +150,7 @@ public class AccountJpaController implements Serializable {
             Account account;
             try {
                 account = em.getReference(Account.class, id);
-                account.getCustomerid();
+                account.getUsername();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The account with id " + id + " no longer exists.", enfe);
             }
@@ -160,7 +160,7 @@ public class AccountJpaController implements Serializable {
                 if (illegalOrphanMessages == null) {
                     illegalOrphanMessages = new ArrayList<String>();
                 }
-                illegalOrphanMessages.add("This Account (" + account + ") cannot be destroyed since the Orders " + ordersListOrphanCheckOrders + " in its ordersList field has a non-nullable customerid field.");
+                illegalOrphanMessages.add("This Account (" + account + ") cannot be destroyed since the Orders " + ordersListOrphanCheckOrders + " in its ordersList field has a non-nullable username field.");
             }
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
@@ -205,7 +205,7 @@ public class AccountJpaController implements Serializable {
         }
     }
 
-    public Account findAccount(Integer id) {
+    public Account findAccount(String id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Account.class, id);

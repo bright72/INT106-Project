@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package FLR.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author INT303
+ * @author SARUNSUMETPANICH
  */
 @Entity
 @Table(name = "ORDERS")
@@ -54,9 +54,9 @@ public class Orders implements Serializable {
     @Size(max = 200)
     @Column(name = "COMMENT")
     private String comment;
-    @JoinColumn(name = "CUSTOMERID", referencedColumnName = "CUSTOMERID")
+    @JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME")
     @ManyToOne(optional = false)
-    private Account customerid;
+    private Account username;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderid")
     private List<Orderdetail> orderdetailList;
 
@@ -96,12 +96,12 @@ public class Orders implements Serializable {
         this.comment = comment;
     }
 
-    public Account getCustomerid() {
-        return customerid;
+    public Account getUsername() {
+        return username;
     }
 
-    public void setCustomerid(Account customerid) {
-        this.customerid = customerid;
+    public void setUsername(Account username) {
+        this.username = username;
     }
 
     @XmlTransient
@@ -135,7 +135,7 @@ public class Orders implements Serializable {
 
     @Override
     public String toString() {
-        return "Model.Orders[ orderid=" + orderid + " ]";
+        return "FLR.model.Orders[ orderid=" + orderid + " ]";
     }
     
 }

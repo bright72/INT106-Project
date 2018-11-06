@@ -1,7 +1,7 @@
 drop table account;
 
 create table account (
-customerid int NOT NULL,
+username varchar(20),
 encryptedPassword varchar(20) Not null,
 fname varchar(30) Not null,
 lname varchar(50) Not null,
@@ -9,17 +9,17 @@ address varchar(100),
 province varchar(20),
 country varchar(20),
 postalCode varchar(10),
-PRIMARY KEY(customerid));
+PRIMARY KEY(username));
 
 drop table orders;
 
 create table orders (
 orderId int NOT NULL,
 orderDate Date Not null,
-customerId int Not null,
+username varchar(20) Not null,
 comment varchar(200),
 PRIMARY KEY(orderId),
-CONSTRAINT orders_ibfk_1 FOREIGN KEY(customerID) REFERENCES account (customerID));
+CONSTRAINT orders_ibfk_1 FOREIGN KEY(username) REFERENCES account (username));
 
 drop table orderDetail;
 

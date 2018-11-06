@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model.Controller;
+package FLR.model.controller;
 
-import Model.Controller.exceptions.NonexistentEntityException;
-import Model.Controller.exceptions.PreexistingEntityException;
-import Model.Controller.exceptions.RollbackFailureException;
-import Model.Orderdetail;
+import FLR.model.Orderdetail;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import Model.Orders;
-import Model.Product;
+import FLR.model.Orders;
+import FLR.model.Product;
+import FLR.model.controller.exceptions.NonexistentEntityException;
+import FLR.model.controller.exceptions.PreexistingEntityException;
+import FLR.model.controller.exceptions.RollbackFailureException;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -23,7 +23,7 @@ import javax.transaction.UserTransaction;
 
 /**
  *
- * @author INT303
+ * @author SARUNSUMETPANICH
  */
 public class OrderdetailJpaController implements Serializable {
 

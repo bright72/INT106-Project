@@ -1,4 +1,4 @@
-package Model.Controller.exceptions;
+package FLR.model.controller.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

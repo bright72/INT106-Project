@@ -1,4 +1,4 @@
-package Model.Controller.exceptions;
+package FLR.model.controller.exceptions;
 
 public class PreexistingEntityException extends Exception {
     public PreexistingEntityException(String message, Throwable cause) {

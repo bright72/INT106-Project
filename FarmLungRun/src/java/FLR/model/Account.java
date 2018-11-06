@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package FLR.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -23,14 +23,14 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author INT303
+ * @author SARUNSUMETPANICH
  */
 @Entity
 @Table(name = "ACCOUNT")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Account.findAll", query = "SELECT a FROM Account a")
-    , @NamedQuery(name = "Account.findByCustomerid", query = "SELECT a FROM Account a WHERE a.customerid = :customerid")
+    , @NamedQuery(name = "Account.findByUsername", query = "SELECT a FROM Account a WHERE a.username = :username")
     , @NamedQuery(name = "Account.findByEncryptedpassword", query = "SELECT a FROM Account a WHERE a.encryptedpassword = :encryptedpassword")
     , @NamedQuery(name = "Account.findByFname", query = "SELECT a FROM Account a WHERE a.fname = :fname")
     , @NamedQuery(name = "Account.findByLname", query = "SELECT a FROM Account a WHERE a.lname = :lname")
@@ -44,8 +44,9 @@ public class Account implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "CUSTOMERID")
-    private Integer customerid;
+    @Size(min = 1, max = 20)
+    @Column(name = "USERNAME")
+    private String username;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 20)
@@ -73,29 +74,41 @@ public class Account implements Serializable {
     @Size(max = 10)
     @Column(name = "POSTALCODE")
     private String postalcode;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "customerid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "username")
     private List<Orders> ordersList;
 
     public Account() {
     }
 
-    public Account(Integer customerid) {
-        this.customerid = customerid;
+    public Account(String username) {
+        this.username = username;
     }
 
-    public Account(Integer customerid, String encryptedpassword, String fname, String lname) {
-        this.customerid = customerid;
+    public Account(String username, String encryptedpassword, String fname, String lname) {
+        this.username = username;
         this.encryptedpassword = encryptedpassword;
         this.fname = fname;
         this.lname = lname;
     }
-
-    public Integer getCustomerid() {
-        return customerid;
+    
+    public Account(String username, String encryptedpassword, String fname, String lname, String address, 
+            String province, String country, String postalcode) {
+        this.username = username;
+        this.encryptedpassword = encryptedpassword;
+        this.fname = fname;
+        this.lname = lname;
+        this.address = address;
+        this.province = province;
+        this.country = country;
+        this.postalcode = postalcode;
     }
 
-    public void setCustomerid(Integer customerid) {
-        this.customerid = customerid;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEncryptedpassword() {
@@ -166,7 +179,7 @@ public class Account implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (customerid != null ? customerid.hashCode() : 0);
+        hash += (username != null ? username.hashCode() : 0);
         return hash;
     }
 
@@ -177,7 +190,7 @@ public class Account implements Serializable {
             return false;
         }
         Account other = (Account) object;
-        if ((this.customerid == null && other.customerid != null) || (this.customerid != null && !this.customerid.equals(other.customerid))) {
+        if ((this.username == null && other.username != null) || (this.username != null && !this.username.equals(other.username))) {
             return false;
         }
         return true;
@@ -185,7 +198,7 @@ public class Account implements Serializable {
 
     @Override
     public String toString() {
-        return "Model.Account[ customerid=" + customerid + " ]";
+        return "FLR.model.Account[ username=" + username + " ]";
     }
     
 }

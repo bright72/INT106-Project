@@ -1,4 +1,4 @@
-package Model.Controller.exceptions;
+package FLR.model.controller.exceptions;
 
 public class NonexistentEntityException extends Exception {
     public NonexistentEntityException(String message, Throwable cause) {

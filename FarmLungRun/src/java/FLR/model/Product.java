@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package FLR.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author INT303
+ * @author SARUNSUMETPANICH
  */
 @Entity
 @Table(name = "PRODUCT")
@@ -135,7 +135,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Model.Product[ productcode=" + productcode + " ]";
+        return "FLR.model.Product[ productcode=" + productcode + " ]";
     }
     
 }
