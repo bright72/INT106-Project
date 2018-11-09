@@ -49,7 +49,7 @@ public class Account implements Serializable {
     private String username;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 20)
+    @Size(min = 1, max = 100)
     @Column(name = "ENCRYPTEDPASSWORD")
     private String encryptedpassword;
     @Basic(optional = false)
@@ -89,18 +89,6 @@ public class Account implements Serializable {
         this.encryptedpassword = encryptedpassword;
         this.fname = fname;
         this.lname = lname;
-    }
-    
-    public Account(String username, String encryptedpassword, String fname, String lname, String address, 
-            String province, String country, String postalcode) {
-        this.username = username;
-        this.encryptedpassword = encryptedpassword;
-        this.fname = fname;
-        this.lname = lname;
-        this.address = address;
-        this.province = province;
-        this.country = country;
-        this.postalcode = postalcode;
     }
 
     public String getUsername() {

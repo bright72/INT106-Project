@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
             String username = request.getParameter("username");
 
             AccountJpaController ajc = new AccountJpaController(utx, emf);
-            if (ajc.findAccount(username).getUsername() != null) {
+            if (ajc.findAccount(username) != null) {
                 request.getSession().setAttribute("message", "Username already exists!");
                 System.out.println("HI");
                 getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
@@ -73,6 +73,7 @@ public class RegisterServlet extends HttpServlet {
                 account.setPostalcode(request.getParameter("postalcode"));
                 
                 try {
+                    System.out.println("Hi");
                     ajc.create(account);
                 } catch (RollbackFailureException ex) {
                     System.out.println(ex);
@@ -80,7 +81,8 @@ public class RegisterServlet extends HttpServlet {
                     System.out.println(ex);
                 }
                 request.getSession().setAttribute("message", "Register Successful!");
-                getServletContext().getRequestDispatcher("/Login").forward(request, response);
+                response.sendRedirect("Home.jsp");
+                return;
             }
         }
         
