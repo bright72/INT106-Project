@@ -2,7 +2,7 @@ drop table account;
 
 create table account (
 username varchar(20),
-encryptedPassword varchar(20) Not null,
+encryptedPassword varchar(100) Not null,
 fname varchar(30) Not null,
 lname varchar(50) Not null,
 address varchar(100),
