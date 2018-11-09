@@ -61,8 +61,7 @@ public class LoginServlet extends HttpServlet {
                     if (cryptWithMD5(password).equals(account.getEncryptedpassword())){
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
-                        response.sendRedirect("Home.jsp");
-                        return;
+                        getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
                     } else {
                         session.setAttribute("message", "invalid password");
                     getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);

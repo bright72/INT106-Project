@@ -12,18 +12,6 @@
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>FLR.controller.LogoutServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ProductDetail</servlet-name>
-        <servlet-class>FLR.controller.ProductDetail</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CartServlet</servlet-name>
-        <servlet-class>FLR.controller.CartServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AboutServlet</servlet-name>
-        <servlet-class>FLR.controller.AboutServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -35,18 +23,6 @@
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/Logout</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProductDetail</servlet-name>
-        <url-pattern>/Product</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CartServlet</servlet-name>
-        <url-pattern>/Cart</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AboutServlet</servlet-name>
-        <url-pattern>/About</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
