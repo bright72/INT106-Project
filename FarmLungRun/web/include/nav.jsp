@@ -4,6 +4,7 @@
     Author     : SARUNSUMETPANICH
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
                     </form>
                     <p class="text-center text-muted">Not registered yet?</p>
                     <div class="text-center">
-                        <button type="submit" id="basket-overview" data-toggle="modal" class="btn btn-primary" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
                     </div>
                 </div>
             </div>
@@ -46,8 +47,7 @@
                 </div>
                 <div class="modal-body">
                     <h1>New account</h1>
-                    <p class="lead">Not our registered customer yet?</p>
-                    <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                    <p class="lead">Not our registered customer yet?</p>                 
                     <hr>
                     <form action="Register" method="post">
                         <div class="form-group">                                  
@@ -117,7 +117,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="Home.jsp"><img src="img/core-img/logo.png" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
@@ -135,20 +135,39 @@
             <!-- Logo -->
             <div class="logo">
                 <!-- <a href="index.html"><img src="img/core-img/logo.png" alt=""></a> -->
-                <a href="index.html" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
+                <a href="Home.jsp" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+
+                    <c:if test="${param.page == 'Home'}">
+                        <li class="active">
+                        </c:if>
+                        <a href="index">Home</a></li>
+
+                    <c:if test="${param.page == 'Shop'}">
+                        <li class="active">
+                        </c:if>
+                    <li><a href="Product">Shop</a></li>
+
+                    <c:if test="${param.page == 'Cart'}">
+                        <li class="active">
+                        </c:if>
+                    <li><a href="Cart">Cart</a></li>
+
+                    <c:if test="${param.page == 'About'}">
+                        <li class="active">
+                        </c:if>
+                    <li><a href="About">About</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of ce53ddc... ปรับปรุง  login
             <c:if test="${sessionScope.account == null}">
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal">Login</a>
@@ -158,13 +177,12 @@
             </c:if> 
 
             <c:if test="${sessionScope.account != null}">
-                <hr><br>
-                <div>Hello ${sessionScope.account.username}</div>
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="Logout" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview">Logout</a>
                 </div>
             </c:if> 
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
@@ -176,6 +194,8 @@
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
 =======
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
+=======
+>>>>>>> parent of ce53ddc... ปรับปรุง  login
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
                 <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
