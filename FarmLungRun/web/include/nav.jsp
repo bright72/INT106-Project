@@ -148,6 +148,7 @@
             </nav>
             <!-- Button Group -->
 <<<<<<< HEAD
+<<<<<<< HEAD
             <c:if test="${sessionScope.account == null}">
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal">Login</a>
@@ -165,10 +166,15 @@
             </c:if> 
 
 =======
+=======
+>>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
             <div class="amado-btn-group mt-30 mb-100">
                 <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal">Login</a>
                 <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#register-modal">Register</a>
             </div>
+<<<<<<< HEAD
+>>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
+=======
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
