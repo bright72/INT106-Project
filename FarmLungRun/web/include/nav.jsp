@@ -30,7 +30,7 @@
                     </form>
                     <p class="text-center text-muted">Not registered yet?</p>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                        <button type="submit" id="basket-overview" data-toggle="modal" class="btn btn-primary" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
                     </div>
                 </div>
             </div>
@@ -151,8 +151,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of ce53ddc... ปรับปรุง  login
+=======
+>>>>>>> parent of 624b83e... Revert "ปรับปรุง  login"
             <c:if test="${sessionScope.account == null}">
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="#" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" data-toggle="modal" data-target="#login-modal">Login</a>
@@ -162,12 +165,13 @@
             </c:if> 
 
             <c:if test="${sessionScope.account != null}">
+                <hr><br>
+                <div>Hello ${sessionScope.account.username}</div>
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="Logout" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview">Logout</a>
                 </div>
             </c:if> 
 
-<<<<<<< HEAD
 =======
 =======
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
@@ -182,10 +186,13 @@
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
 =======
 >>>>>>> 63d220598643656e7e1d00b52713ad2f015b9e13
+<<<<<<< HEAD
 =======
 >>>>>>> parent of ce53ddc... ปรับปรุง  login
 =======
 >>>>>>> parent of f27f5cc... login regis
+=======
+>>>>>>> parent of 624b83e... Revert "ปรับปรุง  login"
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
                 <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
