@@ -172,7 +172,9 @@
                 </div>
             </c:if> 
 
+            <hr><br>
             <c:if test="${sessionScope.account != null}">
+                <div>Hello ${sessionScope.account.username}</div>
                 <div class="amado-btn-group mt-30 mb-100">
                     <a href="Logout" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview">Logout</a>
                 </div>
