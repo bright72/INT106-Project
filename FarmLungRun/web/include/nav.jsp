@@ -31,7 +31,7 @@
                     </form>
                     <p class="text-center text-muted">Not registered yet?</p>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
                     </div>
                 </div>
             </div>
