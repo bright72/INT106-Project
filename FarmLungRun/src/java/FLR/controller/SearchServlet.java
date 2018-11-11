@@ -50,7 +50,7 @@ public class SearchServlet extends HttpServlet {
         List<Product> foundProduct = new ArrayList<Product>();
         for (Product product : allProduct) {
             if (search.toLowerCase().contains(product.getProductname().toLowerCase())) {
-                System.out.println(product);
+                System.out.println(">>"+product);
                 foundProduct.add(product);                
             }
         }

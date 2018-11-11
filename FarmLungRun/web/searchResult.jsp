@@ -14,6 +14,6 @@
     <body>
         <jsp:include page="include/nav.jsp"/>
         
-        <h1>${message}</h1>
+        <h1>Hey ${message}</h1>
     </body>
 </html>
