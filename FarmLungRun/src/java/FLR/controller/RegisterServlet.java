@@ -56,7 +56,7 @@ public class RegisterServlet extends HttpServlet {
             AccountJpaController ajc = new AccountJpaController(utx, emf);
             if (ajc.findAccount(username) != null) {
                 request.getSession().setAttribute("message", "Username already exists!");
-                getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             } else {
                 String password = request.getParameter("password");
 //                String fname = request.getParameter("fname");

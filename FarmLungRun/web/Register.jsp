@@ -26,7 +26,8 @@
                     <form action="Register" method="post">
                         <div class="form-group">                                  
                             <label for="name">Username</label>
-                            <input name="username" type="text" class="form-control" required>
+                            <input name="username" type="text" class="form-control" required><br>
+                            <p style="color: red">${message}</p>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
