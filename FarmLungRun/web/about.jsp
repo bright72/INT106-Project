@@ -12,6 +12,7 @@
         <title>About Page</title>
     </head>
     <body>
+        <jsp:include page="include/nav.jsp?page=About"/>
         <h1>About Page</h1>
     </body>
 </html>
