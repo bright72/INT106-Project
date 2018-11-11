@@ -8,6 +8,25 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Title  -->
+        <title>Farm LungRun | Home</title>
+
+        <!-- Favicon  -->
+        <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
+        <link rel="icon" href="img/core-img/favicon.ico">
+
+        <!-- Core Style CSS -->
+        <link rel="stylesheet" href="css/core-style.css">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
 
     <!-- Search Wrapper Area Start -->
     <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
@@ -144,22 +163,34 @@
                     <c:if test="${param.page == 'Home'}">
                         <li class="active">
                         </c:if>
-                        <a href="index">Home</a></li>
+                        <c:if test="${param.page != 'Home'}">
+                        <li>
+                        </c:if>
+                        <a href="Home.jsp">Home</a></li>
 
                     <c:if test="${param.page == 'Shop'}">
                         <li class="active">
                         </c:if>
-                    <li><a href="Product">Shop</a></li>
+                        <c:if test="${param.page != 'Shop'}">
+                        <li>
+                        </c:if>
+                    <a href="Shop">Shop</a></li>
 
                     <c:if test="${param.page == 'Cart'}">
                         <li class="active">
                         </c:if>
-                    <li><a href="Cart">Cart</a></li>
+                        <c:if test="${param.page != 'Cart'}">
+                        <li>
+                        </c:if>
+                    <a href="Cart">Cart</a></li>
 
                     <c:if test="${param.page == 'About'}">
                         <li class="active">
                         </c:if>
-                    <li><a href="About">About</a></li>
+                        <c:if test="${param.page != 'About'}">
+                        <li>
+                        </c:if>
+                    <a href="About">About</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -182,9 +213,10 @@
 
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
+                <a href="Cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
         </header>
         <!-- Header Area End -->
+
 </html>

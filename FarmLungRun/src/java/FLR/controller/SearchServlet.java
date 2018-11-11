@@ -9,6 +9,7 @@ import FLR.model.Product;
 import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
@@ -24,9 +25,10 @@ import javax.transaction.UserTransaction;
  * @author SARUNSUMETPANICH
  */
 public class SearchServlet extends HttpServlet {
-    @PersistenceUnit (unitName = "FarmLungRunPU")
+
+    @PersistenceUnit(unitName = "FarmLungRunPU")
     EntityManagerFactory emf;
-    
+
     @Resource
     UserTransaction utx;
 
@@ -42,21 +44,23 @@ public class SearchServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String search = (String) request.getParameter("search");
-        
+
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         List<Product> allProduct = pjc.findProductEntities();
-        List<Product> foundProduct = null;
+        List<Product> foundProduct = new ArrayList<Product>();
         for (Product product : allProduct) {
-            if (product.getProductname().equalsIgnoreCase(search)) {
-                foundProduct.add(product);
+            if (search.toLowerCase().contains(product.getProductname().toLowerCase())) {
+                System.out.println(product);
+                foundProduct.add(product);                
             }
         }
-        if (foundProduct == null) {
-            request.setAttribute("message", "There are no results for "+search);
-            getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
-        } else {
+        if (foundProduct == null) { //ถ้าไม่เจอ
+            request.setAttribute("message", "There are no results for " + search);
+            getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
+        } else { //ถ้าเจอ            
             request.setAttribute("foundProduct", foundProduct);
-            response.sendRedirect(search); //ต้องส่งไปที่ไหน?
+            request.setAttribute("message", "These are results for " + search);
+            response.sendRedirect("searchResult.jsp");
             return;
         }
     }
