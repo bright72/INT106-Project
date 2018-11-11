@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author SARUNSUMETPANICH
+ * @author Dell
  */
 @Entity
 @Table(name = "PRODUCT")
@@ -41,8 +41,9 @@ public class Product implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 10)
     @Column(name = "PRODUCTCODE")
-    private Integer productcode;
+    private String productcode;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
@@ -62,21 +63,21 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Integer productcode) {
+    public Product(String productcode) {
         this.productcode = productcode;
     }
 
-    public Product(Integer productcode, String productname, BigDecimal productprice) {
+    public Product(String productcode, String productname, BigDecimal productprice) {
         this.productcode = productcode;
         this.productname = productname;
         this.productprice = productprice;
     }
 
-    public Integer getProductcode() {
+    public String getProductcode() {
         return productcode;
     }
 
-    public void setProductcode(Integer productcode) {
+    public void setProductcode(String productcode) {
         this.productcode = productcode;
     }
 

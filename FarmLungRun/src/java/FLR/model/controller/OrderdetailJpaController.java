@@ -23,7 +23,7 @@ import javax.transaction.UserTransaction;
 
 /**
  *
- * @author SARUNSUMETPANICH
+ * @author Dell
  */
 public class OrderdetailJpaController implements Serializable {
 
