@@ -29,7 +29,7 @@
     </head>
 
     <!-- Search Wrapper Area Start -->
-    <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+<!--    <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -55,9 +55,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
-    <div id="register-modal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true" class="modal fade">
+<!--    <div id="register-modal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true" class="modal fade">
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-header">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
