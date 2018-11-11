@@ -47,7 +47,7 @@ public class SearchServlet extends HttpServlet {
 
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         List<Product> allProduct = pjc.findProductEntities();
-        List<Product> foundProduct = new ArrayList<Product>();
+        List<Product> foundProduct = null;
         for (Product product : allProduct) {
             if (search.toLowerCase().contains(product.getProductname().toLowerCase())) {
                 System.out.println(">>"+product);
@@ -60,7 +60,7 @@ public class SearchServlet extends HttpServlet {
         } else { //ถ้าเจอ            
             request.setAttribute("foundProduct", foundProduct);
             request.setAttribute("message", "These are results for " + search);
-            response.sendRedirect("searchResult.jsp");
+            response.sendRedirect("searchResult.jsp?search=true");
             return;
         }
     }
