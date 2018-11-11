@@ -6,9 +6,11 @@
 package FLR.controller;
 
 import FLR.model.Account;
+import FLR.model.Orderdetail;
 import FLR.model.Orders;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
@@ -47,8 +49,9 @@ public class CartServlet extends HttpServlet {
         Account accountSession = (Account) session.getAttribute("account");
         if (accountSession != null) {
             List<Orders> od = accountSession.getOrdersList();
-            for (Orders orders : od) {
-                orders.getOrderdetailList();
+            List<Orderdetail> odd = new ArrayList<Orderdetail>();
+            for (Orders orders : od) {                
+                
             }
         } else {
             getServletContext().getRequestDispatcher("/Login").forward(request, response);
