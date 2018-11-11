@@ -24,7 +24,7 @@ CONSTRAINT orders_ibfk_1 FOREIGN KEY(username) REFERENCES account (username));
 drop table product;
 
 create table product (
-productCode int not null,
+productCode varchar(10) not null,
 productName varchar(30) not null,
 productPrice decimal(4,2) not null,
 productType varchar(25),
@@ -35,7 +35,7 @@ drop table orderDetail;
 create table orderDetail (
 orderDetailId int NOT NULL,
 orderId int NOT NULL,
-productCode int Not null,
+productCode varchar(10) Not null,
 quantity int Not null,
 priceEach decimal(4,2) Not null,
 PRIMARY KEY(orderDetailId),
