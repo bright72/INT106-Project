@@ -28,8 +28,8 @@ public class ShopServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
-        response.sendRedirect("shop.jsp");
+            throws ServletException, IOException {    
+        request.getRequestDispatcher("/shop.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
