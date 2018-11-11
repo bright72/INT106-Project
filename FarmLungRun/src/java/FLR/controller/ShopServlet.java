@@ -5,12 +5,19 @@
  */
 package FLR.controller;
 
+import FLR.model.Product;
+import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.UserTransaction;
 
 /**
  *
@@ -18,6 +25,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ShopServlet extends HttpServlet {
 
+    @PersistenceUnit (unitName = "FarmLungRunPU")
+    EntityManagerFactory emf;
+    
+    @Resource
+    UserTransaction utx;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,7 +40,10 @@ public class ShopServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {    
+            throws ServletException, IOException {
+        ProductJpaController productCtrl = new ProductJpaController(utx, emf);
+        List<Product> product = productCtrl.findProductEntities();
+        request.setAttribute("product", product);
         request.getRequestDispatcher("/shop.jsp").forward(request, response);
     }
 
