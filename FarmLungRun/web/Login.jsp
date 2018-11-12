@@ -10,6 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
+        
+        <!-- Favicon  -->
+        <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
+        <link rel="icon" href="img/core-img/favicon.ico">
+
+        <!-- Core Style CSS -->
+        <link rel="stylesheet" href="css/core-style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 <!--        <h1>Login</h1>
@@ -19,7 +27,7 @@
             <input type="submit" value="Login">
         </form>-->
 
-<div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,11 +48,11 @@
                     </form>
                     <p class="text-center text-muted">Not registered yet?</p>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
+                        <button type="submit" class="btn btn-primary" href="Register"><i class="fa fa-user-md"></i> Register</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
     </body>
 </html>
