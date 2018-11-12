@@ -14,8 +14,8 @@
     </head>
     <body>
         <jsp:include page="include/nav.jsp"/>
-        <br>
-        <h1>Hey ${message}</h1>
+        <br>        
+        <div style="margin-left: 5%; margin-top: 5%"><h1>${message}</h1></div>
         <br>
         <c:if test="${param.search=='true'}">
             <table>

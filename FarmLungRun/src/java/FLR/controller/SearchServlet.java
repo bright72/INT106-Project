@@ -49,7 +49,7 @@ public class SearchServlet extends HttpServlet {
         List<Product> allProduct = pjc.findProductEntities();
         List<Product> foundProduct = null;
         for (Product product : allProduct) {
-            if (search.toLowerCase().contains(product.getProductname().toLowerCase())) {
+            if (search.toLowerCase().contains(product.getProductname().toLowerCase())) { //ปรับให้หาได้ทุกตัว
                 System.out.println(">>"+product);
                 foundProduct.add(product);                
             }

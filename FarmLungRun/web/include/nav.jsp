@@ -29,86 +29,86 @@
     </head>
 
     <!-- Search Wrapper Area Start -->
-<!--    <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Customer login</h5>
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                    <form action="Login" method="post">
-                        <div class="form-group">
-                            <input id="email-modal" type="text" name="username" placeholder="username" class="form-control">
+    <!--    <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Customer login</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="Login" method="post">
+                            <div class="form-group">
+                                <input id="email-modal" type="text" name="username" placeholder="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
+                            </div>
+                            <p class="text-center">
+                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                            </p>
+                        </form>
+                        <p class="text-center text-muted">Not registered yet?</p>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
                         </div>
-                        <div class="form-group">
-                            <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
-                        </div>
-                        <p class="text-center">
-                            <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                        </p>
-                    </form>
-                    <p class="text-center text-muted">Not registered yet?</p>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#register-modal"><i class="fa fa-user-md"></i> Register</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>-->
+        </div>-->
 
-<!--    <div id="register-modal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true" class="modal fade">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Customer Register</h5>
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body">
-                    <h1>New account</h1>
-                    <p class="lead">Not our registered customer yet?</p>                 
-                    <hr>
-                    <form action="Register" method="post">
-                        <div class="form-group">                                  
-                            <label for="name">Username</label>
-                            <input name="username" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input name="password" type="password" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="fname">First Name</label>
-                            <input name="fname" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname">Last Name</label>
-                            <input name="lname" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <input name="address" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="province">Province</label>
-                            <input name="province" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input name="country" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="postalcode">Postal Code</label>
-                            <input name="postalcode" type="text" class="form-control" required>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
-                        </div>
-                    </form>
+    <!--    <div id="register-modal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true" class="modal fade">
+            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Customer Register</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <h1>New account</h1>
+                        <p class="lead">Not our registered customer yet?</p>                 
+                        <hr>
+                        <form action="Register" method="post">
+                            <div class="form-group">                                  
+                                <label for="name">Username</label>
+                                <input name="username" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input name="password" type="password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input name="fname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input name="lname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input name="address" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input name="province" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input name="country" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postalcode">Postal Code</label>
+                                <input name="postalcode" type="text" class="form-control" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>-->
+        </div>-->
 
     <div class="search-wrapper section-padding-100">
         <div class="search-close">
@@ -174,7 +174,7 @@
                         <c:if test="${param.page != 'Shop'}">
                         <li>
                         </c:if>
-                    <a href="Shop">Shop</a></li>
+                        <a href="Shop">Shop</a></li>
 
                     <c:if test="${param.page == 'Cart'}">
                         <li class="active">
@@ -182,7 +182,7 @@
                         <c:if test="${param.page != 'Cart'}">
                         <li>
                         </c:if>
-                    <a href="Cart">Cart</a></li>
+                        <a href="Cart">Cart</a></li>
 
                     <c:if test="${param.page == 'About'}">
                         <li class="active">
@@ -190,7 +190,7 @@
                         <c:if test="${param.page != 'About'}">
                         <li>
                         </c:if>
-                    <a href="About">About</a></li>
+                        <a href="About">About</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -218,5 +218,7 @@
             </div>
         </header>
         <!-- Header Area End -->
+        
+        
 
 </html>
