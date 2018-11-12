@@ -18,6 +18,7 @@
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
         <link rel="stylesheet" href="style.css">
+
     </head>
     <body>
 <!--        <h1>Login</h1>
@@ -42,6 +43,9 @@
                         <div class="form-group">
                             <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
                         </div>
+                        <div style="color: red" class="text-center">
+                            ${message}
+                        </div> <br>
                         <p class="text-center">
                             <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                         </p>

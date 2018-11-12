@@ -52,43 +52,58 @@ public class RegisterServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         if (session.getAttribute("account") == null) {
             String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            String fname = request.getParameter("fname");
+            String lname = request.getParameter("lname");
+            String address = request.getParameter("address");
+            String province = request.getParameter("province");
+            String country = request.getParameter("country");
+            String postalcode = request.getParameter("postalcode");
 
             AccountJpaController ajc = new AccountJpaController(utx, emf);
-            if (ajc.findAccount(username) != null) {
-                request.getSession().setAttribute("message", "Username already exists!");
-                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-            } else {
-                String password = request.getParameter("password");
-//                String fname = request.getParameter("fname");
-                
-                
-                Account account = new Account(username);
-                account.setEncryptedpassword(cryptWithMD5(password));
-                account.setFname(request.getParameter("fname"));
-                account.setLname(request.getParameter("lname"));
-                account.setAddress(request.getParameter("address"));
-                account.setProvince(request.getParameter("province"));
-                account.setCountry(request.getParameter("country"));
-                account.setPostalcode(request.getParameter("postalcode"));
-                
-                try {
-                    System.out.println("Hi");
-                    ajc.create(account);
-                } catch (RollbackFailureException ex) {
-                    System.out.println(ex);
-                } catch (Exception ex) {
-                    System.out.println(ex);
+
+            if (username != null && password != null && fname != null
+                    && lname != null) {
+                if (ajc.findAccount(username) != null) { //ถ้าเจอว่ามี  username นี้แล้ว
+                    request.setAttribute("message", "Username already exists!");
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+                } else { //ถ้าไม่เจอ
+
+                    if (username != null && username.length() > 4 && password != null
+                            && fname != null && lname != null) {
+                        Account account = new Account(username);
+                        account.setEncryptedpassword(cryptWithMD5(password));
+                        account.setFname(fname);
+                        account.setLname(lname);
+                        account.setAddress(address);
+                        account.setProvince(province);
+                        account.setCountry(country);
+                        account.setPostalcode(postalcode);
+                        try {
+                            ajc.create(account);
+                        } catch (RollbackFailureException ex) {
+                            System.out.println(ex);
+                        } catch (Exception ex) {
+                            System.out.println(ex);
+                        }
+                        request.setAttribute("message", "Register Successful!");
+                        response.sendRedirect("Home.jsp");
+                        return;
+                    } else {
+                        request.setAttribute("message", "Register Unsuccessful Please make sure your username length more than 4!");
+                        getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+                    }
+
                 }
-                request.getSession().setAttribute("message", "Register Successful!");
-                response.sendRedirect("Home.jsp");
-                return;
+            } else {
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             }
+
         }
-        
 
     }
-    
-      public static String cryptWithMD5(String pass) {
+
+    public static String cryptWithMD5(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] passBytes = pass.getBytes();
