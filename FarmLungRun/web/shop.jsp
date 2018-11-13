@@ -4,6 +4,7 @@
     Author     : SARUNSUMETPANICH
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -61,16 +62,17 @@
                 <h6 class="widget-title mb-30">Price</h6>
 
                 <div class="widget-desc">
-                        <form action="Shop">
-                            <select name="range">
-                                <option value="1">1-50฿</option>
-                                <option value="2">51-100฿</option>
-                                <option value="3">101-200฿</option>
-                                <option value="4">More than 200฿</option>
-                            </select>
-                            <br><br>
-                            <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Select">
-                        </form>
+                    <form action="Shop">
+                        <select name="range">
+                            <option value="0" >All Price</option>
+                            <option value="1" ${param.range == "1" ? "selected" : ""} >1-50฿</option>
+                            <option value="2" ${param.range == "2" ? "selected" : ""}>51-100฿</option>
+                            <option value="3" ${param.range == "3" ? "selected" : ""}>101-200฿</option>
+                            <option value="4" ${param.range == "4" ? "selected" : ""}>More than 200฿</option>
+                        </select>
+                        <br><br>
+                        <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Select">
+                    </form>
                 </div>
             </div>
         </div>

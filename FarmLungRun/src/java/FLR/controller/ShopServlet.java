@@ -51,7 +51,7 @@ public class ShopServlet extends HttpServlet {
             if (range.equalsIgnoreCase("1")) {
                 List<Product> foundProduct = productCtrl.findByProductprice("1", "50");
                 request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+                request.getRequestDispatcher("/shop.jsp?range=1").forward(request, response);
             } else if (range.equalsIgnoreCase("2")) {
                 List<Product> foundProduct = productCtrl.findByProductprice("51", "100");
                 request.setAttribute("product", foundProduct);
@@ -63,6 +63,10 @@ public class ShopServlet extends HttpServlet {
             } else if (range.equalsIgnoreCase("4")) {
                 List<Product> foundProduct = productCtrl.findByProductprice("200", "100000");
                 request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+            } else if (range.equalsIgnoreCase("0")) {
+                List<Product> product = productCtrl.findProductEntities();
+                request.setAttribute("product", product);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             }
 
