@@ -2,3 +2,5 @@
 /FarmLungRun/nbproject/private/
 /FarmLungRun/build/
 /FarmLungRun/dist/
+*.properties
+.DS_Store
