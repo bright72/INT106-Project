@@ -14,5 +14,8 @@
     <body>
         <jsp:include page="include/nav.jsp?page=About"/>
         <h1>About Page</h1>
+        <table>
+          
+        </table>
     </body>
 </html>
