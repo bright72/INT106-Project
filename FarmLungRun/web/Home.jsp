@@ -94,7 +94,7 @@
                         <a href="shop.html">
                             <img src="img/bg-img/5.jpg" alt="">
                             <!-- Hover Content -->
-                            <div class="hover-content">
+                            <div>
                                 <div class="line"></div>
                                 <p>From $18</p>
                                 <h4>Plant Pot</h4>

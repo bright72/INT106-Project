@@ -47,14 +47,14 @@ public class SearchServlet extends HttpServlet {
 
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         List<Product> foundProduct = pjc.findByProductname(search);
-
-        if (foundProduct == null) { //ถ้าไม่เจอ
+        System.out.println(foundProduct.size());
+        if (foundProduct.size() == 0) { //ถ้าไม่เจอ
             request.setAttribute("message", "There are no results for " + search);
             getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
         } else { //ถ้าเจอ            
             request.setAttribute("foundProduct", foundProduct);
-            request.setAttribute("message", "These are results for " + search);
-            response.sendRedirect("searchResult.jsp?search=true");
+            request.setAttribute("message", "These are results for \"" + search + "\"");
+            getServletContext().getRequestDispatcher("/searchResult.jsp?search=true").forward(request, response);
             return;
         }
     }
