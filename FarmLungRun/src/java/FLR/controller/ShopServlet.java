@@ -72,18 +72,30 @@ public class ShopServlet extends HttpServlet {
             }
 
         } else if (catagories != null) {
-            if (catagories.equalsIgnoreCase("vegatables")) {
-
+            if (catagories.equalsIgnoreCase("vegetables")) {
+                List<Product> foundProduct = productCtrl.findByProducttype("Vegetable");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("fruit")) {
-
+                List<Product> foundProduct = productCtrl.findByProducttype("Fruit");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("meat")) {
-
+                List<Product> foundProduct = productCtrl.findByProducttype("Meat");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("dairy")) {
-
+                List<Product> foundProduct = productCtrl.findByProducttype("Dairy");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("eggs")) {
-
+                List<Product> foundProduct = productCtrl.findByProducttype("Egg");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("mushrooms")) {
-
+                List<Product> foundProduct = productCtrl.findByProducttype("Mushroom");
+                request.setAttribute("product", foundProduct);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             }
         } else {
             List<Product> product = productCtrl.findProductEntities();
