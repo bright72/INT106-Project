@@ -39,7 +39,7 @@
                                     <div >
                                         <ul class="navbar-nav ml-auto">
                                             <li class="nav-item ${param.page == "Home" ? "active" : ""}">
-                                                <a class="nav-link" href="Home.jsp">Home</a>
+                                                <a class="nav-link" href="Home">Home</a>
                                             </li>
                                             <li class="nav-item ${param.page == "Shop" ? "active" : ""}">
                                                 <a class="nav-link" href="Shop">Shop</a>

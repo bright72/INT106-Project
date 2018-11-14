@@ -55,7 +55,7 @@
             <!-- ##### Single Widget ##### -->
             <div class="widget price mb-50">
                 <!-- Widget Title -->
-                <h6 class="widget-title mb-30">Price</h6>
+                <h6 class="widget-title mb-30">Price Range</h6>
 
                 <div class="widget-desc">
                     <form action="Shop">
@@ -66,7 +66,7 @@
                             <option value="3" ${param.range == "3" ? "selected" : ""}>101-200฿</option>
                             <option value="4" ${param.range == "4" ? "selected" : ""}>More than 200฿</option>
                         </select>
-                        <br><br>
+                        <br><br><br>
                         <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Select">
                     </form>
                 </div>
@@ -81,36 +81,9 @@
                         <div class="product-topbar d-xl-flex align-items-end justify-content-between">
                             <!-- Total Products -->
                             <div class="total-products">
-                                <c:forEach  items="${product}" var="p" varStatus="n">                        
-                                </c:forEach>
-                                <p>Showing ${n.count} product</p> 
+                                <h3>Product</h3> 
                             </div>
 
-                            <!-- Sorting -->
-
-                            <div class="product-sorting d-flex">
-                                <div class="sort-by-date d-flex align-items-center mr-15">
-                                    <p>Sort by</p>
-                                    <form action="#" method="get">
-                                        <select name="select" id="sortBydate">
-                                            <option value="value">Date</option>
-                                            <option value="value">Newest</option>
-                                            <option value="value">Popular</option>
-                                        </select>
-                                    </form>
-                                </div>                                                          
-                                <div class="view-product d-flex align-items-center">
-                                    <p>View</p>
-                                    <form action="#" method="get">
-                                        <select name="select" id="viewProduct">
-                                            <option value="value">12</option>
-                                            <option value="value">24</option>
-                                            <option value="value">48</option>
-                                            <option value="value">96</option>
-                                        </select>
-                                    </form>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,7 +107,7 @@
                                     <!-- Product Meta Data -->
                                     <div class="product-meta-data">
                                         <div class="line"></div>
-                                        <p class="product-price">${p.productprice}</p>
+                                        <p class="product-price">${p.productprice} ฿</p>
                                         <a href="product-details.html">
                                             <h6>${p.productname}</h6>
                                         </a>

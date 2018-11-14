@@ -50,30 +50,6 @@
                                         <th>Quantity</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="cart_product_img">
-                                            <a href="#"><img src="img/E_4001.png" alt="Product"></a>
-                                        </td>
-                                        <td class="cart_product_desc">
-                                            <h5>Egg</h5>
-                                        </td>
-                                        <td class="price">
-                                            <span>90฿</span>
-                                        </td>
-                                        <td class="qty">
-                                            <div class="qty-btn d-flex">
-                                                <p>Qty</p>
-                                                <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty) & amp; & amp; qty & gt; 1) effect.value--; return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty)) effect.value++; return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-
                                 <c:forEach items="${product}" var="p" varStatus="n">
                                     <tbody>
                                         <tr>
@@ -84,18 +60,10 @@
                                                 <h5>${p.productname}</h5>
                                             </td>
                                             <td class="price">
-                                                <span>${p.productprice}</span>
+                                                <span>${p.productprice} ฿</span>
                                             </td>
                                             <td class="qty">
-                                                <div class="qty-btn d-flex">
-                                                    <p>Qty</p>
-                                                    <div class="quantity">
-                                                        <form action="/Cart" method ="post">
-                                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if (!isNaN(qty) & amp; & amp; qty & gt; 1) effect.value--; return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                            <input type="number" class="qty-text" id="qty3" step="1" min="1" max="300" name="quantity" value="">
-                                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if (!isNaN(qty)) effect.value++; return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                                    </div>
-                                                </div>
+                                                1 
                                             </td>
                                         </tr>
                                     </tbody>

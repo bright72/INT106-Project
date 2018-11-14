@@ -45,7 +45,7 @@
                             <!-- Hover Content -->
                             <div class="hover-content">
                                 <div class="line"></div>
-                                <p>From ${p.productprice}</p>
+                                <p>From ${p.productprice} ฿</p>
                                 <h4>${p.productname}</h4>
                             </div>
                         </a>
