@@ -114,7 +114,7 @@
                         <c:if test="${param.page != 'Checkout'}">
                         <li>
                         </c:if>
-                        <a href="checkout.jsp">Checkout</a></li>
+                        <a href="Checkout">Checkout</a></li>
 
                     <c:if test="${param.page == 'About'}">
                         <li class="active">
