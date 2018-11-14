@@ -30,7 +30,7 @@
 
 <body>
     
-    <jsp:include page="include/nav.jsp?page=Home"/>
+    <jsp:include page="include/nav.jsp?page=Checkout"/>
 
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
