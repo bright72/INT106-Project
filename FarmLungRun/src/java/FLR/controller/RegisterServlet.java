@@ -50,6 +50,7 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
+        session.setAttribute("message", "");
         if (session.getAttribute("account") == null) {
             String username = request.getParameter("username");
             String password = request.getParameter("password");
