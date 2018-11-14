@@ -4,6 +4,7 @@
     Author     : INT303
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en th">
@@ -29,109 +30,109 @@
     </head>
 
     <body>
-        
 
-            <jsp:include page="include/nav.jsp?page=Home"/>
 
-            <!-- Product Catagories Area Start -->
-            <div class="products-catagories-area clearfix">
-                <div class="amado-pro-catagory clearfix">
+        <jsp:include page="include/nav.jsp?page=Home"/>
 
-                    <!-- Single Catagory -->
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <img src="img/bg-img/1.jpg" alt="">
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <div class="line"></div>
-                                <p>From $180</p>
-                                <h4>Modern Chair</h4>
-                            </div>
-                        </a>
-                    </div>
+        <!-- Product Catagories Area Start -->
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
 
-                    <!-- Single Catagory -->
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <img src="img/bg-img/2.jpg" alt="">
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <div class="line"></div>
-                                <p>From $180</p>
-                                <h4>Minimalistic Plant Pot</h4>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Single Catagory -->
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <img src="img/bg-img/3.jpg" alt="">
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <div class="line"></div>
-                                <p>From $180</p>
-                                <h4>Modern Chair</h4>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Single Catagory -->
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <img src="img/bg-img/4.jpg" alt="">
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <div class="line"></div>
-                                <p>From $180</p>
-                                <h4>Night Stand</h4>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Single Catagory -->
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <img src="img/bg-img/5.jpg" alt="">
-                            <!-- Hover Content -->
-                            <div>
-                                <div class="line"></div>
-                                <p>From $18</p>
-                                <h4>Plant Pot</h4>
-                            </div>
-                        </a>
-                    </div>
-
-                    <c:forEach items="${product}" var="p" varStatus="n">
-                        <div class="single-products-catagory clearfix">
-                            <a href="shop.html">
-                                <img src="img/bg-img/9.jp g" alt="">
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <div class="line"></div>
-                                    <p>From ${price}</p>
-                                    <h4>${productname}</h4>
-                                </div>
-                            </a>
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/1.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Modern Chair</h4>
                         </div>
-                    </c:forEach>
-
+                    </a>
                 </div>
-            </div>
-            <!-- Product Catagories Area End -->
-        </div>
-        <!-- ##### Main Content Wrapper End ##### -->
 
-        <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-        <script src="js/jquery/jquery-2.2.4.min.js"></script>
-        <!-- Popper js -->
-        <script src="js/popper.min.js"></script>
-        <!-- Bootstrap js -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Plugins js -->
-        <script src="js/plugins.js"></script>
-        <!-- Active js -->
-        <script src="js/active.js"></script>
-        <jsp:include page="include/footer.jsp?page=Home"/>
-    </body>
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/2.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Minimalistic Plant Pot</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!--                     Single Catagory 
+                                    <div class="single-products-catagory clearfix">
+                                        <a href="shop.html">
+                                            <img src="img/bg-img/3.jpg" alt="">
+                                             Hover Content 
+                                            <div class="hover-content">
+                                                <div class="line"></div>
+                                                <p>From $180</p>
+                                                <h4>Modern Chair</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                
+                                     Single Catagory 
+                                    <div class="single-products-catagory clearfix">
+                                        <a href="shop.html">
+                                            <img src="img/bg-img/4.jpg" alt="">
+                                             Hover Content 
+                                            <div class="hover-content">
+                                                <div class="line"></div>
+                                                <p>From $180</p>
+                                                <h4>Night Stand</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                
+                                     Single Catagory 
+                                    <div class="single-products-catagory clearfix">
+                                        <a href="shop.html">
+                                            <img src="img/bg-img/5.jpg" alt="">
+                                             Hover Content 
+                                            <div>
+                                                <div class="line"></div>
+                                                <p>From $18</p>
+                                                <h4>Plant Pot</h4>
+                                            </div>
+                                        </a>
+                                    </div>-->
+
+                <c:forEach items="${product}" var="p" varStatus="n">
+                    <div class="single-products-catagory clearfix">
+                        <a href="shop.html">
+                            <img src="img/${p.productid}.png" alt="">
+                            <!-- Hover Content -->
+                            <div class="hover-content">
+                                <div class="line"></div>
+                                <p>From ${p.productprice}</p>
+                                <h4>${p.productname}</h4>
+                            </div>
+                        </a>
+                    </div>
+                </c:forEach>
+
+            </div>
+        </div>
+        <!-- Product Catagories Area End -->
+    </div>
+    <!-- ##### Main Content Wrapper End ##### -->
+
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <jsp:include page="include/footer.jsp?page=Home"/>
+</body>
 </html>

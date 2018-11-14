@@ -70,12 +70,26 @@
                 <i class="fa fa-close" aria-hidden="true"></i>
             </div>
             <!-- Logo -->
-            <div class="logo">
-                <!-- <a href="index.html"><img src="img/core-img/logo.png" alt=""></a> -->
+            <div style="padding: 10%">
+                <a href="index.html"><img src="img/LOGO.PNG" alt=""></a> 
                 <a href="Home.jsp" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
+                <c:if test="${sessionScope.account == null}">
+                    <div class="amado-btn-group ">
+                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a><br>
+
+                        <a href="Register" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Register</a>
+                    </div><br>
+                </c:if> 
+                <c:if test="${sessionScope.account != null}">
+                    <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.username}</div><br>
+                    <div class="amado-btn-group ">
+                        <a href="Logout" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview">Logout</a><br>
+                    </div><br>
+                </c:if> 
+
                 <ul>
 
                     <c:if test="${param.page == 'Home'}">
@@ -113,21 +127,7 @@
             </nav>
             <!-- Button Group -->
 
-            <c:if test="${sessionScope.account == null}">
-                <div class="amado-btn-group mt-30 mb-100">
-                    <a href="Login" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" >Login</a>
-
-                    <a href="Register" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" >Register</a>
-                </div>
-            </c:if> 
-
             <hr><br>
-            <c:if test="${sessionScope.account != null}">
-                <div style="text-align: center" class="hover active amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview" >Hello ${sessionScope.account.username}</div>
-                <div class="amado-btn-group mt-30 mb-100">
-                    <a href="Logout" class="btn amado-btn mb-15 navbar-collapse collapse d-none d-lg-block " id="basket-overview">Logout</a>
-                </div>
-            </c:if> 
 
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
@@ -136,7 +136,7 @@
             </div>
         </header>
         <!-- Header Area End -->
-        
-        
+
+
 
 </html>
