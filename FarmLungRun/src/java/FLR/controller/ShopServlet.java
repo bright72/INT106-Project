@@ -69,6 +69,10 @@ public class ShopServlet extends HttpServlet {
                 List<Product> foundProduct = productCtrl.findByProductprice("200", "100000");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
+            } else {
+                List<Product> product = productCtrl.findProductEntities();
+                request.setAttribute("product", product);
+                request.getRequestDispatcher("/shop.jsp").forward(request, response);
             }
 
         } else if (catagories != null) {
