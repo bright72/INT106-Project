@@ -98,7 +98,7 @@
                         <c:if test="${param.page != 'Home'}">
                         <li>
                         </c:if>
-                        <a href="Home.jsp">Home</a></li>
+                        <a href="Home">Home</a></li>
 
                     <c:if test="${param.page == 'Shop'}">
                         <li class="active">
