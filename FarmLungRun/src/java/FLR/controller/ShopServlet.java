@@ -45,13 +45,13 @@ public class ShopServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String range = request.getParameter("range");
+        String catagories = request.getParameter("catagories");
         ProductJpaController productCtrl = new ProductJpaController(utx, emf);
 
 //        ProductJpaController productJpaCtrl = new ProductJpaController(utx, emf);
 //        List<Product> product = productJpaCtrl.findProductEntities();
 //        request.setAttribute("product", product);
 //        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
-        
         if (range != null) {
             if (range.equalsIgnoreCase("1")) {
                 List<Product> foundProduct = productCtrl.findByProductprice("1", "50");
@@ -71,40 +71,25 @@ public class ShopServlet extends HttpServlet {
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             }
 
-        } else {
-            List<Product> product = productCtrl.findProductEntities();
-            request.setAttribute("product", product);
-            request.getRequestDispatcher("/shop.jsp").forward(request, response);
-        }
-        if (range != null) {
-            if (range.equalsIgnoreCase("1")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("1", "50");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp?range=1").forward(request, response);
-            } else if (range.equalsIgnoreCase("2")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("51", "100");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("3")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("101", "200");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("4")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("200", "100000");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("0")) {
-                List<Product> product = productCtrl.findProductEntities();
-                request.setAttribute("product", product);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+        } else if (catagories != null) {
+            if (catagories.equalsIgnoreCase("vegatables")) {
+
+            } else if (catagories.equalsIgnoreCase("fruit")) {
+
+            } else if (catagories.equalsIgnoreCase("meat")) {
+
+            } else if (catagories.equalsIgnoreCase("dairy")) {
+
+            } else if (catagories.equalsIgnoreCase("eggs")) {
+
+            } else if (catagories.equalsIgnoreCase("mushrooms")) {
+
             }
-
         } else {
             List<Product> product = productCtrl.findProductEntities();
             request.setAttribute("product", product);
             request.getRequestDispatcher("/shop.jsp").forward(request, response);
         }
-
 
     }
 

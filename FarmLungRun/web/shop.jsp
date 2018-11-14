@@ -42,14 +42,15 @@
                 <!--  Catagories  -->
                 <div class="catagories-menu">
                     <ul>
-                        <li class="active"><a href="#">All</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruits</a></li>
-                        <li><a href="#">Meat</a></li>
-                        <li><a href="#">Dairy</a></li>
-                        <li><a href="#">Eggs</a></li>
-                        <li><a href="#">Mushrooms</a></li>
-
+                        <form action="Shop">
+                            <li class="${param.catagories == null ? "active" : ""}"><a href="Shop">All</a></li>
+                            <li class="${param.catagories == null ? "vegatables" : ""}"><a href="Shop?catagories=vegatables">Vegetables</a></li>
+                            <li class="${param.catagories == null ? "fruit" : ""}"><a href="Shop?catagories=fruit">Fruits</a></li>
+                            <li class="${param.catagories == null ? "meat" : ""}"><a href="Shop?catagories=meat">Meat</a></li>
+                            <li class="${param.catagories == null ? "Dairy" : ""}"><a href="Shop?catagories=dairy">Dairy</a></li>
+                            <li class="${param.catagories == null ? "Eggs" : ""}"><a href="Shop?catagories=eggs">Eggs</a></li>
+                            <li class="${param.catagories == null ? "Mushrooms" : ""}"><a href="Shop?catagories=mushrooms">Mushrooms</a></li>
+                        </form>
                     </ul>
                 </div>
             </div>
