@@ -131,7 +131,7 @@
                                 <div class="product-img">
                                     <img src="img/${p.productcode}.png" alt="">
                                     <!-- Hover Thumb -->
-                                    <img class="hover-img" src="img/${p.productcode}.png" alt="">
+                                    <img class="hover-img" style="transform: scale(1.5)" src="img/${p.productcode}.png" alt="">
                                 </div>
 
                                 <!-- Product Description -->
