@@ -42,13 +42,13 @@
                                                 <a class="nav-link" href="index.html">Home</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="shop.html">Shop</a>
+                                                <a class="nav-link" href="Shop">Shop</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="cart.html">Cart</a>
+                                                <a class="nav-link" href="Cart">Cart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="checkout.html">Checkout</a>
+                                                <a class="nav-link" href="Checkout">Checkout</a>
                                             </li>
                                         </ul>
                                     </div>
