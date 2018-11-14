@@ -9,7 +9,6 @@ import FLR.model.Product;
 import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -44,11 +43,15 @@ public class ProductDetail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String productCode = request.getParameter("productcode");
-        ProductJpaController productCtrl = new ProductJpaController(utx, emf);
-        List<Product> product = productCtrl.findProductEntities();
-        session.setAttribute("product", product);
-        getServletContext().getRequestDispatcher("/product-details.jsp").forward(request, response);
+        String productCode = request.getParameter("productCode");
+        if (productCode == null) {
+            response.sendError(HttpServletResponse.SC_EXPECTATION_FAILED);
+        } else {
+            ProductJpaController productCtrl = new ProductJpaController(utx, emf);
+            Product product = productCtrl.findProduct(productCode);
+            session.setAttribute("product", product);
+            getServletContext().getRequestDispatcher("/product-details.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
