@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         if (session.getAttribute("account") != null){
             session.setAttribute("message", "");
-            getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Home").forward(request, response);
         } else {
             if (username == null || password == null) {
                 session.setAttribute("message", "");
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
                     if (cryptWithMD5(password).equals(account.getEncryptedpassword())){
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
-                        response.sendRedirect("Home.jsp");
+                        response.sendRedirect("Home");
                         return;
                     } else {
                         session.setAttribute("message", "invalid password");

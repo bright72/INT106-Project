@@ -41,10 +41,11 @@ public class HomeServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         ProductJpaController productJpaCtrl = new ProductJpaController(utx, emf);
         List<Product> product = productJpaCtrl.findProductEntities();
         request.setAttribute("product", product);
-        getServletContext().getRequestDispatcher("/Login").forward(request, response);
+        getServletContext().getRequestDispatcher("/Home.jsp").forward(request, response);
      
     }
 
