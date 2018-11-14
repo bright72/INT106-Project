@@ -41,12 +41,12 @@
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="shop.html">
-                        <img src="img/bg-img/1.jpg" alt="">
+                        <img src="img/V_1001.png" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $180</p>
-                            <h4>Modern Chair</h4>
+                            <p>From 35฿</p>
+                            <h4>Tomato</h4>
                         </div>
                     </a>
                 </div>
@@ -54,12 +54,12 @@
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="shop.html">
-                        <img src="img/bg-img/2.jpg" alt="">
+                        <img src="img/V_1002.png" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $180</p>
-                            <h4>Minimalistic Plant Pot</h4>
+                            <p>From 28฿</p>
+                            <h4>Carrot</h4>
                         </div>
                     </a>
                 </div>

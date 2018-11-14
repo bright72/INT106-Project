@@ -53,13 +53,13 @@
                                 <tbody>
                                     <tr>
                                         <td class="cart_product_img">
-                                            <a href="#"><img src="img/bg-img/cart1.jpg" alt="Product"></a>
+                                            <a href="#"><img src="img/E_4001.png" alt="Product"></a>
                                         </td>
                                         <td class="cart_product_desc">
-                                            <h5>White Modern Chair</h5>
+                                            <h5>Egg</h5>
                                         </td>
                                         <td class="price">
-                                            <span>$130</span>
+                                            <span>90฿</span>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
@@ -107,9 +107,9 @@
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
                             <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140</span></li>
+                                <li><span>subtotal:</span> <span>140฿</span></li>
                                 <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>$140.00</span></li>
+                                <li><span>total:</span> <span>140.00฿</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
                                 <a href="Checkout" class="btn amado-btn w-100">Checkout</a>

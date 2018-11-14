@@ -122,8 +122,8 @@
                 <c:forEach  items="${product}" var="p" varStatus="n">
              
                 <div class="row">
-
                     <!-- Single Product Area -->
+                    
                     <div class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
                             <!-- Product Image -->
@@ -160,28 +160,30 @@
                         </div>
                     </div>
                    </c:forEach>
-
-<!--                     Single Product Area 
+                    
+                    
+                    
+                   
                     <div class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
-                             Product Image 
+                            <!-- Product Image -->
                             <div class="product-img">
-                                <img src="img/product-img/product2.jpg" alt="">
-                                 Hover Thumb 
-                                <img class="hover-img" src="img/product-img/product3.jpg" alt="">
+                                <img src="img/M_5006.png" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/M_5006.png" alt="">
                             </div>
 
-                             Product Description 
+                            <!-- Product Description -->
                             <div class="product-description d-flex align-items-center justify-content-between">
-                                 Product Meta Data 
+                                <!-- Product Meta Data -->
                                 <div class="product-meta-data">
                                     <div class="line"></div>
-                                    <p class="product-price">$180</p>
+                                    <p class="product-price">630฿</p>
                                     <a href="product-details.html">
-                                        <h6>Modern Chair</h6>
+                                        <h6>Salmon</h6>
                                     </a>
                                 </div>
-                                 Ratings & Cart 
+                                <!-- Ratings & Cart -->
                                 <div class="ratings-cart text-right">
                                     <div class="ratings">
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -197,7 +199,48 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Single Product Area -->
+                    <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                        <div class="single-product-wrapper">
+                            <!-- Product Image -->
+                            <div class="product-img">
+                                <img src="img/F_2005.png" alt="">
+                                <!-- Hover Thumb -->
+                                <img class="hover-img" src="img/F_2005.png" alt="">
+                            </div>
 
+                            <!-- Product Description -->
+                            <div class="product-description d-flex align-items-center justify-content-between">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price">108฿</p>
+                                    <a href="product-details.html">
+                                        <h6>Pomegranate</h6>
+                                    </a>
+                                </div>
+                                <!-- Ratings & Cart -->
+                                <div class="ratings-cart text-right">
+                                    <div class="ratings">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="cart">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+<!--
                      Single Product Area 
                     <div class="col-12 col-sm-6 col-md-12 col-xl-6">
                         <div class="single-product-wrapper">
@@ -346,7 +389,6 @@
                         </div>
                     </div>-->
         </div>
-
                 <div class="row">
                     <div class="col-12">
                         <!-- Pagination -->
