@@ -47,7 +47,6 @@ public class ShopServlet extends HttpServlet {
 //        String range = request.getParameter("range");
 //        ProductJpaController productCtrl = new ProductJpaController(utx, emf);
 
-<<<<<<< HEAD
         ProductJpaController productJpaCtrl = new ProductJpaController(utx, emf);
         List<Product> product = productJpaCtrl.findProductEntities();
         request.setAttribute("product", product);
@@ -77,36 +76,35 @@ public class ShopServlet extends HttpServlet {
 //            request.setAttribute("product", product);
 //            request.getRequestDispatcher("/shop.jsp").forward(request, response);
 //        }
-=======
-        if (range != null) {
-            if (range.equalsIgnoreCase("1")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("1", "50");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp?range=1").forward(request, response);
-            } else if (range.equalsIgnoreCase("2")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("51", "100");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("3")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("101", "200");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("4")) {
-                List<Product> foundProduct = productCtrl.findByProductprice("200", "100000");
-                request.setAttribute("product", foundProduct);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (range.equalsIgnoreCase("0")) {
-                List<Product> product = productCtrl.findProductEntities();
-                request.setAttribute("product", product);
-                request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            }
-
-        } else {
-            List<Product> product = productCtrl.findProductEntities();
-            request.setAttribute("product", product);
-            request.getRequestDispatcher("/shop.jsp").forward(request, response);
-        }
->>>>>>> 1f33549c8b57ae867c5ce56257e4ca4148724460
+//        if (range != null) {
+//            if (range.equalsIgnoreCase("1")) {
+//                List<Product> foundProduct = productCtrl.findByProductprice("1", "50");
+//                request.setAttribute("product", foundProduct);
+//                request.getRequestDispatcher("/shop.jsp?range=1").forward(request, response);
+//            } else if (range.equalsIgnoreCase("2")) {
+//                List<Product> foundProduct = productCtrl.findByProductprice("51", "100");
+//                request.setAttribute("product", foundProduct);
+//                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+//            } else if (range.equalsIgnoreCase("3")) {
+//                List<Product> foundProduct = productCtrl.findByProductprice("101", "200");
+//                request.setAttribute("product", foundProduct);
+//                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+//            } else if (range.equalsIgnoreCase("4")) {
+//                List<Product> foundProduct = productCtrl.findByProductprice("200", "100000");
+//                request.setAttribute("product", foundProduct);
+//                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+//            } else if (range.equalsIgnoreCase("0")) {
+//                List<Product> product = productCtrl.findProductEntities();
+//                request.setAttribute("product", product);
+//                request.getRequestDispatcher("/shop.jsp").forward(request, response);
+//            }
+//
+//        } else {
+//            List<Product> product = productCtrl.findProductEntities();
+//            request.setAttribute("product", product);
+//            request.getRequestDispatcher("/shop.jsp").forward(request, response);
+//        }
+//
 
     }
 
