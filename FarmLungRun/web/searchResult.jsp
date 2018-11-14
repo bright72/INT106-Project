@@ -48,6 +48,7 @@
                             </div>
                         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     </div>
                 </c:forEach>
             </c:if>
@@ -65,6 +66,8 @@
         <!-- Active js -->
         <script src="js/active.js"></script>
 =======
+=======
+>>>>>>> 1f33549c8b57ae867c5ce56257e4ca4148724460
                     </c:forEach>
                 </c:if>
             </div>
@@ -78,6 +81,9 @@
             <script src="js/plugins.js"></script>
             <!-- Active js -->
             <script src="js/active.js"></script>
+<<<<<<< HEAD
+>>>>>>> 1f33549c8b57ae867c5ce56257e4ca4148724460
+=======
 >>>>>>> 1f33549c8b57ae867c5ce56257e4ca4148724460
     </body>
 </html>
