@@ -17,7 +17,7 @@
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
         <!-- Title  -->
-       <title>Farm LungRun | Cart</title>
+        <title>Farm LungRun | Cart</title>
 
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
@@ -119,9 +119,9 @@
                 </div>
             </div>
         </div>
-  </div>
-
+        </div>
     </body>
+
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -132,7 +132,7 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    
+
     <jsp:include page="include/footer.jsp?page=Home"/>
 
 </html>  

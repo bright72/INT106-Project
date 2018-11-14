@@ -71,7 +71,7 @@
             </div>
             <!-- Logo -->
             <div style="padding: 10%">
-                <a href="index.html"><img src="img/LOGO.PNG" alt=""></a> 
+                <a href="Home.jsp"><img src="img/LOGO.PNG" alt=""></a> 
                 <a href="Home.jsp" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
