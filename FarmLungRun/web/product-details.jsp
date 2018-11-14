@@ -187,7 +187,7 @@
                         <div class="single_product_thumb">
                             <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
-                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/product-img/pro-big-1.jpg);">
+                                    <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/${product.productcode}.png);">
                                     </li>
                                     <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
                                     </li>
@@ -198,8 +198,8 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a class="gallery_img" href="img/product-img/pro-big-1.jpg">
-                                            <img class="d-block w-100" src="img/product-img/pro-big-1.jpg" alt="First slide">
+                                        <a class="gallery_img" href="img/${product.productcode}.png">
+                                            <img class="d-block w-100" src="img/${product.productcode}.png" alt="First slide">
                                         </a>
                                     </div>
                                     <div class="carousel-item">
@@ -226,9 +226,9 @@
                             <!-- Product Meta Data -->
                             <div class="product-meta-data">
                                 <div class="line"></div>
-                                <p class="product-price">$180</p>
+                                <p class="product-price">${product.productprice}</p>
                                 <a href="product-details.html">
-                                    <h6>White Modern Chair</h6>
+                                    <h6>${product.productname}</h6>
                                 </a>
                                 <!-- Ratings & Review -->
                                 <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
