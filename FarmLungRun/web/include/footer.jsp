@@ -25,7 +25,7 @@
                             </div>
                             <!-- Copywrite Text -->
                             <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | FarmLungRun by <a href="https://colorlib.com" target="_blank">INT303 FarmLungRun Group</a>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | FarmLungRun by <a href="About"><br>INT303 FarmLungRun Group</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                                                 <a class="nav-link" href="Cart">Cart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="Checkout">Checkout</a>
+                                                <a class="nav-link" href="About">About</a>
                                             </li>
                                         </ul>
                                     </div>
