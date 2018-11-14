@@ -8,6 +8,8 @@ package FLR.controller;
 import FLR.model.Account;
 import FLR.model.Orderdetail;
 import FLR.model.Orders;
+import FLR.model.Product;
+import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -27,10 +29,10 @@ import javax.transaction.UserTransaction;
  * @author SARUNSUMETPANICH
  */
 public class CartServlet extends HttpServlet {
-    
-    @PersistenceUnit (unitName = "FarmLungRunPU")
+
+    @PersistenceUnit(unitName = "FarmLungRunPU")
     EntityManagerFactory emf;
-    
+
     @Resource
     UserTransaction utx;
 
@@ -48,11 +50,11 @@ public class CartServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         Account accountSession = (Account) session.getAttribute("account");
         if (accountSession != null) {
-            List<Orders> od = accountSession.getOrdersList();
-            List<Orderdetail> odd = new ArrayList<Orderdetail>();
-            for (Orders orders : od) {                
-                
-            }
+            ProductJpaController productJpa = new ProductJpaController(utx, emf);
+            List<Product> product = productJpa.findProductEntities();
+            request.setAttribute("product", product);
+            getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
+
         } else {
             getServletContext().getRequestDispatcher("/Login").forward(request, response);
         }

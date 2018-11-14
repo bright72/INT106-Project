@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
-        
+
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/core-img/favicon.ico">
@@ -21,18 +21,23 @@
 
     </head>
     <body>
-<!--        <h1>Login</h1>
-        <form action="Login" method="post">
-            username : <input type="text" name="username" required>
-            password : <input type="text" name="password" required>
-            <input type="submit" value="Login">
-        </form>-->
+        <!--        <h1>Login</h1>
+                <form action="Login" method="post">
+                    username : <input type="text" name="username" required>
+                    password : <input type="text" name="password" required>
+                    <input type="submit" value="Login">
+                </form>-->
 
 
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Customer login</h5>
+                    <a href="Home.jsp">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </a>
                     <!--<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>-->
                 </div>
                 <div class="modal-body">

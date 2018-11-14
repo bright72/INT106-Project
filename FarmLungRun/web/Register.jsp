@@ -26,6 +26,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Customer Register</h5>
+                    <a href="Home.jsp">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </a>
                 </div> 
 
                 <div class="modal-body">

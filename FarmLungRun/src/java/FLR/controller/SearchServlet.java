@@ -49,7 +49,7 @@ public class SearchServlet extends HttpServlet {
         List<Product> foundProduct = pjc.findByProductname(search);
         System.out.println(foundProduct.size());
         if (foundProduct.size() == 0) { //ถ้าไม่เจอ
-            request.setAttribute("message", "There are no results for " + search);
+            request.setAttribute("message", "There are no results for \"" + search + "\"");
             getServletContext().getRequestDispatcher("/searchResult.jsp").forward(request, response);
         } else { //ถ้าเจอ            
             request.setAttribute("foundProduct", foundProduct);
