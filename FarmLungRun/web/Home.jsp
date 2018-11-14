@@ -41,7 +41,7 @@
                 <c:forEach items="${product}" var="p" varStatus="n">
                     <div class="single-products-catagory clearfix">
                         <a href="shop.html">
-                            <img src="img/${p.productcode}.png" alt="">
+                            <a href="Product?productCode=${p.productcode}"><img src="img/${p.productcode}.png" alt=""></a>
                             <!-- Hover Content -->
                             <div class="hover-content">
                                 <div class="line"></div>
