@@ -58,6 +58,7 @@
                                     </div>
                                     <div class="col-12 mb-3">
                                         <select class="w-100" id="country">
+                                        <option value="tha">Thailand</option>
                                         <option value="usa">United States</option>
                                         <option value="uk">United Kingdom</option>
                                         <option value="ger">Germany</option>
