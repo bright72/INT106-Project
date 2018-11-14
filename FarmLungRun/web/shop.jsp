@@ -134,7 +134,7 @@
                                     <!-- Product Meta Data -->
                                     <div class="product-meta-data">
                                         <div class="line"></div>
-                                        <p class="product-price">${p.productprice}</p>
+                                        <p class="product-price">${p.productprice} ฿</p>
                                         <a href="product-details.html">
                                             <h6>${p.productname}</h6>
                                         </a>
