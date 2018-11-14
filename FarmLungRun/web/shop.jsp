@@ -97,9 +97,11 @@
                             <div class="single-product-wrapper">
                                 <!-- Product Image -->
                                 <div class="product-img">
+                                    <a href="Product?productCode=${p.productcode}">
                                     <img src="img/${p.productcode}.png" alt="">
                                     <!-- Hover Thumb -->
                                     <img class="hover-img" style="transform: scale(1.5)" src="img/${p.productcode}.png" alt="">
+                                    </a>
                                 </div>
 
                                 <!-- Product Description -->
