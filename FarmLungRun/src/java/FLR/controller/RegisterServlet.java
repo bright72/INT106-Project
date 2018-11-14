@@ -70,7 +70,7 @@ public class RegisterServlet extends HttpServlet {
                 } else { //ถ้าไม่เจอ
 
                     if (username != null && username.length() > 4 && password != null
-                            && fname != null && lname != null) {
+                            && password.length() > 4 && fname != null && lname != null) {
                         Account account = new Account(username);
                         account.setEncryptedpassword(cryptWithMD5(password));
                         account.setFname(fname);
@@ -90,7 +90,7 @@ public class RegisterServlet extends HttpServlet {
                         response.sendRedirect("Home.jsp");
                         return;
                     } else {
-                        request.setAttribute("message", "Register Unsuccessful Please make sure your username length more than 4!");
+                        request.setAttribute("message", "Register Unsuccessful Please make sure your username length and password length more than 4!");
                         getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
                     }
 
