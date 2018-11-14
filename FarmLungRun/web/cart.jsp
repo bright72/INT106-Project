@@ -74,7 +74,7 @@
                                     </tr>
                                 </tbody>
 
-                                <c:forEach items="product" var="p" varStatus="n">
+                                <c:forEach items="${product}" var="p" varStatus="n">
                                     <tbody>
                                         <tr>
                                             <td class="cart_product_img">
@@ -107,9 +107,9 @@
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
                             <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140.00${c.subtotal}</span></li>
-                                <li><span>delivery:</span> <span>Free${delivery}</span></li>
-                                <li><span>total:</span> <span>$140.00${total}</span></li>
+                                <li><span>subtotal:</span> <span>$140</span></li>
+                                <li><span>delivery:</span> <span>Free</span></li>
+                                <li><span>total:</span> <span>$140.00</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
                                 <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
@@ -119,6 +119,7 @@
                 </div>
             </div>
         </div>
+  </div>
 
     </body>
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
