@@ -133,6 +133,6 @@
     <!-- Active js -->
     <script src="js/active.js"></script>
 
-    <jsp:include page="include/footer.jsp?page=Home"/>
+    <jsp:include page="include/footer.jsp?page=Cart"/>
 
 </html>  

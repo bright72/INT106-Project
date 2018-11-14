@@ -38,16 +38,16 @@
          
                                     <div >
                                         <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="index.html">Home</a>
+                                            <li class="nav-item ${param.page == "Home" ? "active" : ""}">
+                                                <a class="nav-link" href="Home.jsp">Home</a>
                                             </li>
-                                            <li class="nav-item">
+                                            <li class="nav-item ${param.page == "Shop" ? "active" : ""}">
                                                 <a class="nav-link" href="Shop">Shop</a>
                                             </li>
-                                            <li class="nav-item">
+                                            <li class="nav-item ${param.page == "Cart" ? "active" : ""}">
                                                 <a class="nav-link" href="Cart">Cart</a>
                                             </li>
-                                            <li class="nav-item">
+                                            <li class="nav-item ${param.page == "About" ? "active" : ""}">
                                                 <a class="nav-link" href="About">About</a>
                                             </li>
                                         </ul>
