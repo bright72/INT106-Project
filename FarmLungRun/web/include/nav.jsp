@@ -84,7 +84,7 @@
                     </div><br>
                 </c:if> 
                 <c:if test="${sessionScope.account != null}">
-                    <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.username}</div><br>
+                    <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.fname}</div><br>
                     <div class="amado-btn-group ">
                         <a href="Logout" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview">Logout</a><br>
                     </div><br>
