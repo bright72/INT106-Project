@@ -63,7 +63,15 @@
                                                 <span>${p.productprice} ฿</span>
                                             </td>
                                             <td class="qty">
-                                                1 
+                                                <form action="AddToCart"class="cart clearfix" method="post">
+                                                    <div class="cart-btn d-flex mb-50">
+                                                        <p>Qty</p>
+                                                        <div class="quantity">
+                                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty) & amp; & amp; qty & gt; 1) effect.value--; return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty))effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    </div>                                                      
                                             </td>
                                         </tr>
                                     </tbody>
@@ -87,20 +95,20 @@
                 </div>
             </div>
         </div>
-        </div>
-    </body>
+    </div>
+</body>
 
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
 
-    <jsp:include page="include/footer.jsp?page=Cart"/>
+<jsp:include page="include/footer.jsp?page=Cart"/>
 
 </html>  

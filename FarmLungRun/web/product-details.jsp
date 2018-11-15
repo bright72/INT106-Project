@@ -55,12 +55,12 @@
                                 <ol class="carousel-indicators">
                                     <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/${product.productcode}.png);">
                                     </li>
-                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
+<!--                                    <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
                                     </li>
                                     <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/product-img/pro-big-3.jpg);">
                                     </li>
                                     <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
-                                    </li>
+                                    </li>-->
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -68,7 +68,8 @@
                                             <img class="d-block w-100" src="img/${product.productcode}.png" alt="First slide">
                                         </a>
                                     </div>
-                                    <div class="carousel-item">
+<!--                                        Feature more image-->
+<!--                                    <div class="carousel-item">
                                         <a class="gallery_img" href="img/product-img/pro-big-2.jpg">
                                             <img class="d-block w-100" src="img/product-img/pro-big-2.jpg" alt="Second slide">
                                         </a>
@@ -82,7 +83,7 @@
                                         <a class="gallery_img" href="img/product-img/pro-big-4.jpg">
                                             <img class="d-block w-100" src="img/product-img/pro-big-4.jpg" alt="Fourth slide">
                                         </a>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -105,9 +106,6 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                    <div class="review">
-                                        <a href="#">Write A Review</a>
-                                    </div>
                                 </div>
                                 <!-- Avaiable -->
                                 <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
@@ -118,7 +116,7 @@
                             </div>
 
                             <!-- Add to Cart Form -->
-                            <form class="cart clearfix" method="post">
+                            <form action="AddToCart"class="cart clearfix" method="post">
                                 <div class="cart-btn d-flex mb-50">
                                     <p>Qty</p>
                                     <div class="quantity">
@@ -129,7 +127,6 @@
                                 </div>
                                 <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
                             </form>
-
                         </div>
                     </div>
                 </div>
