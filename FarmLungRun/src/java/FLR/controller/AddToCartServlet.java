@@ -51,9 +51,13 @@ public class AddToCartServlet extends HttpServlet {
             session.setAttribute("cart", cart);
         }
         String productCode = request.getParameter("productCode"); //ดักมาจาก request
+        String quantity = request.getParameter("quantity");
+
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         Product product = pjc.findProduct(productCode); //เอา product code ไปหา product
-        cart.add(product);
+        for (int i = 0; i < Integer.parseInt(quantity); i++) {
+            cart.add(product);
+        }
         //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
         response.sendRedirect("Shop");
     }
