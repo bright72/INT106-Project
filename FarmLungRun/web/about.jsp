@@ -10,13 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>About Page</title>
+        
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
-        <link rel="icon" href="img/core-img/favicon.ico">
+        <link rel="icon" href="img/LOGO.PNG">
 
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        
     </head>
     <body>
         <jsp:include page="include/nav.jsp?page=About"/>
