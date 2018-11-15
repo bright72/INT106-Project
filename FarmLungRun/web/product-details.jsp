@@ -97,7 +97,7 @@
                                     <h6>${product.productname}</h6>
                                 </a>
                                 <!-- Ratings & Review -->
-                                <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+<!--                                <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
                                     <div class="ratings">
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -105,9 +105,9 @@
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                         <i class="fa fa-star" aria-hidden="true"></i>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- Avaiable -->
-                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+<!--                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>-->
                             </div>
 
                             <div class="short_overview my-5">
