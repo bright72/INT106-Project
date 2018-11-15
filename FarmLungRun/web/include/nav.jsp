@@ -81,7 +81,7 @@
                         <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a>
 
                         <a href="Register" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Register</a>
-                    <hr>
+                        <hr>
                     </div>
                 </c:if> 
                 <c:if test="${sessionScope.account != null}">
@@ -132,7 +132,12 @@
 
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="Cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
+                <c:if test="${cart != null}">
+                    <a href="Cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(${cart.totalQuantity})</span></a>
+                    </c:if>
+                    <c:if test="${cart == null}">
+                    <a href="Cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
+                 </c:if>
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
         </header>
