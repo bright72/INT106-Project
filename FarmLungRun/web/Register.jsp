@@ -22,93 +22,99 @@
 
     </head>
     <body>
-        
-        <!-- Pop up -->
-        <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
-            <div class="modal-dialog modal-sm">
+
+        <c:if test="${success == null}">
+            <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Customer login</h5>
-                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                    </div>
+                        <h5 class="modal-title">Customer Register</h5>
+                        <a href="Home">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </a>
+                    </div> 
+
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input id="email-modal" type="text" placeholder="email" class="form-control">
+                        <h1>New account</h1>
+                        <p class="lead">Not our registered customer yet?</p>                 
+                        <hr>
+                        <form action="Register" method="post">
+                            <p style="color: red">${message}</p>
+                            <div class="form-group">                                  
+                                <label for="name">Username</label>
+                                <input placeholder="Username length more than 4" name="username" type="text" class="form-control" required>                          
                             </div>
                             <div class="form-group">
-                                <input id="password-modal" type="password" placeholder="password" class="form-control">
+                                <label for="password">Password</label>
+                                <input placeholder="Password length more than 4" name="password" type="password" class="form-control" required>
                             </div>
-                            <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
+                            <div class="form-group">
+                                <label for="fname">First Name</label>
+                                <input name="fname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name</label>
+                                <input name="lname" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input name="address" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input name="province" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input name="country" type="text" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="postalcode">Postal Code</label>
+                                <input name="postalcode" type="text" class="form-control" >
+                            </div>
+                            <div class="text-center" >
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                            </div>
                         </form>
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
-                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>                    
+        </c:if>
 
-
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Customer Register</h5>
-                    <a href="Home">
-                        <button type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </a>
-                </div> 
-
-                <div class="modal-body">
-                    <h1>New account</h1>
-                    <p class="lead">Not our registered customer yet?</p>                 
-                    <hr>
-                    <form action="Register" method="post">
-                        <p style="color: red">${message}</p>
-                        <div class="form-group">                                  
-                            <label for="name">Username</label>
-                            <input placeholder="Username length more than 4" name="username" type="text" class="form-control" required>                          
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input placeholder="Password length more than 4" name="password" type="password" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="fname">First Name</label>
-                            <input name="fname" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lname">Last Name</label>
-                            <input name="lname" type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address</label>
-                            <input name="address" type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label for="province">Province</label>
-                            <input name="province" type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Country</label>
-                            <input name="country" type="text" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label for="postalcode">Postal Code</label>
-                            <input name="postalcode" type="text" class="form-control" >
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
-                        </div>
-                    </form>
+        <c:if test="${success != null}">
+<!--            <div class="modal-dialog ">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Success Register</h5>
+                        <a href="Home">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <hr><br>
+                            <div class="text-center" >
+                              <a href="Home">  <button class="btn btn-primary"><i class="home"></i> Go to Home Page</button></a>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </div>-->
+<div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Success Register</h5>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
             </div>
+            <div class="modal-body">
+              <p class="text-center text-muted">Welcome to Our Farm</p>
+              <div class="text-center">
+                  <a href="Home"> <button type="submit" class="btn btn-primary">Go to Home Page</button></a>
+                  </div>
+            </div>
+          </div>
         </div>
+        </c:if>
+
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>
