@@ -40,9 +40,8 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mt-50">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Furniture</a></li>
-                                <li class="breadcrumb-item"><a href="#">Chairs</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">white modern chair</li>
+                                <li class="breadcrumb-item"><a href="#">${product.producttype}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">${product.productname}</li>
                             </ol>
                         </nav>
                     </div>
