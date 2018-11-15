@@ -100,7 +100,7 @@
                                     <a href="Product?productCode=${p.productcode}">
                                     <img src="img/${p.productcode}.png" alt="">
                                     <!-- Hover Thumb -->
-                                    <img class="hover-img" style="transform: scale(1.5)" src="img/${p.productcode}.png" alt="">
+                                    <img class="hover-img" style="transform: scale(1.0)" src="img/${p.productcode}.png" alt="">
                                     </a>
                                 </div>
 
