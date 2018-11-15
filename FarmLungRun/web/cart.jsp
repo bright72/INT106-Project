@@ -50,17 +50,17 @@
                                         <th>Quantity</th>
                                     </tr>
                                 </thead>
-                                <c:forEach items="${product}" var="p" varStatus="n">
+                                <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="n">
                                     <tbody>
                                         <tr>
                                             <td class="cart_product_img">
-                                                <a href="#"><img src="img/${p.productcode}.png" alt="${p.productcode}"></a>
+                                                <a href="#"><img src="img/${p.product.productcode}.png" alt="${p.product.productcode}"></a>
                                             </td>
                                             <td class="cart_product_desc">
-                                                <h5>${p.productname}</h5>
+                                                <h5>${p.product.productname}</h5>
                                             </td>
                                             <td class="price">
-                                                <span>${p.productprice} ฿</span>
+                                                <span>${p.product.productprice} ฿</span>
                                             </td>
                                             <td class="qty">
                                                 <form action="AddToCart"class="cart clearfix" method="post">

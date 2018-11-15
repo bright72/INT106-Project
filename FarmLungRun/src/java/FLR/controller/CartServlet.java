@@ -9,6 +9,7 @@ import FLR.model.Account;
 import FLR.model.Orderdetail;
 import FLR.model.Orders;
 import FLR.model.Product;
+import FLR.model.ShoppingCart;
 import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,17 +48,20 @@ public class CartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(true);
-        Account accountSession = (Account) session.getAttribute("account");
-        if (accountSession != null) {
-            ProductJpaController productJpa = new ProductJpaController(utx, emf);
-            List<Product> product = productJpa.findProductEntities();
-            request.setAttribute("product", product);
-            getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
+        HttpSession session = request.getSession(false); //Create session
 
-        } else {
-            getServletContext().getRequestDispatcher("/Login").forward(request, response);
+        if (session != null) {
+            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+            if (cart != null) {
+                session.setAttribute("cart", cart);
+                getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
+                return; //กันเมื่อออกจากลูปจะไปลงเข้า index
+            }
+
         }
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+                "Session Timeout .. Try Again");
+//getServletContext().getRequestDispatcher("/index.html").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

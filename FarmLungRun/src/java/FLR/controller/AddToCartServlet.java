@@ -6,19 +6,32 @@
 package FLR.controller;
 
 import FLR.model.Account;
+import FLR.model.Product;
+import FLR.model.ShoppingCart;
+import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
 
 /**
  *
  * @author Dell
  */
 public class AddToCartServlet extends HttpServlet {
+
+    @PersistenceUnit(unitName = "FarmLungRunPU")
+    EntityManagerFactory emf;
+
+    @Resource
+    UserTransaction utx;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,14 +44,18 @@ public class AddToCartServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-        Account accountSession = (Account) session.getAttribute("account");
-        if (accountSession == null) {
-            session.setAttribute("message", "");
-            getServletContext().getRequestDispatcher("/Login").forward(request, response);
-        } else {
-            
+        HttpSession session = request.getSession(true);
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+            session.setAttribute("cart", cart);
         }
+        String productCode = request.getParameter("productCode"); //ดักมาจาก request
+        ProductJpaController pjc = new ProductJpaController(utx, emf);
+        Product product = pjc.findProduct(productCode); //เอา product code ไปหา product
+        cart.add(product);
+        //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
+    response.sendRedirect("Shop");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
