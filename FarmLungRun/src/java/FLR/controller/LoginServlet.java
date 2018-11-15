@@ -47,9 +47,18 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        
+//        String url = null;
+//        if (request.getHeader("Referer") != "http://localhost:8080/FarmLungRun/Login" ) {
+//           url = request.getHeader("Referer"); 
+//           System.out.println(">>"+url);
+//        }
+        
+        
         if (session.getAttribute("account") != null){
             session.setAttribute("message", "");
-            getServletContext().getRequestDispatcher("/Home").forward(request, response);
+            response.sendRedirect("Home");
+            return;
         } else {
             if (username == null || password == null) {
                 session.setAttribute("message", "");
@@ -62,6 +71,7 @@ public class LoginServlet extends HttpServlet {
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
                         response.sendRedirect("Home");
+                        //response.sendRedirect(url);
                         return;
                     } else {
                         session.setAttribute("message", "invalid password");
