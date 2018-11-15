@@ -115,14 +115,7 @@
                                         </a>
                                     </div>
                                     <!-- Ratings & Cart -->
-                                    <div class="ratings-cart text-right">
-                                        <div class="ratings">
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </div>
+                                    <div class="ratings-cart text-right">                   
                                         <div class="cart">
                                             <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
                                         </div>
