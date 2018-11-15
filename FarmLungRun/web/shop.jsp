@@ -67,7 +67,7 @@
                             <option value="4" ${param.range == "4" ? "selected" : ""}>More than 200฿</option>
                         </select>
                         <br><br><br>
-                        <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Select">
+                        <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Search">
                     </form>
                 </div>
             </div>
