@@ -61,24 +61,22 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-
-
         <!-- Header Area Start -->
-        <header class="header-area clearfix">
+        <header class="header-area clearfix" >
             <!-- Close Icon -->
             <div class="nav-close">
                 <i class="fa fa-close" aria-hidden="true"></i>
             </div>
             <!-- Logo -->
-            <div style="padding: 10%">
-                <a href="Home"><img src="img/LOGO.PNG" alt="img/LOGO.PNG"></a> 
+            <div style="padding: 5%">
+                <a href="Home"><img src="img/LOGO.PNG" alt="img/LOGO.PNG"></a>
                 <a href="Home" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
-            <nav class="amado-nav">
+            <nav class="amado-nav" style="width: 5%">
                 <c:if test="${sessionScope.account == null}">
                     <div class="amado-btn-group ">
-                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a>
+                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a> <br>
 
                         <a href="Register" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Register</a>
                         <hr>
@@ -90,9 +88,7 @@
                         <a href="Logout" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview">Logout</a><br>
                     </div><br>
                 </c:if> 
-
                 <ul>
-
                     <c:if test="${param.page == 'Home'}">
                         <li class="active">
                         </c:if>
@@ -127,9 +123,7 @@
                 </ul>
             </nav>
             <!-- Button Group -->
-
             <hr><br>
-
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
                 <c:if test="${cart != null}">
@@ -141,8 +135,4 @@
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
         </header>
-        <!-- Header Area End -->
-
-
-
 </html>
