@@ -78,7 +78,7 @@
             <nav class="amado-nav">
                 <c:if test="${sessionScope.account == null}">
                     <div class="amado-btn-group ">
-                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a><br><br>
+                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a>
 
                         <a href="Register" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Register</a>
                     <hr>

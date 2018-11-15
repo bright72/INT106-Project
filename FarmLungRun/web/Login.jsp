@@ -20,17 +20,9 @@
         <link rel="stylesheet" href="style.css">
 
     </head>
-    <body style="background-color: #565656">
-        <!--        <h1>Login</h1>
-                <form action="Login" method="post">
-                    username : <input type="text" name="username" required>
-                    password : <input type="text" name="password" required>
-                    <input type="submit" value="Login">
-                </form>-->
-
-
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
+    <body style="background-color: #565656" >
+<div style="padding:5%">
+            <div class="modal-content"  >
                 <div class="modal-header">
                     <h5 class="modal-title">Customer login</h5>
                     <a href="Home">
@@ -62,7 +54,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+     </div>
     </body>
 </html>

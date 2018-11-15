@@ -24,7 +24,7 @@
     <body style="background-color: #565656">
        
         <c:if test="${success == null}">
-            <div class="modal-dialog ">
+            <div style="padding:5%">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Customer Register</h5>
