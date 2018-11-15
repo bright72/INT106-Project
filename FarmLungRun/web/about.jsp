@@ -21,9 +21,9 @@
     <body>
         <jsp:include page="include/nav.jsp?page=About"/>
 
-        <div style="width: 55%;margin-top: 5%">
+        <div style="width: 55%; margin-top: 5%">
             <h1>About Page</h1>
-            <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=13.6526803,100.4937294&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Add map to website</a></iframe></div><br />
+            <div style="width: 100%; height: 70%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=13.6526803,100.4937294&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Add map to website</a></iframe></div><br />
         </div>   
     </div>
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
