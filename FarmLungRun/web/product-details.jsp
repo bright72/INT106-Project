@@ -41,7 +41,7 @@
                             <ol class="breadcrumb mt-50">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">${product.producttype}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">${product.productname}</li>
+                                <li style="color:#fbb710" class="breadcrumb-item " aria-current="page">${product.productname}</li>
                             </ol>
                         </nav>
                     </div>
