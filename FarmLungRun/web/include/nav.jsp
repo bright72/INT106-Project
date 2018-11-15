@@ -71,17 +71,18 @@
             </div>
             <!-- Logo -->
             <div style="padding: 10%">
-                <a href="Home"><img src="img/LOGO.PNG" alt=""></a> 
+                <a href="Home"><img src="img/LOGO.PNG" alt="img/LOGO.PNG"></a> 
                 <a href="Home" style="text-underline-position: unset"><h1>Farm LungRun</h1></a>
             </div>
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <c:if test="${sessionScope.account == null}">
                     <div class="amado-btn-group ">
-                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a><br>
+                        <a href="Login" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Login</a><br><br>
 
                         <a href="Register" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview" >Register</a>
-                    </div><br>
+                    <hr>
+                    </div>
                 </c:if> 
                 <c:if test="${sessionScope.account != null}">
                     <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.fname}</div><br>
