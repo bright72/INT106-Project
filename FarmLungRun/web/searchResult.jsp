@@ -59,9 +59,11 @@
                                     <div class="single-product-wrapper">
                                         <!-- Product Image -->
                                         <div class="product-img">
+                                            <a href="Product?productCode=${fp.productcode}">
                                             <img src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
                                             <!-- Hover Thumb -->
                                             <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
+                                            </a>
                                         </div>
 
                                         <!-- Product Description -->
@@ -84,7 +86,7 @@
                                                     <i class="fa fa-star" aria-hidden="true"></i>
                                                 </div>
                                                 <div class="cart">
-                                                    <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                                    <a href="AddToCart?productCode=${fp.productcode}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
                                                 </div>
                                             </div>
                                         </div>
