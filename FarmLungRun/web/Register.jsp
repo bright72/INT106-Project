@@ -4,6 +4,7 @@
     Author     : Dell
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,6 +22,36 @@
 
     </head>
     <body>
+        
+        <!-- Pop up -->
+        <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Customer login</h5>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="customer-orders.html" method="post">
+                            <div class="form-group">
+                                <input id="email-modal" type="text" placeholder="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input id="password-modal" type="password" placeholder="password" class="form-control">
+                            </div>
+                            <p class="text-center">
+                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                            </p>
+                        </form>
+                        <p class="text-center text-muted">Not registered yet?</p>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal-dialog ">
             <div class="modal-content">
@@ -41,11 +72,11 @@
                         <p style="color: red">${message}</p>
                         <div class="form-group">                                  
                             <label for="name">Username</label>
-                            <input name="username" type="text" class="form-control" required>                          
+                            <input placeholder="Username length more than 4" name="username" type="text" class="form-control" required>                          
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input name="password" type="password" class="form-control" required>
+                            <input placeholder="Password length more than 4" name="password" type="password" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="fname">First Name</label>
@@ -78,6 +109,6 @@
                 </div>
             </div>
         </div>
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
 </html>

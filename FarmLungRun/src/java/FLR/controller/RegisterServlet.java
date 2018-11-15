@@ -87,8 +87,8 @@ public class RegisterServlet extends HttpServlet {
                         } catch (Exception ex) {
                             System.out.println(ex);
                         }
-                        request.setAttribute("message", "Register Successful!");
-                        response.sendRedirect("Home");
+                        request.setAttribute("success", "Register Successful!");
+                        getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
                         return;
                     } else {
                         request.setAttribute("message", "Register Unsuccessful Please make sure your username length and password length more than 4!");
