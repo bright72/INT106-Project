@@ -37,6 +37,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Product.findByProducttype", query = "SELECT p FROM Product p WHERE p.producttype like :producttype")})
 public class Product implements Serializable {
 
+    @Size(max = 200)
+    @Column(name = "PRODUCTDESCRIBE")
+    private String productdescribe;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -137,6 +141,14 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "FLR.model.Product[ productcode=" + productcode + " ]";
+    }
+
+    public String getProductdescribe() {
+        return productdescribe;
+    }
+
+    public void setProductdescribe(String productdescribe) {
+        this.productdescribe = productdescribe;
     }
     
 }
