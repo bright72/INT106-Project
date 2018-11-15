@@ -61,16 +61,11 @@
                                             <td class="cart_product_desc">
                                                 <h5>${p.product.productname}</h5>
                                             </td>
-                                            <td class="price">
-                                                <span>${p.product.productprice} ฿</span>
+                                            <td class="cart_product_desc">
+                                                <h5>${p.product.productprice} ฿</h5>
                                             </td>
-                                            <td class="qty">
-                                                <form action="AddToCart"class="cart clearfix" method="post">
-                                                    <div class="cart-btn d-flex mb-50">
-                                                        <div class="quantity">
-                                                            <p>${p.quantity}</p>
-                                                        </div>
-                                                    </div>                                                      
+                                            <td class="cart_product_desc">                                                                                              
+                                                            <h5>${p.quantity}</h5>                                                                                            
                                             </td>
                                         </tr>
                                     </tbody>
