@@ -58,6 +58,9 @@ public class CartServlet extends HttpServlet {
                 return; //กันเมื่อออกจากลูปจะไปลงเข้า index
             }
 
+        } else if (session == null){
+            request.setAttribute("message", "Your cart is empty!");
+            getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
         }
         response.sendError(HttpServletResponse.SC_BAD_REQUEST,
                 "Session Timeout .. Try Again");
