@@ -50,6 +50,8 @@
                                         <th>Quantity</th>
                                     </tr>
                                 </thead>
+
+
                                 <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="n">
                                     <tbody>
                                         <tr>
@@ -72,8 +74,11 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </c:forEach>
+                                </c:forEach>                                
                             </table>
+                            <c:if test="${sessionScope.cart == null}">
+                                <h3>${message}</h3>
+                            </c:if>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">

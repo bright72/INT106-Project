@@ -55,7 +55,7 @@ public class AddToCartServlet extends HttpServlet {
         Product product = pjc.findProduct(productCode); //เอา product code ไปหา product
         cart.add(product);
         //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
-    response.sendRedirect("Shop");
+        response.sendRedirect("Shop");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
