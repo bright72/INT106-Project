@@ -76,9 +76,11 @@
                                     </tbody>
                                 </c:forEach>                                
                             </table>
-                            <c:if test="${sessionScope.cart == null}">
-                                <h3>${message}</h3>
-                            </c:if>
+                            <div style="text-align: center">
+                                <c:if test="${sessionScope.cart == null}">
+                                    <h3 style="color: grey">${message}</h3>
+                                </c:if>
+                            </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
