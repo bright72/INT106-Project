@@ -65,9 +65,8 @@
                                             <td class="qty">
                                                 <form action="AddToCart"class="cart clearfix" method="post">
                                                     <div class="cart-btn d-flex mb-50">
-                                                        <p>Qty</p>
                                                         <div class="quantity">
-                                                            <p>${orderdetail.quantity}</p>
+                                                            <p>${p.quantity}</p>
                                                         </div>
                                                     </div>                                                      
                                             </td>
