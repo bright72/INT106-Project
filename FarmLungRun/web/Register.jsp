@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="style.css">
 
     </head>
-    <body>
-
+    <body style="background-color: #565656">
+       
         <c:if test="${success == null}">
             <div class="modal-dialog ">
                 <div class="modal-content">
@@ -83,27 +83,11 @@
         </c:if>
 
         <c:if test="${success != null}">
-<!--            <div class="modal-dialog ">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Success Register</h5>
-                        <a href="Home">
-                            <button type="button" class="close" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <hr><br>
-                            <div class="text-center" >
-                              <a href="Home">  <button class="btn btn-primary"><i class="home"></i> Go to Home Page</button></a>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>-->
 <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Success Register</h5>
-              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              <a href="Home"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button></a>
             </div>
             <div class="modal-body">
               <p class="text-center text-muted">Welcome to Our Farm</p>
@@ -114,7 +98,6 @@
           </div>
         </div>
         </c:if>
-
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    </body>
+ 
+   </body>
 </html>

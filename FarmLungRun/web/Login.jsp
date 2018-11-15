@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="style.css">
 
     </head>
-    <body>
+    <body style="background-color: #565656">
         <!--        <h1>Login</h1>
                 <form action="Login" method="post">
                     username : <input type="text" name="username" required>
