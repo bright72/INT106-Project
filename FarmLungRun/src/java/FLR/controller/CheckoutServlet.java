@@ -15,6 +15,7 @@ import FLR.model.controller.AccountJpaController;
 import FLR.model.controller.OrderdetailJpaController;
 import FLR.model.controller.OrdersJpaController;
 import FLR.model.controller.ProductJpaController;
+import FLR.model.controller.exceptions.RollbackFailureException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -81,7 +82,16 @@ public class CheckoutServlet extends HttpServlet {
                     orderDetail.setProductcode(lineItem.getProduct());
                     orderDetail.setPriceeach(lineItem.getPrice());
                     orderDetail.setQuantity(lineItem.getQuantity());
-                    
+          
+                    try {
+                            accountCtrl.edit(account);
+                            ordersCtrl.create(orders);
+                            orderdetailCtrl.create(orderDetail);
+                        } catch (RollbackFailureException ex) {
+                            System.out.println(ex);
+                        } catch (Exception ex) {
+                            System.out.println(ex);
+                        }
                     
                 }
 
