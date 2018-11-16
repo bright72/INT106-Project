@@ -105,14 +105,6 @@
                         </c:if>
                         <a href="Shop">Shop</a></li>
 
-                    <c:if test="${param.page == 'Checkout'}">
-                        <li class="active">
-                        </c:if>
-                        <c:if test="${param.page != 'Checkout'}">
-                        <li>
-                        </c:if>
-                        <a href="Checkout">Checkout</a></li>
-
                     <c:if test="${param.page == 'About'}">
                         <li class="active">
                         </c:if>

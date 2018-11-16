@@ -43,18 +43,18 @@
                         <div class="cart-table clearfix">
                             <table class="table table-responsive">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th></th>
                                         <th>Name</th>
                                         <th>Price</th>
-                                        <th>Quantity</th>
+                                        <th>Quantity</th>                                     
                                     </tr>
                                 </thead>
 
 
                                 <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="n">
                                     <tbody>
-                                        <tr>
+                                        <tr style="text-align: center">
                                             <td class="cart_product_img">
                                                 <a href="#"><img src="img/${p.product.productcode}.png" alt="${p.product.productcode}"></a>
                                             </td>
@@ -64,16 +64,16 @@
                                             <td class="cart_product_desc">
                                                 <h5>${p.product.productprice} ฿</h5>
                                             </td>
-                                            <td class="cart_product_desc">                                                                                            
-       
+                                            <td class="cart_product_desc" >                                                                                            
                                                 <div class="quantity">
                                                     <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty) & amp; & amp; qty & gt; 1) effect.value--; return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input style="text-align: center" type="number" class="qty-text" id="qty" step="1" min="1" max="100" name="quantity" value="${p.quantity}" disabled>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="100" name="quantity" value="${p.quantity}" disabled>
                                                     <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty))
-                                                                effect.value++;
-                                                            return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                                effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>                                         
                                                 </div>
-                                            </td>
+                                                    <br>
+                                                    <input type="submit" name="remove" value="Remove" id="submit">
+                                            </td>                                                                         
                                         </tr>
                                     </tbody>
                                 </c:forEach>                                
@@ -94,7 +94,7 @@
                                 <li><span>total:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
                             </ul>
                             <div class="cart-btn mt-100">
-                                <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
+                                <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
                             </div>
                         </div>
                     </div>
