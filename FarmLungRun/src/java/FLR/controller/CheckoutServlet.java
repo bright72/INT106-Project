@@ -92,7 +92,8 @@ public class CheckoutServlet extends HttpServlet {
                     orderDetail.setProductcode(lineItem.getProduct());
                     orderDetail.setPriceeach(lineItem.getPrice());
                     orderDetail.setQuantity(lineItem.getQuantity());
-
+                    
+                    cart.remove(lineItem.getProduct());
                     try {
                         accountCtrl.edit(account);
                         ordersCtrl.create(orders);
@@ -103,9 +104,9 @@ public class CheckoutServlet extends HttpServlet {
                         System.out.println(ex);
                     }
 
-                }
-
+                }               
                 request.setAttribute("message_checkout", "");
+                request.setAttribute("message","Your cart is empty!");                
                 getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
             }
         } else {

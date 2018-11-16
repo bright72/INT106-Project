@@ -26,21 +26,16 @@
         <link rel="stylesheet" href="css/core-style.css">
 
     </head>
-
     <body>
-
         <jsp:include page="include/nav.jsp?page=Checkout"/>
-
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="checkout_details_area mt-50 clearfix">
-
                             <div class="cart-title">
                                 <h2>Checkout</h2>
                             </div>
-
                             <form action="Checkout" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
@@ -100,7 +95,7 @@
                             <div class="payment-method">
                                 <!-- Paypal -->
                                 <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="paypal">
+                                    <input type="checkbox" class="custom-control-input" id="paypal" checked="true" disabled="">
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
                                 <p style="color:red;">${message_checkout}</p>
@@ -111,7 +106,7 @@
                         </div>
                     </div> 
                 </div>
-                            </form>
+                </form>
             </div>
         </div>
     </div>
@@ -129,7 +124,5 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-
 </body>
-
 </html>
