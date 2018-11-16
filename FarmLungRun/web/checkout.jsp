@@ -87,7 +87,6 @@
                                     <div class="col-12">
                                     </div>
                                 </div>
-
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -110,9 +109,9 @@
                                 <input type="submit"class="btn amado-btn w-100"value="Checkout">
                             </div>
                         </div>
-                    </div>
-                    </form>
+                    </div> 
                 </div>
+                            </form>
             </div>
         </div>
     </div>

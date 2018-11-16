@@ -69,15 +69,25 @@ public class CheckoutServlet extends HttpServlet {
                 String comment = request.getParameter("comment");
 
                 List<LineItem> lineItemList = cart.getLineItems();
-                for (LineItem lineItem : lineItemList) {
+                
                     Orders orders = new Orders();
+                    if(orders.getOrderid()==null){
+                    orders.setOrderid(0001);
+                    }else{
                     orders.setOrderid(orders.getOrderid() + 1);
+                    }
                     orders.setComment(comment);
                     orders.setOrderdate(new Date());
                     orders.setUsername(account);
+                
+                for (LineItem lineItem : lineItemList) {
 
                     Orderdetail orderDetail = new Orderdetail();
+                    if(orderDetail.getOrderdetailid()==null){
+                    orderDetail.setOrderdetailid(0001);
+                    }else{
                     orderDetail.setOrderdetailid(orderDetail.getOrderdetailid()+1);
+                    }
                     orderDetail.setOrderid(orders);
                     orderDetail.setProductcode(lineItem.getProduct());
                     orderDetail.setPriceeach(lineItem.getPrice());

@@ -104,7 +104,7 @@
                                 <li><span>total:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
                             </ul>
                             <div class="cart-btn">
-                                <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
+                                <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
                             </div>
                         </div>
                     </div>
