@@ -59,19 +59,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <textarea  name="address" type="text" class="form-control" ></textarea>
+                                <textarea  name="address" type="text" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="province">Province</label>
-                                <input name="province" type="text" class="form-control" >
+                                <input name="province" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="country">Country</label>
-                                <input name="country" type="text" class="form-control" >
+                                <input name="country" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="postalcode">Postal Code</label>
-                                <input name="postalcode" type="text" class="form-control" >
+                                <input name="postalcode" type="text" class="form-control" required>
                             </div>
                             <div class="text-center" >
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
