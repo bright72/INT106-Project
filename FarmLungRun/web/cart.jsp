@@ -102,10 +102,15 @@
                                 <li><span>subtotal:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
                                 <li><span>delivery:</span> <span>Free</span></li>
                                 <li><span>total:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
-                            </ul>
-                            <p style="color: red;">${message_checkout}</p>
+                            </ul>             
                             <div class="cart-btn">
+                                <c:if test="${cart==null}">
+                                    <p style="color: red;">${message_checkout}</p>
+                                    <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
+                                </c:if>
+                                    <c:if test="${cart!=null}">
                                 <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
+                                </c:if>
                             </div>
                         </div>
                     </div>
