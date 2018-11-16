@@ -69,40 +69,40 @@ public class CheckoutServlet extends HttpServlet {
                 String comment = request.getParameter("comment");
 
                 List<LineItem> lineItemList = cart.getLineItems();
-                
-                    Orders orders = new Orders();
-                    if(orders.getOrderid()==null){
+
+                Orders orders = new Orders();
+                if (orders.getOrderid() == null) {
                     orders.setOrderid(0001);
-                    }else{
+                } else {
                     orders.setOrderid(orders.getOrderid() + 1);
-                    }
-                    orders.setComment(comment);
-                    orders.setOrderdate(new Date());
-                    orders.setUsername(account);
-                
+                }
+                orders.setComment(comment);
+                orders.setOrderdate(new Date());
+                orders.setUsername(account);
+
                 for (LineItem lineItem : lineItemList) {
 
                     Orderdetail orderDetail = new Orderdetail();
-                    if(orderDetail.getOrderdetailid()==null){
-                    orderDetail.setOrderdetailid(0001);
-                    }else{
-                    orderDetail.setOrderdetailid(orderDetail.getOrderdetailid()+1);
+                    if (orderDetail.getOrderdetailid() == null) {
+                        orderDetail.setOrderdetailid(0001);
+                    } else {
+                        orderDetail.setOrderdetailid(orderDetail.getOrderdetailid() + 1);
                     }
                     orderDetail.setOrderid(orders);
                     orderDetail.setProductcode(lineItem.getProduct());
                     orderDetail.setPriceeach(lineItem.getPrice());
                     orderDetail.setQuantity(lineItem.getQuantity());
-          
+
                     try {
-                            accountCtrl.edit(account);
-                            ordersCtrl.create(orders);
-                            orderdetailCtrl.create(orderDetail);
-                        } catch (RollbackFailureException ex) {
-                            System.out.println(ex);
-                        } catch (Exception ex) {
-                            System.out.println(ex);
-                        }
-                    
+                        accountCtrl.edit(account);
+                        ordersCtrl.create(orders);
+                        orderdetailCtrl.create(orderDetail);
+                    } catch (RollbackFailureException ex) {
+                        System.out.println(ex);
+                    } catch (Exception ex) {
+                        System.out.println(ex);
+                    }
+
                 }
 
                 request.setAttribute("message", "");
