@@ -99,16 +99,15 @@
                                 <li><span>delivery:</span> <span>Free</span></li>
                                 <li><span>total:</span> <span>140.00 ฿</span></li>
                             </ul>
-
                             <div class="payment-method">
                                 <!-- Paypal -->
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="paypal">
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
-                            </div>
-                            <p style="color:red;">${message}</p>
-                            <div class="cart-btn mt-100">
+                                <p style="color:red;">${message}</p>
+                            </div>                            
+                            <div class="cart-btn">
                                 <input type="submit"class="btn amado-btn w-100"value="Checkout">
                             </div>
                         </div>
