@@ -62,15 +62,27 @@
                                             <td class="cart_product_desc">
                                                 <h5>${p.product.productprice} ฿</h5>
                                             </td>
-                                            <td class="cart_product_desc" >                                                                                            
+                                            <td class="cart_product_desc" >    
+                                                <form action="UpdateCart">
                                                 <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty) & amp; & amp; qty & gt; 1) effect.value--; return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="100" name="quantity" value="${p.quantity}" disabled>
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if (!isNaN(qty))
-                                                                effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>                                         
+
+                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty');
+                                                            var qty = effect.value;
+                                                            if (!isNaN(qty))
+                                                                effect.value--;
+                                                            return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="100" name="quantity" value="${p.quantity}" >
+                                                    <input hidden value="${p.product.productcode}" name="productcode">
+                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty');
+                                                            var qty = effect.value;
+                                                            if (!isNaN(qty))
+                                                                effect.value++;
+                                                            return false;"><i class="fa fa-plus" aria-hidden="true"></i></span> 
+
                                                 </div>
-                                                    <br>
-                                                    <input type="submit" name="remove" value="Remove" id="submit">
+                                                <br>
+                                                <input type="submit" value="update" id="submit">
+                                                </form>
                                             </td>                                                                         
                                         </tr>
                                     </tbody>
