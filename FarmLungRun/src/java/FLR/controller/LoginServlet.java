@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
                     if (cryptWithMD5(password).equals(account.getEncryptedpassword())){
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
-                        session.setMaxInactiveInterval(30*60); //เพิ่ม session timeout
+                        //session.setMaxInactiveInterval(60*60); //เพิ่ม session timeout
                         response.sendRedirect("Home");
                         //response.sendRedirect(url);
                         return;
