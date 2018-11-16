@@ -45,10 +45,10 @@
                             <form action="Checkout" method="post">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="first_name" value="" placeholder="First Name" required>
+                                        <input type="text" class="form-control" id="first_name" value="" placeholder="First Name">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="last_name" value="" placeholder="Last Name" required>
+                                        <input type="text" class="form-control" id="last_name" value="" placeholder="Last Name">
                                     </div>
                                     <div class="col-12 mb-3">
                                         <input type="text" class="form-control" id="company" placeholder="Company Name" value="">
@@ -107,7 +107,7 @@
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
                             </div>
-
+                            <p style="color:red;">${message}</p>
                             <div class="cart-btn mt-100">
                                 <input type="submit"class="btn amado-btn w-100"value="Checkout">
                             </div>
