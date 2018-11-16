@@ -59,8 +59,8 @@ public class CheckoutServlet extends HttpServlet {
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
         if (accountSession != null) {
             if (cart == null) {
-                request.setAttribute("message", "Your cart is empty! You can't checkout anything now...");
-                getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
+                request.setAttribute("message_checkout", "Your cart is empty! You can't checkout anything now...");
+                getServletContext().getRequestDispatcher("/Cart").forward(request, response);
             } else {
                 AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
                 Account account = accountCtrl.findAccount(accountSession.getUsername());
@@ -105,11 +105,11 @@ public class CheckoutServlet extends HttpServlet {
 
                 }
 
-                request.setAttribute("message", "");
+                request.setAttribute("message_checkout", "");
                 getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
             }
         } else {
-            request.setAttribute("message", "Your cart is empty! You can't checkout anything now...");
+            request.setAttribute("message_checkout", "Your cart is empty! You can't checkout anything now...");
             getServletContext().getRequestDispatcher("/Login").forward(request, response);
         }
 

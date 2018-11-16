@@ -103,6 +103,7 @@
                                 <li><span>delivery:</span> <span>Free</span></li>
                                 <li><span>total:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
                             </ul>
+                            <p style="color: red;">${message_checkout}</p>
                             <div class="cart-btn">
                                 <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
                             </div>

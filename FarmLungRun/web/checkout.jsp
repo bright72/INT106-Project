@@ -103,7 +103,7 @@
                                     <input type="checkbox" class="custom-control-input" id="paypal">
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
-                                <p style="color:red;">${message}</p>
+                                <p style="color:red;">${message_checkout}</p>
                             </div>                            
                             <div class="cart-btn">
                                 <input type="submit"class="btn amado-btn w-100"value="Checkout">
