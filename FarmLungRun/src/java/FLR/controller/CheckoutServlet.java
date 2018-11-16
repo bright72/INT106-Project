@@ -6,6 +6,7 @@
 package FLR.controller;
 
 import FLR.model.Product;
+import FLR.model.ShoppingCart;
 import FLR.model.controller.ProductJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 /**
@@ -41,11 +43,14 @@ public class CheckoutServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        ProductJpaController productJpaCtrl = new ProductJpaController(utx, emf);
-        List<Product> product = productJpaCtrl.findProductEntities();
-        request.setAttribute("product", product);
-        getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
+        HttpSession session = request.getSession(true);
+        ShoppingCart cart = (ShoppingCart)session.getAttribute("cart");
+        if (cart == null) {
+            request.setAttribute("message", "Your cart is empty!");
+            getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
+        }
         
     }
 
