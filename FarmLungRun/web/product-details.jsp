@@ -38,8 +38,8 @@
                     <div class="col-12">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mt-50">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">${product.producttype}</a></li>
+                                <li class="breadcrumb-item"><a href="Home">Home</a></li>
+                                <li class="breadcrumb-item"><a href="Shop?catogories=${product.producttype}">${product.producttype}</a></li>
                                 <li style="color:#fbb710" class="breadcrumb-item " aria-current="page">${product.productname}</li>
                             </ol>
                         </nav>
