@@ -16,8 +16,7 @@
         <link rel="icon" href="img/LOGO.PNG">
 
         <!-- Core Style CSS -->
-        <link rel="stylesheet" href="css/core-style.css">
-        <link rel="stylesheet" href="css/style.css">      
+        <link rel="stylesheet" href="css/core-style.css">   
     </head>
     
     <body>
