@@ -91,7 +91,7 @@
             <div class="modal-body">
               <p class="text-center text-muted">Welcome to Our Farm</p>
               <div class="text-center">
-                  <a href="Home"> <button type="submit" class="btn btn-primary">Go to Home Page</button></a>
+                  <a href="Login"> <button type="submit" class="btn btn-primary">Go to Login Page</button></a>
                   </div>
             </div>
           </div>

@@ -36,52 +36,31 @@
                             <div class="cart-title">
                                 <h2>Checkout</h2>
                             </div>
-                            <form action="Checkout" method="post">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="first_name" value="" placeholder="First Name">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="last_name" value="" placeholder="Last Name">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" id="company" placeholder="Company Name" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <select class="w-100" id="country">
-                                            <option value="tha">Thailand</option>
-                                            <option value="usa">United States</option>
-                                            <option value="uk">United Kingdom</option>
-                                            <option value="ger">Germany</option>
-                                            <option value="fra">France</option>
-                                            <option value="ind">India</option>
-                                            <option value="aus">Australia</option>
-                                            <option value="bra">Brazil</option>
-                                            <option value="cana">Canada</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control mb-3" id="street_address" placeholder="Address" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" id="city" placeholder="Town" value="">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" value="">
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" id="phone_number" min="0" placeholder="Phone No" value="">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Leave a comment about your order"></textarea>
-                                    </div>
 
-                                    <div class="col-12">
+                            <div>
+                                <h5>Your Address information</h5>
+                                <p>${sessionScope.account.fname} ${sessionScope.account.lname}</p>
+                                <p>${sessionScope.account.address}</p>
+                                <p>${sessionScope.account.province}, ${sessionScope.account.country}, ${sessionScope.account.postalcode}</p>
+                            </div>
+
+                            <form action="Checkout" method="post">
+                                <div class="row">                                  
+
+                                    <div class="col-12 mb-4">
+                                        <textarea type="text" class="form-control" placeholder="Address" value="Address"></textarea>                                        
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="city" placeholder="Province" name="Province">
+                                    </div>                                    
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="zipCode" placeholder="PostalCode" name="PostalCode">
+                                    </div>                
+                                    <div class="col-12 mb-3">
+                                        <input name="country" type="text" class="form-control" placeholder="Country">
                                     </div>
                                 </div>
+                            </form>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
@@ -99,14 +78,19 @@
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
                                 <p style="color:red;">${message_checkout}</p>
-                            </div>                            
-                            <div class="cart-btn">
-                                <input type="submit"class="btn amado-btn w-100"value="Checkout">
-                            </div>
+                            </div>           
+                            <form action="Checkout" method="post">
+                                <input type="number" placeholder="Card number">
+                                <div class="col-13 mb-3 ">                                    
+                                    <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
+                                </div>
+                                <div class="cart-btn">
+                                    <input type="submit"class="btn amado-btn w-100"value="Checkout">
+                                </div>
+                            </form>
                         </div>
                     </div> 
-                </div>
-                </form>
+                </div>                
             </div>
         </div>
     </div>
