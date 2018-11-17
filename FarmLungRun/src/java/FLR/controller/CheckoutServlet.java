@@ -93,7 +93,6 @@ public class CheckoutServlet extends HttpServlet {
                     orderDetail.setPriceeach(lineItem.getPrice());
                     orderDetail.setQuantity(lineItem.getQuantity());
                     
-                    cart.remove(lineItem.getProduct());
                     try {
                         accountCtrl.edit(account);
                         ordersCtrl.create(orders);
@@ -103,10 +102,12 @@ public class CheckoutServlet extends HttpServlet {
                     } catch (Exception ex) {
                         System.out.println(ex);
                     }
-
+                    cart.remove(lineItem.getProduct());
+                } if (lineItemList.size() == 0) {
+                    session.removeAttribute("cart");
                 }               
                 request.setAttribute("message_checkout", "");
-                request.setAttribute("message","Your cart is empty!");                
+//                request.setAttribute("message","Your cart is empty!");                
                 getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
             }
         } else {
