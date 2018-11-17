@@ -45,7 +45,7 @@
                                         <th></th>
                                         <th>Name</th>
                                         <th>Price</th>
-                                        <th>Quantity</th>                                     
+                                        <th>Quantity</th>                   
                                     </tr>
                                 </thead>
 
@@ -62,27 +62,16 @@
                                             <td class="cart_product_desc">
                                                 <h5>${p.product.productprice} ฿</h5>
                                             </td>
-                                            <td class="cart_product_desc" >    
-                                                <form action="UpdateCart">
+                                            <td class="cart_product_desc" >   
                                                 <div class="quantity">
-
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty');
-                                                            var qty = effect.value;
-                                                            if (!isNaN(qty))
-                                                                effect.value--;
-                                                            return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="100" name="quantity" value="${p.quantity}" >
-                                                    <input hidden value="${p.product.productcode}" name="productcode">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty');
-                                                            var qty = effect.value;
-                                                            if (!isNaN(qty))
-                                                                effect.value++;
-                                                            return false;"><i class="fa fa-plus" aria-hidden="true"></i></span> 
-
+                                                    <span>${p.quantity}</span>
+                                                    <a href="RemoveFromCart?productcode=${p.product.productcode}">
+                                                       <button type="button" class="close" >
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>      
+                                                    </a>
                                                 </div>
                                                 <br>
-                                                <input type="submit" value="update" id="submit">
-                                                </form>
                                             </td>                                                                         
                                         </tr>
                                     </tbody>
@@ -108,8 +97,8 @@
                                     <p style="color: red;">${message_checkout}</p>
                                     <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
                                 </c:if>
-                                    <c:if test="${cart!=null}">
-                                <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
+                                <c:if test="${cart!=null}">
+                                    <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
                                 </c:if>
                             </div>
                         </div>

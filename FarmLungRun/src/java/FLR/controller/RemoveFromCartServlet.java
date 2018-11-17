@@ -24,11 +24,10 @@ import javax.transaction.UserTransaction;
  *
  * @author SARUNSUMETPANICH
  */
-public class UpdateCartServlet extends HttpServlet {
-
-    @PersistenceUnit(unitName = "FarmLungRunPU")
+public class RemoveFromCartServlet extends HttpServlet {
+    @PersistenceUnit (unitName = "FarmLungRunPU")
     EntityManagerFactory emf;
-
+    
     @Resource
     UserTransaction utx;
 
@@ -47,23 +46,16 @@ public class UpdateCartServlet extends HttpServlet {
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
 
         String productCode = request.getParameter("productcode");
-        String quantity = request.getParameter("quantity");
         
         System.out.println(productCode);
-        System.out.println(quantity);
-//
-//        ProductJpaController pjc = new ProductJpaController(utx, emf);
-//        Product product = pjc.findProduct(productCode); //เอา product code ไปหา product
-//
-//        cart.remove(product);
-//
-//        Product updateProduct = new Product(productCode);
-//        for (int i = 0; i < Integer.parseInt(quantity); i++) {
-//            cart.add(updateProduct);
-//        }
 
-        //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
-        response.sendRedirect("Home");
+        ProductJpaController pjc = new ProductJpaController(utx, emf);
+        Product product = pjc.findProduct(productCode);
+
+        cart.remove(product);        
+        session.removeAttribute("cart");
+        
+        response.sendRedirect("Cart");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

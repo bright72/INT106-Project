@@ -67,8 +67,8 @@
         <servlet-class>FLR.controller.AddToCartServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>UpdateCartServlet</servlet-name>
-        <servlet-class>FLR.controller.UpdateCartServlet</servlet-class>
+        <servlet-name>RemoveFromCartServlet</servlet-name>
+        <servlet-class>FLR.controller.RemoveFromCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -115,8 +115,8 @@
         <url-pattern>/AddToCart</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UpdateCartServlet</servlet-name>
-        <url-pattern>/UpdateCart</url-pattern>
+        <servlet-name>RemoveFromCartServlet</servlet-name>
+        <url-pattern>/RemoveFromCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
