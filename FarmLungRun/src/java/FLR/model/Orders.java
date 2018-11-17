@@ -7,9 +7,7 @@ package FLR.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,14 +15,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,6 +33,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Orders.findAll", query = "SELECT o FROM Orders o")
     , @NamedQuery(name = "Orders.findByOrderid", query = "SELECT o FROM Orders o WHERE o.orderid = :orderid")
     , @NamedQuery(name = "Orders.findByOrderdate", query = "SELECT o FROM Orders o WHERE o.orderdate = :orderdate")
+    , @NamedQuery(name = "Orders.findByTotalprice", query = "SELECT o FROM Orders o WHERE o.totalprice = :totalprice")
     , @NamedQuery(name = "Orders.findByComment", query = "SELECT o FROM Orders o WHERE o.comment = :comment")})
 public class Orders implements Serializable {
 
@@ -51,14 +48,15 @@ public class Orders implements Serializable {
     @Column(name = "ORDERDATE")
     @Temporal(TemporalType.DATE)
     private Date orderdate;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "TOTALPRICE")
+    private Double totalprice;
     @Size(max = 200)
     @Column(name = "COMMENT")
     private String comment;
     @JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME")
     @ManyToOne(optional = false)
     private Account username;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "orderid")
-    private List<Orderdetail> orderdetailList;
 
     public Orders() {
     }
@@ -88,6 +86,14 @@ public class Orders implements Serializable {
         this.orderdate = orderdate;
     }
 
+    public Double getTotalprice() {
+        return totalprice;
+    }
+
+    public void setTotalprice(Double totalprice) {
+        this.totalprice = totalprice;
+    }
+
     public String getComment() {
         return comment;
     }
@@ -102,15 +108,6 @@ public class Orders implements Serializable {
 
     public void setUsername(Account username) {
         this.username = username;
-    }
-
-    @XmlTransient
-    public List<Orderdetail> getOrderdetailList() {
-        return orderdetailList;
-    }
-
-    public void setOrderdetailList(List<Orderdetail> orderdetailList) {
-        this.orderdetailList = orderdetailList;
     }
 
     @Override
