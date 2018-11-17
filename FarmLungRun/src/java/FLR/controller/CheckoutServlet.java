@@ -82,6 +82,7 @@ public class CheckoutServlet extends HttpServlet {
             orders.setComment(comment);
             orders.setOrderdate(new Date());
             orders.setUsername(account);
+            orders.setTotalprice(cart.getTotalPrice());
             try {
                 ordersCtrl.create(orders);
             } catch (RollbackFailureException ex) {
