@@ -22,6 +22,12 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>FLRFilter</filter-name>
+        <servlet-name>HistoryServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>FLR.controller.RegisterServlet</servlet-class>
@@ -70,6 +76,14 @@
         <servlet-name>RemoveFromCartServlet</servlet-name>
         <servlet-class>FLR.controller.RemoveFromCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HistoryServlet</servlet-name>
+        <servlet-class>FLR.controller.HistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HistoryDetailServlet</servlet-name>
+        <servlet-class>FLR.controller.HistoryDetailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -117,6 +131,14 @@
     <servlet-mapping>
         <servlet-name>RemoveFromCartServlet</servlet-name>
         <url-pattern>/RemoveFromCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HistoryServlet</servlet-name>
+        <url-pattern>/History</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HistoryDetailServlet</servlet-name>
+        <url-pattern>/HistoryDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
