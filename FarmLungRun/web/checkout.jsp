@@ -49,7 +49,7 @@
                                 <div>${message}</div>
                                 <div class="row">                                
                                     <div class="col-12 mb-4">
-                                        <textarea type="text" class="form-control" placeholder="Address" value="Address" required></textarea>                                        
+                                        <textarea type="text" class="form-control" placeholder="Address" value="Address" name="Address" required></textarea>                                        
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <input type="text" class="form-control" id="city" placeholder="Province" name="Province" required>

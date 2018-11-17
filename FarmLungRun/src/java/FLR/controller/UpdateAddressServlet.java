@@ -61,7 +61,6 @@ public class UpdateAddressServlet extends HttpServlet {
         nAcc.setProvince(Province);
         nAcc.setPostalcode(PostalCode);
         nAcc.setCountry(Country);
-        nAcc.setFname("Hey");
         try {
             ajc.edit(nAcc);
             session.setAttribute("account", ajc);
