@@ -107,8 +107,8 @@ public class CheckoutServlet extends HttpServlet {
                     session.removeAttribute("cart");
                 }               
                 request.setAttribute("message_checkout", "");
-//                request.setAttribute("message","Your cart is empty!");                
-                getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
+                request.setAttribute("message","Your cart is empty!");                
+                getServletContext().getRequestDispatcher("/Cart").forward(request, response);
             }
         } else {
             request.setAttribute("message_checkout", "Your cart is empty! You can't checkout anything now...");
