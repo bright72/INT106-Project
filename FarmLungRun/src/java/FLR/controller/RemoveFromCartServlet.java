@@ -53,7 +53,7 @@ public class RemoveFromCartServlet extends HttpServlet {
         
         cart.remove(product);        
         System.out.println("After remove "+cart.getLineItems());
-        if (cart.getLineItems().size() == 0) {
+        if (cart.getLineItems().isEmpty()) {
             session.removeAttribute("cart");            
         }
         

@@ -21,6 +21,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -71,44 +73,53 @@ public class CheckoutServlet extends HttpServlet {
                 List<LineItem> lineItemList = cart.getLineItems();
 
                 Orders orders = new Orders();
-                if (orders.getOrderid() == null) {
-                    orders.setOrderid(0001);
+                if (ordersCtrl.getOrdersCount() == 0) {
+                    orders.setOrderid(1);
                 } else {
-                    orders.setOrderid(orders.getOrderid() + 1);
+                    orders.setOrderid(ordersCtrl.getOrdersCount() + 1);
                 }
                 orders.setComment(comment);
                 orders.setOrderdate(new Date());
                 orders.setUsername(account);
+                try {
+                    ordersCtrl.create(orders);
+                } catch (RollbackFailureException ex) {
+                    System.out.println(ex);
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
 
                 for (LineItem lineItem : lineItemList) {
-
                     Orderdetail orderDetail = new Orderdetail();
-                    if (orderDetail.getOrderdetailid() == null) {
-                        orderDetail.setOrderdetailid(0001);
+                    if (orderdetailCtrl.getOrderdetailCount() == 0) {
+                        orderDetail.setOrderdetailid(1);
                     } else {
-                        orderDetail.setOrderdetailid(orderDetail.getOrderdetailid() + 1);
+                        orderDetail.setOrderdetailid(orderdetailCtrl.getOrderdetailCount() + 1);
                     }
                     orderDetail.setOrderid(orders);
                     orderDetail.setProductcode(lineItem.getProduct());
                     orderDetail.setPriceeach(lineItem.getPrice());
                     orderDetail.setQuantity(lineItem.getQuantity());
-                    
+
                     try {
-                        accountCtrl.edit(account);
-                        ordersCtrl.create(orders);
+                        //accountCtrl.edit(account);                        
                         orderdetailCtrl.create(orderDetail);
+                        cart.remove(lineItem.getProduct());
+                        System.out.println(">>>" + lineItemList.size());
                     } catch (RollbackFailureException ex) {
                         System.out.println(ex);
                     } catch (Exception ex) {
                         System.out.println(ex);
                     }
-                    cart.remove(lineItem.getProduct());
-                } if (lineItemList.size() == 0) {
-                    session.removeAttribute("cart");
-                }               
+
+                }
+
+                session.removeAttribute("cart");
                 request.setAttribute("message_checkout", "");
-                request.setAttribute("message","Your cart is empty!");                
-                getServletContext().getRequestDispatcher("/Cart").forward(request, response);
+                request.setAttribute("message", "Your cart is empty!");
+                response.sendRedirect("Cart");
+                return;
+                //getServletContext().getRequestDispatcher("/Cart").forward(request, response);
             }
         } else {
             request.setAttribute("message_checkout", "Your cart is empty! You can't checkout anything now...");
