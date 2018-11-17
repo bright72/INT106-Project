@@ -33,10 +33,10 @@
                 <div class="modal-body">
                     <form action="Login" method="post">
                         <div class="form-group">
-                            <input id="email-modal" type="text" name="username" placeholder="username" class="form-control">
+                            <input id="email-modal" type="text" name="username" placeholder="username" class="form-control" pattern="[A-Za-z0-9-_]{4,}">
                         </div>
                         <div class="form-group">
-                            <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
+                            <input id="password-modal" type="password" name="password" placeholder="password" class="form-control" pattern="[A-Za-z0-9-_]{4,}">
                         </div>
                         <div style="color: red" class="text-center">
                             ${message}

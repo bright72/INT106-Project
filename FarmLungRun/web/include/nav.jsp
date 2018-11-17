@@ -37,7 +37,7 @@
                 <div class="col-12">
                     <div class="search-content">
                         <form action="Search" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <input type="search" name="search" id="search" placeholder="Type your keyword..." pattern="[A-Za-z0-9-_]{1,}">
                             <button type="submit"><img src="img/core-img/search.png" alt=""></button>
                         </form>
                     </div>

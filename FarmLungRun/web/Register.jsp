@@ -42,19 +42,19 @@
                             <p style="color: red">${message}</p>
                             <div class="form-group">                                  
                                 <label for="name">Username</label>
-                                <input placeholder="Username length more than 4" name="username" type="text" class="form-control" required>                          
+                                <input placeholder="Username length more than 4 and you can use letters numbers - and _" name="username" type="text" class="form-control" required pattern="[A-Za-z0-9-_]{4,}">                          
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input placeholder="Password length more than 4" name="password" type="password" class="form-control" required>
+                                <input placeholder="Password length more than 4 and you can use letters numbers - and _" name="password" type="password" class="form-control" required pattern="[A-Za-z0-9-_]{4,}">
                             </div>
                             <div class="form-group">
                                 <label for="fname">First Name</label>
-                                <input name="fname" type="text" class="form-control" required>
+                                <input name="fname" type="text" class="form-control" required pattern="[A-Za-z]{1,}">
                             </div>
                             <div class="form-group">
                                 <label for="lname">Last Name</label>
-                                <input name="lname" type="text" class="form-control" required>
+                                <input name="lname" type="text" class="form-control" required pattern="[A-Za-z]{1,}">
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
