@@ -63,7 +63,7 @@ public class UpdateAddressServlet extends HttpServlet {
         nAcc.setCountry(Country);
         try {
             ajc.edit(nAcc);
-            session.setAttribute("account", ajc);
+            session.setAttribute("account", nAcc);
             response.sendRedirect("checkout.jsp");
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(UpdateAddressServlet.class.getName()).log(Level.SEVERE, null, ex);
