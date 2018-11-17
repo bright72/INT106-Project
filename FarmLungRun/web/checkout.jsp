@@ -43,10 +43,10 @@
                                 <p>${sessionScope.account.address}</p>
                                 <p>${sessionScope.account.province}, ${sessionScope.account.country}, ${sessionScope.account.postalcode}</p>
                             </div>
-
-                            <form action="Checkout" method="post">
-                                <div class="row">                                  
-
+                            <br>
+                            <form action="Checkout" method="post">                                
+                                <h5>If your address is incorrect, please update new address below.</h5>
+                                <div class="row">                                
                                     <div class="col-12 mb-4">
                                         <textarea type="text" class="form-control" placeholder="Address" value="Address"></textarea>                                        
                                     </div>
@@ -59,6 +59,10 @@
                                     <div class="col-12 mb-3">
                                         <input name="country" type="text" class="form-control" placeholder="Country">
                                     </div>
+                                </div>
+
+                                <div class="cart-btn">
+                                    <input type="submit"class="btn amado-btn w-100"value="Update My Address">
                                 </div>
                             </form>
                         </div>
@@ -82,38 +86,38 @@
 
                             <div><input maxlength="13" type="text" placeholder="Card number"></div> <br>
                             <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC">
-                            <input style="width: 15%" maxlength="2" type="text" placeholder="MM"> / 
-                            <input style="width: 15%" maxlength="2" type="text" placeholder="YY"></div> <br>
+                                <input style="width: 15%" maxlength="2" type="text" placeholder="MM"> / 
+                                <input style="width: 15%" maxlength="2" type="text" placeholder="YY"></div> <br>
 
-                        <form action="Checkout" method="post">
+                            <form action="Checkout" method="post">
 
-                            <div class="col-13 mb-3 ">                                    
-                                <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
-                            </div>
-                            <div class="cart-btn">
-                                <input type="submit"class="btn amado-btn w-100"value="Checkout">
-                            </div>
+                                <div class="col-13 mb-3 ">                                    
+                                    <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
+                                </div>
+                                <div class="cart-btn">
+                                    <input type="submit"class="btn amado-btn w-100"value="Checkout">
+                                </div>
 
-                        </form>
-                    </div>
-                </div> 
-            </div>                
+                            </form>
+                        </div>
+                    </div> 
+                </div>                
+            </div>
         </div>
     </div>
-</div>
-<!-- ##### Main Content Wrapper End ##### -->
+    <!-- ##### Main Content Wrapper End ##### -->
 
-<jsp:include page="include/footer.jsp?page=Checkout"/>
+    <jsp:include page="include/footer.jsp?page=Checkout"/>
 
-<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
-<!-- Popper js -->
-<script src="js/popper.min.js"></script>
-<!-- Bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Plugins js -->
-<script src="js/plugins.js"></script>
-<!-- Active js -->
-<script src="js/active.js"></script>
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
 </body>
 </html>
