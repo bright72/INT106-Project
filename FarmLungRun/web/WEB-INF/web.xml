@@ -28,6 +28,12 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>FLRFilter</filter-name>
+        <servlet-name>HistoryDetailServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>FLR.controller.RegisterServlet</servlet-class>

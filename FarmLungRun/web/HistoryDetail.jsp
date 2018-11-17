@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : cart
     Created on : Nov 2, 2018, 11:05:32 AM
@@ -43,27 +42,28 @@
                             <table class="table table-responsive">
                                 <thead>
                                     <tr style="text-align: center">
-                                        <th>Orders ID</th>
-                                        <th>Date</th>
-                                        <th>Total Price</th>                   
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Quantity</th>   
+                                        <th>Price each</th>
                                     </tr>
                                 </thead>
 
 
-                                <c:forEach items="${accountorders}" var="o" varStatus="n">
+                                <c:forEach items="${orderdetail}" var="o" varStatus="n">
                                     <tbody>
                                         <tr style="text-align: center">
-                                            <td class="orders_id">
-                                                <h5>${o.orderid}</h5>
+                                            <td class="detail_img">
+                                                <img src="img/${o.productcode.productcode}.png" alt="${o.productcode.productcode}">
                                             </td>
-                                            <td class="orders_date">
-                                                <h5>${o.orderdate}</h5>
+                                            <td class="detail_name">
+                                                <h5>${o.productcode.productname}</h5>
                                             </td>
-                                            <td class="orders_totalPrice">
-                                                <h5>${o.totalprice} ฿</h5>
+                                            <td class="detail_quantity">
+                                                <h5>${o.quantity} </h5>
                                             </td>
-                                            <td>
-                                                <a href="HistoryDetail?orderid=${o.orderid}"><button class="btn amado-btn w-100">View order detail</button></a>
+                                            <td class="detail_price">
+                                                <h5>${o.priceeach} ฿</h5>
                                             </td>
                                         </tr>
                                     </tbody>
