@@ -17,6 +17,7 @@ create table orders (
 orderId int NOT NULL,
 orderDate Date Not null,
 username varchar(20) Not null,
+totalPrice double,
 comment varchar(200),
 PRIMARY KEY(orderId),
 CONSTRAINT orders_ibfk_1 FOREIGN KEY(username) REFERENCES account (username));
