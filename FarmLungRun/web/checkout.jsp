@@ -44,20 +44,21 @@
                                 <p>${sessionScope.account.province}, ${sessionScope.account.country}, ${sessionScope.account.postalcode}</p>
                             </div>
                             <br>
-                            <form action="Checkout" method="post">                                
+                            <form action="UpdateAddress" method="post">                                
                                 <h5>If your address is incorrect, please update new address below.</h5>
+                                <div>${message}</div>
                                 <div class="row">                                
                                     <div class="col-12 mb-4">
-                                        <textarea type="text" class="form-control" placeholder="Address" value="Address"></textarea>                                        
+                                        <textarea type="text" class="form-control" placeholder="Address" value="Address" required></textarea>                                        
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="city" placeholder="Province" name="Province">
+                                        <input type="text" class="form-control" id="city" placeholder="Province" name="Province" required>
                                     </div>                                    
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="zipCode" placeholder="PostalCode" name="PostalCode">
+                                        <input type="text" class="form-control" id="zipCode" placeholder="PostalCode" name="PostalCode" required>
                                     </div>                
                                     <div class="col-12 mb-3">
-                                        <input name="country" type="text" class="form-control" placeholder="Country">
+                                        <input name="Country" type="text" class="form-control" placeholder="Country" required>
                                     </div>
                                 </div>
 

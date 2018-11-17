@@ -84,6 +84,10 @@
         <servlet-name>HistoryDetailServlet</servlet-name>
         <servlet-class>FLR.controller.HistoryDetailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateAddressServlet</servlet-name>
+        <servlet-class>FLR.controller.UpdateAddressServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -140,9 +144,13 @@
         <servlet-name>HistoryDetailServlet</servlet-name>
         <url-pattern>/HistoryDetail</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateAddressServlet</servlet-name>
+        <url-pattern>/UpdateAddress</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            3600
         </session-timeout>
     </session-config>
 </web-app>
