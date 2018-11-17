@@ -68,6 +68,7 @@ public class LoginServlet extends HttpServlet {
                 Account account = accountCtrl.findAccount(username);
                 if (account != null) {
                     if (cryptWithMD5(password).equals(account.getEncryptedpassword())){
+                        
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
                         //session.setMaxInactiveInterval(60*60); //เพิ่ม session timeout

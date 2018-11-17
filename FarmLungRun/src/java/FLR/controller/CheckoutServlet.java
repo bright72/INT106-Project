@@ -59,7 +59,7 @@ public class CheckoutServlet extends HttpServlet {
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
         if (accountSession != null) {
             if (cart == null) {
-                request.setAttribute("message_checkout", "Your cart is empty! You can't checkout anything now...");
+                request.setAttribute("message_checkout", "Your cart is empty! You can't checkout now!");
                 getServletContext().getRequestDispatcher("/Cart").forward(request, response);
             } else {
                 AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
