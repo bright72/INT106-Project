@@ -67,9 +67,9 @@
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
                             <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>140.00 ฿</span></li>
+                                <li><span>subtotal:</span> <span>${cart.totalPrice}฿</span></li>
                                 <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>140.00 ฿</span></li>
+                                <li><span>total:</span> <span style="color: green">${cart.totalPrice}฿</span></li>
                             </ul>
                             <div class="payment-method">
                                 <!-- Paypal -->
@@ -78,35 +78,42 @@
                                     <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                 </div>
                                 <p style="color:red;">${message_checkout}</p>
-                            </div>           
-                            <form action="Checkout" method="post">
-                                <input type="number" placeholder="Card number">
-                                <div class="col-13 mb-3 ">                                    
-                                    <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
-                                </div>
-                                <div class="cart-btn">
-                                    <input type="submit"class="btn amado-btn w-100"value="Checkout">
-                                </div>
-                            </form>
-                        </div>
-                    </div> 
-                </div>                
-            </div>
+                            </div>    
+
+                            <div><input maxlength="13" type="text" placeholder="Card number"></div> <br>
+                            <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC">
+                            <input style="width: 15%" maxlength="2" type="text" placeholder="MM"> / 
+                            <input style="width: 15%" maxlength="2" type="text" placeholder="YY"></div> <br>
+
+                        <form action="Checkout" method="post">
+
+                            <div class="col-13 mb-3 ">                                    
+                                <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
+                            </div>
+                            <div class="cart-btn">
+                                <input type="submit"class="btn amado-btn w-100"value="Checkout">
+                            </div>
+
+                        </form>
+                    </div>
+                </div> 
+            </div>                
         </div>
     </div>
-    <!-- ##### Main Content Wrapper End ##### -->
+</div>
+<!-- ##### Main Content Wrapper End ##### -->
 
-    <jsp:include page="include/footer.jsp?page=Checkout"/>
+<jsp:include page="include/footer.jsp?page=Checkout"/>
 
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
 </body>
 </html>
