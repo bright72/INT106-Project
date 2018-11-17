@@ -25,7 +25,8 @@ import javax.transaction.UserTransaction;
  * @author SARUNSUMETPANICH
  */
 public class RemoveFromCartServlet extends HttpServlet {
-    @PersistenceUnit (unitName = "FarmLungRunPU")
+
+    @PersistenceUnit(unitName = "FarmLungRunPU")
     EntityManagerFactory emf;
     
     @Resource
@@ -44,16 +45,17 @@ public class RemoveFromCartServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-
+        
         String productCode = request.getParameter("productcode");
         
-        System.out.println(productCode);
-
         ProductJpaController pjc = new ProductJpaController(utx, emf);
         Product product = pjc.findProduct(productCode);
-
+        
         cart.remove(product);        
-        session.removeAttribute("cart");
+        System.out.println("After remove "+cart.getLineItems());
+        if (cart.getLineItems().size() == 0) {
+            session.removeAttribute("cart");            
+        }
         
         response.sendRedirect("Cart");
     }

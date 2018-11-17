@@ -53,7 +53,6 @@ public class CartServlet extends HttpServlet {
         if (session != null) {
             ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
             if (cart != null) {
-                System.out.println("1 "+cart);
                 getServletContext().getRequestDispatcher("/cart.jsp").forward(request, response);
                 return; //กันเมื่อออกจากลูปจะไปลงเข้า index
             } else {
