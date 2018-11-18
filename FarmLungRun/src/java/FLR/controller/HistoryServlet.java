@@ -46,7 +46,8 @@ public class HistoryServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         Account accountSession = (Account) session.getAttribute("account");
         AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
-        List<Orders> accountOrders = accountSession.getOrdersList();
+        Account findAccount = accountCtrl.findAccount(accountSession.getUsername());
+        List<Orders> accountOrders = findAccount.getOrdersList();
         if(accountOrders.isEmpty()) {
             session.setAttribute("message", "You didn't purchase anything.");
             getServletContext().getRequestDispatcher("/History.jsp").forward(request, response);
