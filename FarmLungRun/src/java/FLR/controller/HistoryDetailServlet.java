@@ -47,9 +47,11 @@ public class HistoryDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         String orderidString = request.getParameter("orderid");
+        
         OrdersJpaController orderCtrl = new OrdersJpaController(utx, emf);
         Orders orderid = orderCtrl.findOrders(Integer.parseInt(orderidString));
         List<Orderdetail> orderList = orderid.getOrderdetailList();
+
         session.setAttribute("orderdetail", orderList);
         session.setAttribute("message", "");
         getServletContext().getRequestDispatcher("/HistoryDetail.jsp").forward(request, response);

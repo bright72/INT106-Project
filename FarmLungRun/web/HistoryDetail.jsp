@@ -49,7 +49,6 @@
                                     </tr>
                                 </thead>
 
-
                                 <c:forEach items="${orderdetail}" var="o" varStatus="n">
                                     <tbody>
                                         <tr style="text-align: center">

@@ -18,6 +18,7 @@ import FLR.model.controller.ProductJpaController;
 import FLR.model.controller.exceptions.RollbackFailureException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -80,7 +81,7 @@ public class CheckoutServlet extends HttpServlet {
                 orders.setOrderid(ordersCtrl.getOrdersCount() + 1);
             }
             orders.setComment(comment);
-            orders.setOrderdate(new Date());
+            orders.setOrderdate(new Timestamp(System.currentTimeMillis()));
             orders.setUsername(account);
             orders.setTotalprice(cart.getTotalPrice());
             try {
