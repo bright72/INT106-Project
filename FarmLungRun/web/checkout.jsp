@@ -4,6 +4,7 @@
     Author     : INT303
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en th">
@@ -106,6 +107,24 @@
             </div>
         </div>
     </div>
+
+    <c:if test="${success != null}">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success Register</h5>
+                    <a href="Home"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button></a>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center text-muted">Welcome to Our Farm</p>
+                    <div class="text-center">
+                        <a href="Login"> <button type="submit" class="btn btn-primary">Go to Login Page</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </c:if>
+
     <!-- ##### Main Content Wrapper End ##### -->
 
     <jsp:include page="include/footer.jsp?page=Checkout"/>

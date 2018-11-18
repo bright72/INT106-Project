@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register Page</title>
+        <title><title>Farm LungRun | Register</title></title>
 
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
@@ -18,10 +18,10 @@
 
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
-     
+
     </head>
     <body style="background-color: #565656">
-       
+
         <c:if test="${success == null}">
             <div style="padding:5%">
                 <div class="modal-content">
@@ -82,21 +82,21 @@
         </c:if>
 
         <c:if test="${success != null}">
-<div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Success Register</h5>
-              <a href="Home"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button></a>
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Success Register</h5>
+                        <a href="Home"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button></a>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center text-muted">Welcome to Our Farm</p>
+                        <div class="text-center">
+                            <a href="Login"> <button type="submit" class="btn btn-primary">Go to Login Page</button></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-              <p class="text-center text-muted">Welcome to Our Farm</p>
-              <div class="text-center">
-                  <a href="Login"> <button type="submit" class="btn btn-primary">Go to Login Page</button></a>
-                  </div>
-            </div>
-          </div>
-        </div>
         </c:if>
- 
-   </body>
+
+    </body>
 </html>

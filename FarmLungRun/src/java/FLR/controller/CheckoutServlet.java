@@ -119,7 +119,7 @@ public class CheckoutServlet extends HttpServlet {
             session.removeAttribute("cart");
             request.setAttribute("message_checkout", "");
             request.setAttribute("message", "Your cart is empty!");
-            response.sendRedirect("Cart");
+            response.sendRedirect("Cart"); 
             return;
             //getServletContext().getRequestDispatcher("/Cart").forward(request, response);
         }

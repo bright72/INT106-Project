@@ -11,11 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Result Page</title>
-        
-       <!-- Favicon  -->
+
+        <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
+        <title>Farm LungRun | Search</title>
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
     </head>
@@ -41,9 +41,9 @@
                                         <!-- Product Image -->
                                         <div class="product-img">
                                             <a href="Product?productCode=${fp.productcode}">
-                                            <img src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
-                                            <!-- Hover Thumb -->
-                                            <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
+                                                <img src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
+                                                <!-- Hover Thumb -->
+                                                <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
                                             </a>
                                         </div>
 
