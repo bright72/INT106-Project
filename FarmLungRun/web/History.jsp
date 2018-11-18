@@ -29,7 +29,7 @@
     </head>
 
     <body>
-        <jsp:include page="include/nav.jsp?page=Hisrtory"/>
+        <jsp:include page="include/nav.jsp?page=History"/>
 
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
