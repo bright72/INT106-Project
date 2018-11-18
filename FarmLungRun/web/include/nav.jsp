@@ -112,6 +112,14 @@
                         <li>
                         </c:if>
                         <a href="About">About</a></li>
+
+                    <c:if test="${param.page == 'History'}">
+                        <li class="active">
+                        </c:if>
+                        <c:if test="${param.page != 'History'}">
+                        <li>
+                        </c:if>
+                        <a href="History">History</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -123,7 +131,7 @@
                     </c:if>
                     <c:if test="${cart == null}">
                     <a href="Cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Cart <span>(0)</span></a>
-                 </c:if>
+                    </c:if>
                 <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Search</a>
             </div>
         </header>
