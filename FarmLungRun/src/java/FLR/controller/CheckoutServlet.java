@@ -38,10 +38,10 @@ import javax.transaction.UserTransaction;
  * @author SARUNSUMETPANICH
  */
 public class CheckoutServlet extends HttpServlet {
-    
+
     @PersistenceUnit(unitName = "FarmLungRunPU")
     EntityManagerFactory emf;
-    
+
     @Resource
     UserTransaction utx;
 
@@ -60,7 +60,7 @@ public class CheckoutServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         Account accountSession = (Account) session.getAttribute("account");
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        
+
         if (cart == null) {
             request.setAttribute("message_checkout", "Your cart is empty! You can't checkout now!");
             getServletContext().getRequestDispatcher("/Cart").forward(request, response);
@@ -70,9 +70,9 @@ public class CheckoutServlet extends HttpServlet {
             OrdersJpaController ordersCtrl = new OrdersJpaController(utx, emf);
             OrderdetailJpaController orderdetailCtrl = new OrderdetailJpaController(utx, emf);
             String comment = request.getParameter("comment");
-            
+
             List<LineItem> lineItemList = cart.getLineItems();
-            
+
             Orders orders = new Orders();
             if (ordersCtrl.getOrdersCount() == 0) {
                 orders.setOrderid(1);
@@ -90,7 +90,7 @@ public class CheckoutServlet extends HttpServlet {
             } catch (Exception ex) {
                 System.out.println(ex);
             }
-            
+
             for (LineItem lineItem : lineItemList) {
                 Orderdetail orderDetail = new Orderdetail();
                 if (orderdetailCtrl.getOrderdetailCount() == 0) {
@@ -102,28 +102,28 @@ public class CheckoutServlet extends HttpServlet {
                 orderDetail.setProductcode(lineItem.getProduct());
                 orderDetail.setPriceeach(lineItem.getPrice());
                 orderDetail.setQuantity(lineItem.getQuantity());
-                
+
                 try {
                     //accountCtrl.edit(account);                        
                     orderdetailCtrl.create(orderDetail);
                     cart.remove(lineItem.getProduct());
-                    System.out.println(">>>" + lineItemList.size());
                 } catch (RollbackFailureException ex) {
                     System.out.println(ex);
                 } catch (Exception ex) {
                     System.out.println(ex);
                 }
-                
+
             }
-            
+
             session.removeAttribute("cart");
+            request.setAttribute("success", "Checkout Success");
             request.setAttribute("message_checkout", "");
             request.setAttribute("message", "Your cart is empty!");
-            response.sendRedirect("Cart"); 
+            response.sendRedirect("checkout.jsp");
             return;
             //getServletContext().getRequestDispatcher("/Cart").forward(request, response);
         }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

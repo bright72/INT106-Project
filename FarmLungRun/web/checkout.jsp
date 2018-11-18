@@ -112,7 +112,7 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Success Register</h5>
+                    <h5 class="modal-title">Success Checkout</h5>
                     <a href="Home"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button></a>
                 </div>
                 <div class="modal-body">
