@@ -53,6 +53,8 @@ public class HistoryDetailServlet extends HttpServlet {
         session.setAttribute("orderdetail", orderList);
         session.setAttribute("message", "");
         getServletContext().getRequestDispatcher("/HistoryDetail.jsp").forward(request, response);
+        
+        //didn't update history and history detail after checkout and I don't know why
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
