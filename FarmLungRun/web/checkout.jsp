@@ -27,10 +27,9 @@
         <link rel="stylesheet" href="css/core-style.css">
 
     </head>
+     <c:if test="${success == null}">
     <body>
-        <c:if test="${success == null}">
             <jsp:include page="include/nav.jsp?page=Checkout"/>
-
             <div class="cart-table-area section-padding-100">
                 <div class="container-fluid">
                     <div class="row">
@@ -110,22 +109,27 @@
             </div>
         </div>
         <jsp:include page="include/footer.jsp?page=Checkout"/>
+        </body>
+
     </c:if>
 
     <c:if test="${success != null}">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Success Checkout</h5>                    
-                </div>
-                <div class="modal-body">
-                    <p class="text-center text-muted">Your order has been successful!</p>
-                    <div class="text-center">
-                        <a href="History"> <button type="submit" class="btn btn-primary">See my order</button></a>                    
+        <body style="background-color: #565656" >
+        
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Success Checkout</h5>                    
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center text-muted">Your order has been successful!</p>
+                        <div class="text-center">
+                            <a href="History"> <button type="submit" class="btn btn-primary">See my order</button></a>                    
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </body>
     </c:if>
 
     <!-- ##### Main Content Wrapper End ##### -->

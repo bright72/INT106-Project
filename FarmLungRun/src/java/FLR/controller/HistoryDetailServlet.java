@@ -45,7 +45,7 @@ public class HistoryDetailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
         String orderidString = request.getParameter("orderid");
         
         OrdersJpaController orderCtrl = new OrdersJpaController(utx, emf);
