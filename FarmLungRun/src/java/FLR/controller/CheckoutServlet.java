@@ -81,7 +81,7 @@ public class CheckoutServlet extends HttpServlet {
                 orders.setOrderid(ordersCtrl.getOrdersCount() + 1);
             }
             orders.setComment(comment);
-            orders.setOrderdate(new Timestamp(System.currentTimeMillis()));
+            orders.setOrderdate(new Date());
             orders.setUsername(account);
             orders.setTotalprice(cart.getTotalPrice());
             try {

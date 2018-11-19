@@ -6,6 +6,8 @@
 package FLR.model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -84,8 +86,10 @@ public class Orders implements Serializable {
         this.orderid = orderid;
     }
 
-    public Date getOrderdate() {
-        return orderdate;
+    public String getOrderdate() {
+        DateFormat df = new SimpleDateFormat("dd/MM/yy");
+        String formattedDate = df.format(orderdate);
+        return formattedDate;
     }
 
     public void setOrderdate(Date orderdate) {
@@ -115,7 +119,7 @@ public class Orders implements Serializable {
     public void setUsername(Account username) {
         this.username = username;
     }
-    
+
     @XmlTransient
     public List<Orderdetail> getOrderdetailList() {
         return orderdetailList;
@@ -149,5 +153,5 @@ public class Orders implements Serializable {
     public String toString() {
         return "FLR.model.Orders[ orderid=" + orderid + " ]";
     }
-    
+
 }
