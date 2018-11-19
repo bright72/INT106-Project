@@ -36,22 +36,108 @@
         <div class="products-catagories-area clearfix">
             <div class="amado-pro-catagory clearfix">
 
-                <c:forEach items="${product}" var="p" varStatus="n">
-                    <div class="single-products-catagory clearfix">
-                        <a href="shop.html">
-                            <a href="Product?productCode=${p.productcode}"><img src="img/${p.productcode}.png" alt=""></a>
-                            <!-- Hover Content -->
-                            <div class="hover-content">
-                                <div class="line"></div>
-                                <p>From ${p.productprice} ฿</p>
-                                <h4>${p.productname}</h4>
-                            </div>
-                        </a>
-                    </div>
-                </c:forEach>
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/1.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Modern Chair</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/2.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Minimalistic Plant Pot</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/3.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Modern Chair</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/4.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $180</p>
+                            <h4>Night Stand</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/5.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $18</p>
+                            <h4>Plant Pot</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory -->
+                <div class="single-products-catagory clearfix">
+                    <a href="shop.html">
+                        <img src="img/bg-img/6.jpg" alt="">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line"></div>
+                            <p>From $18</p>
+                            <h4>Plant Pot</h4>
+                        </div>
+                    </a>
+                </div>
 
             </div>
         </div>
+        <!-- Product Catagories Area End -->
+
+        <!--         Product Catagories Area Start 
+                <div class="products-catagories-area clearfix">
+                    <div class="amado-pro-catagory clearfix">
+        
+        <c:forEach items="${product}" var="p" varStatus="n">
+            <div class="single-products-catagory clearfix">
+                <a href="shop.html">
+                    <a href="Product?productCode=${p.productcode}"><img src="img/${p.productcode}.png" alt=""></a>
+                     Hover Content 
+                    <div class="hover-content">
+                        <div class="line"></div>
+                        <p>From ${p.productprice} ฿</p>
+                        <h4>${p.productname}</h4>
+                    </div>
+                </a>
+            </div>
+        </c:forEach>
+
+    </div>
+</div>-->
         <!-- Product Catagories Area End -->
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
