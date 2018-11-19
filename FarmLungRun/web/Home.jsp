@@ -38,13 +38,13 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="Shop?catagories=vegetables">
+                    <a href="Shop">
                         <img src="img/banner/1.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
                             <p>Visit our store</p>
-                            <h4>Vegetable</h4>
+                            <h4>Store</h4>
                         </div>
                     </a>
                 </div>
@@ -77,13 +77,13 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
+                    <a href="Shop?catagories=dairy">
                         <img src="img/banner/4.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $180</p>
-                            <h4>Night Stand</h4>
+                            <p>Start from 58฿</p>
+                            <h4>Dairy</h4>
                         </div>
                     </a>
                 </div>
