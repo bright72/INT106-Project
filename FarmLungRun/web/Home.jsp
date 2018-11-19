@@ -108,8 +108,8 @@
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>Making it from our fruit</p>
-                            <h4>Fruit dessert</h4>
+                            <p>Making dessert from our fruits</p>
+                            <h4>Fruits</h4>
                         </div>
                     </a>
                 </div>
