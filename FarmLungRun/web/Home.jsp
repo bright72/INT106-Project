@@ -90,26 +90,26 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
+                    <a href="Shop?catagories=meat">
                         <img src="img/banner/5.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $18</p>
-                            <h4>Plant Pot</h4>
+                            <p>Start from 139฿</p>
+                            <h4>Raw Meat</h4>
                         </div>
                     </a>
                 </div>
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="shop.html">
+                    <a href="Shop?catagories=meat">
                         <img src="img/banner/6.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>From $18</p>
-                            <h4>Plant Pot</h4>
+                            <p>Start from 139฿</p>
+                            <h4>NNN</h4>
                         </div>
                     </a>
                 </div>
