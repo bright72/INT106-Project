@@ -76,7 +76,7 @@ public class ShopServlet extends HttpServlet {
             }
 
         } else if (catagories != null) {
-            if (catagories.equalsIgnoreCase("vegetables")) {
+            if (catagories.equalsIgnoreCase("vegetable")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Vegetable");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
@@ -88,15 +88,15 @@ public class ShopServlet extends HttpServlet {
                 List<Product> foundProduct = productCtrl.findByProducttype("Meat");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (catagories.equalsIgnoreCase("dairy")) {
+            } else if (catagories.equalsIgnoreCase("dairy product")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Dairy");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (catagories.equalsIgnoreCase("eggs")) {
+            } else if (catagories.equalsIgnoreCase("egg")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Egg");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (catagories.equalsIgnoreCase("mushrooms")) {
+            } else if (catagories.equalsIgnoreCase("mushroom")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Mushroom");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);

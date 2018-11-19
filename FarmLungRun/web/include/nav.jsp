@@ -104,6 +104,14 @@
                         <li>
                         </c:if>
                         <a href="Shop">Shop</a></li>
+                        
+                        <c:if test="${param.page == 'History'}">
+                        <li class="active">
+                        </c:if>
+                        <c:if test="${param.page != 'History'}">
+                        <li>
+                        </c:if>
+                        <a href="History">History</a></li>
 
                     <c:if test="${param.page == 'About'}">
                         <li class="active">
@@ -112,14 +120,7 @@
                         <li>
                         </c:if>
                         <a href="About">About</a></li>
-
-                    <c:if test="${param.page == 'History'}">
-                        <li class="active">
-                        </c:if>
-                        <c:if test="${param.page != 'History'}">
-                        <li>
-                        </c:if>
-                        <a href="History">History</a></li>
+                        
                 </ul>
             </nav>
             <!-- Button Group -->
