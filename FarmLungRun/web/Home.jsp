@@ -103,13 +103,13 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="Shop?catagories=meat">
+                    <a href="Shop?catagories=fruit">
                         <img src="img/banner/6.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line"></div>
-                            <p>Start from 139฿</p>
-                            <h4>NNN</h4>
+                            <p>Making it from our fruit</p>
+                            <h4>Fruit dessert</h4>
                         </div>
                     </a>
                 </div>
