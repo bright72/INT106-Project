@@ -47,15 +47,18 @@ public class HistoryDetailServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         String orderidString = request.getParameter("orderid");
-        
+
         OrdersJpaController orderCtrl = new OrdersJpaController(utx, emf);
-        Orders orderid = orderCtrl.findOrders(Integer.parseInt(orderidString));
-        List<Orderdetail> orderList = orderid.getOrderdetailList();
+        Orders foundOrder = orderCtrl.findOrders(Integer.parseInt(orderidString));
+
+        System.out.println(foundOrder);
+        List<Orderdetail> orderList = foundOrder.getOrderdetailList();
+        System.out.println(orderList.size());
 
         session.setAttribute("orderdetail", orderList);
         session.setAttribute("message", "");
         getServletContext().getRequestDispatcher("/HistoryDetail.jsp").forward(request, response);
-        
+
         //didn't update history and history detail after checkout and I don't know why
     }
 
