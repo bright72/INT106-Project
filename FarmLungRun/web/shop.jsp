@@ -43,7 +43,7 @@
                             <li class="${param.catagories == "vegetable" ? "active" : ""}"><a href="Shop?catagories=vegetable">Vegetables</a></li>
                             <li class="${param.catagories == "fruit" ? "active" : ""}"><a href="Shop?catagories=fruit">Fruits</a></li>
                             <li class="${param.catagories == "meat" ? "active" : ""}"><a href="Shop?catagories=meat">Meat</a></li>
-                            <li class="${param.catagories == "dairy product" ? "active" : ""}"><a href="Shop?catagories=dairy product">Dairy</a></li>
+                            <li class="${param.catagories == "dairy" ? "active" : ""}"><a href="Shop?catagories=dairy">Dairy</a></li>
                             <li class="${param.catagories == "egg" ? "active" : ""}"><a href="Shop?catagories=egg">Eggs</a></li>
                             <li class="${param.catagories == "mushroom" ? "active" : ""}"><a href="Shop?catagories=mushroom">Mushrooms</a></li>
                         </form>

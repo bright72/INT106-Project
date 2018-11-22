@@ -88,7 +88,7 @@ public class ShopServlet extends HttpServlet {
                 List<Product> foundProduct = productCtrl.findByProducttype("Meat");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
-            } else if (catagories.equalsIgnoreCase("dairy product")) {
+            } else if (catagories.equalsIgnoreCase("dairy")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Dairy");
                 request.setAttribute("product", foundProduct);
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
