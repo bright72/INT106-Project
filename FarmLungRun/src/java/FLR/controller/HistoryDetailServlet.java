@@ -55,7 +55,7 @@ public class HistoryDetailServlet extends HttpServlet {
         List<Orderdetail> orderList = foundOrder.getOrderdetailList();
         System.out.println(orderList.size());
 
-        session.setAttribute("orderdetail", orderList);
+        request.setAttribute("orderdetail", orderList);
         session.setAttribute("message", "");
         getServletContext().getRequestDispatcher("/HistoryDetail.jsp").forward(request, response);
 
