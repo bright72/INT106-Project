@@ -11,10 +11,13 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import FLR.model.Account;
+import FLR.model.Orderdetail;
 import FLR.model.Orders;
+import FLR.model.controller.exceptions.IllegalOrphanException;
 import FLR.model.controller.exceptions.NonexistentEntityException;
 import FLR.model.controller.exceptions.PreexistingEntityException;
 import FLR.model.controller.exceptions.RollbackFailureException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -38,6 +41,9 @@ public class OrdersJpaController implements Serializable {
     }
 
     public void create(Orders orders) throws PreexistingEntityException, RollbackFailureException, Exception {
+        if (orders.getOrderdetailList() == null) {
+            orders.setOrderdetailList(new ArrayList<Orderdetail>());
+        }
         EntityManager em = null;
         try {
             utx.begin();
@@ -47,10 +53,25 @@ public class OrdersJpaController implements Serializable {
                 username = em.getReference(username.getClass(), username.getUsername());
                 orders.setUsername(username);
             }
+            List<Orderdetail> attachedOrderdetailList = new ArrayList<Orderdetail>();
+            for (Orderdetail orderdetailListOrderdetailToAttach : orders.getOrderdetailList()) {
+                orderdetailListOrderdetailToAttach = em.getReference(orderdetailListOrderdetailToAttach.getClass(), orderdetailListOrderdetailToAttach.getOrderdetailid());
+                attachedOrderdetailList.add(orderdetailListOrderdetailToAttach);
+            }
+            orders.setOrderdetailList(attachedOrderdetailList);
             em.persist(orders);
             if (username != null) {
                 username.getOrdersList().add(orders);
                 username = em.merge(username);
+            }
+            for (Orderdetail orderdetailListOrderdetail : orders.getOrderdetailList()) {
+                Orders oldOrderidOfOrderdetailListOrderdetail = orderdetailListOrderdetail.getOrderid();
+                orderdetailListOrderdetail.setOrderid(orders);
+                orderdetailListOrderdetail = em.merge(orderdetailListOrderdetail);
+                if (oldOrderidOfOrderdetailListOrderdetail != null) {
+                    oldOrderidOfOrderdetailListOrderdetail.getOrderdetailList().remove(orderdetailListOrderdetail);
+                    oldOrderidOfOrderdetailListOrderdetail = em.merge(oldOrderidOfOrderdetailListOrderdetail);
+                }
             }
             utx.commit();
         } catch (Exception ex) {
@@ -70,7 +91,7 @@ public class OrdersJpaController implements Serializable {
         }
     }
 
-    public void edit(Orders orders) throws NonexistentEntityException, RollbackFailureException, Exception {
+    public void edit(Orders orders) throws IllegalOrphanException, NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             utx.begin();
@@ -78,10 +99,31 @@ public class OrdersJpaController implements Serializable {
             Orders persistentOrders = em.find(Orders.class, orders.getOrderid());
             Account usernameOld = persistentOrders.getUsername();
             Account usernameNew = orders.getUsername();
+            List<Orderdetail> orderdetailListOld = persistentOrders.getOrderdetailList();
+            List<Orderdetail> orderdetailListNew = orders.getOrderdetailList();
+            List<String> illegalOrphanMessages = null;
+            for (Orderdetail orderdetailListOldOrderdetail : orderdetailListOld) {
+                if (!orderdetailListNew.contains(orderdetailListOldOrderdetail)) {
+                    if (illegalOrphanMessages == null) {
+                        illegalOrphanMessages = new ArrayList<String>();
+                    }
+                    illegalOrphanMessages.add("You must retain Orderdetail " + orderdetailListOldOrderdetail + " since its orderid field is not nullable.");
+                }
+            }
+            if (illegalOrphanMessages != null) {
+                throw new IllegalOrphanException(illegalOrphanMessages);
+            }
             if (usernameNew != null) {
                 usernameNew = em.getReference(usernameNew.getClass(), usernameNew.getUsername());
                 orders.setUsername(usernameNew);
             }
+            List<Orderdetail> attachedOrderdetailListNew = new ArrayList<Orderdetail>();
+            for (Orderdetail orderdetailListNewOrderdetailToAttach : orderdetailListNew) {
+                orderdetailListNewOrderdetailToAttach = em.getReference(orderdetailListNewOrderdetailToAttach.getClass(), orderdetailListNewOrderdetailToAttach.getOrderdetailid());
+                attachedOrderdetailListNew.add(orderdetailListNewOrderdetailToAttach);
+            }
+            orderdetailListNew = attachedOrderdetailListNew;
+            orders.setOrderdetailList(orderdetailListNew);
             orders = em.merge(orders);
             if (usernameOld != null && !usernameOld.equals(usernameNew)) {
                 usernameOld.getOrdersList().remove(orders);
@@ -90,6 +132,17 @@ public class OrdersJpaController implements Serializable {
             if (usernameNew != null && !usernameNew.equals(usernameOld)) {
                 usernameNew.getOrdersList().add(orders);
                 usernameNew = em.merge(usernameNew);
+            }
+            for (Orderdetail orderdetailListNewOrderdetail : orderdetailListNew) {
+                if (!orderdetailListOld.contains(orderdetailListNewOrderdetail)) {
+                    Orders oldOrderidOfOrderdetailListNewOrderdetail = orderdetailListNewOrderdetail.getOrderid();
+                    orderdetailListNewOrderdetail.setOrderid(orders);
+                    orderdetailListNewOrderdetail = em.merge(orderdetailListNewOrderdetail);
+                    if (oldOrderidOfOrderdetailListNewOrderdetail != null && !oldOrderidOfOrderdetailListNewOrderdetail.equals(orders)) {
+                        oldOrderidOfOrderdetailListNewOrderdetail.getOrderdetailList().remove(orderdetailListNewOrderdetail);
+                        oldOrderidOfOrderdetailListNewOrderdetail = em.merge(oldOrderidOfOrderdetailListNewOrderdetail);
+                    }
+                }
             }
             utx.commit();
         } catch (Exception ex) {
@@ -113,7 +166,7 @@ public class OrdersJpaController implements Serializable {
         }
     }
 
-    public void destroy(Integer id) throws NonexistentEntityException, RollbackFailureException, Exception {
+    public void destroy(Integer id) throws IllegalOrphanException, NonexistentEntityException, RollbackFailureException, Exception {
         EntityManager em = null;
         try {
             utx.begin();
@@ -124,6 +177,17 @@ public class OrdersJpaController implements Serializable {
                 orders.getOrderid();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The orders with id " + id + " no longer exists.", enfe);
+            }
+            List<String> illegalOrphanMessages = null;
+            List<Orderdetail> orderdetailListOrphanCheck = orders.getOrderdetailList();
+            for (Orderdetail orderdetailListOrphanCheckOrderdetail : orderdetailListOrphanCheck) {
+                if (illegalOrphanMessages == null) {
+                    illegalOrphanMessages = new ArrayList<String>();
+                }
+                illegalOrphanMessages.add("This Orders (" + orders + ") cannot be destroyed since the Orderdetail " + orderdetailListOrphanCheckOrderdetail + " in its orderdetailList field has a non-nullable orderid field.");
+            }
+            if (illegalOrphanMessages != null) {
+                throw new IllegalOrphanException(illegalOrphanMessages);
             }
             Account username = orders.getUsername();
             if (username != null) {

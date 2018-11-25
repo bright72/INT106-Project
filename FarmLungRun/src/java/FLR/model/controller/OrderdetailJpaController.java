@@ -11,6 +11,7 @@ import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import FLR.model.Orders;
 import FLR.model.Product;
 import FLR.model.controller.exceptions.NonexistentEntityException;
 import FLR.model.controller.exceptions.PreexistingEntityException;
@@ -42,12 +43,21 @@ public class OrderdetailJpaController implements Serializable {
         try {
             utx.begin();
             em = getEntityManager();
+            Orders orderid = orderdetail.getOrderid();
+            if (orderid != null) {
+                orderid = em.getReference(orderid.getClass(), orderid.getOrderid());
+                orderdetail.setOrderid(orderid);
+            }
             Product productcode = orderdetail.getProductcode();
             if (productcode != null) {
                 productcode = em.getReference(productcode.getClass(), productcode.getProductcode());
                 orderdetail.setProductcode(productcode);
             }
             em.persist(orderdetail);
+            if (orderid != null) {
+                orderid.getOrderdetailList().add(orderdetail);
+                orderid = em.merge(orderid);
+            }
             if (productcode != null) {
                 productcode.getOrderdetailList().add(orderdetail);
                 productcode = em.merge(productcode);
@@ -76,13 +86,27 @@ public class OrderdetailJpaController implements Serializable {
             utx.begin();
             em = getEntityManager();
             Orderdetail persistentOrderdetail = em.find(Orderdetail.class, orderdetail.getOrderdetailid());
+            Orders orderidOld = persistentOrderdetail.getOrderid();
+            Orders orderidNew = orderdetail.getOrderid();
             Product productcodeOld = persistentOrderdetail.getProductcode();
             Product productcodeNew = orderdetail.getProductcode();
+            if (orderidNew != null) {
+                orderidNew = em.getReference(orderidNew.getClass(), orderidNew.getOrderid());
+                orderdetail.setOrderid(orderidNew);
+            }
             if (productcodeNew != null) {
                 productcodeNew = em.getReference(productcodeNew.getClass(), productcodeNew.getProductcode());
                 orderdetail.setProductcode(productcodeNew);
             }
             orderdetail = em.merge(orderdetail);
+            if (orderidOld != null && !orderidOld.equals(orderidNew)) {
+                orderidOld.getOrderdetailList().remove(orderdetail);
+                orderidOld = em.merge(orderidOld);
+            }
+            if (orderidNew != null && !orderidNew.equals(orderidOld)) {
+                orderidNew.getOrderdetailList().add(orderdetail);
+                orderidNew = em.merge(orderidNew);
+            }
             if (productcodeOld != null && !productcodeOld.equals(productcodeNew)) {
                 productcodeOld.getOrderdetailList().remove(orderdetail);
                 productcodeOld = em.merge(productcodeOld);
@@ -124,6 +148,11 @@ public class OrderdetailJpaController implements Serializable {
                 orderdetail.getOrderdetailid();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The orderdetail with id " + id + " no longer exists.", enfe);
+            }
+            Orders orderid = orderdetail.getOrderid();
+            if (orderid != null) {
+                orderid.getOrderdetailList().remove(orderdetail);
+                orderid = em.merge(orderid);
             }
             Product productcode = orderdetail.getProductcode();
             if (productcode != null) {

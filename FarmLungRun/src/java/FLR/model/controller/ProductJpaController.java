@@ -204,16 +204,7 @@ public class ProductJpaController implements Serializable {
             em.close();
         }
     }
-
-    public Product findProduct(String id) {
-        EntityManager em = getEntityManager();
-        try {
-            return em.find(Product.class, id);
-        } finally {
-            em.close();
-        }
-    }
-
+    
     public List<Product> findByProductname(String name) {
         EntityManager em = getEntityManager();
         try {
@@ -250,8 +241,16 @@ public class ProductJpaController implements Serializable {
             em.close();
         }
     }
-    
-    
+
+    public Product findProduct(String id) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.find(Product.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
     public int getProductCount() {
         EntityManager em = getEntityManager();
         try {
@@ -264,5 +263,5 @@ public class ProductJpaController implements Serializable {
             em.close();
         }
     }
-
+    
 }
