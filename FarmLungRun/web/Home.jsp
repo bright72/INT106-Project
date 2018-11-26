@@ -77,7 +77,7 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="Shop?catagories=dairy product">
+                    <a href="Shop?catagories=Dairy Product">
                         <img src="img/banner/4.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
