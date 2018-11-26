@@ -86,13 +86,13 @@
                                     </div>
                                     <p style="color:red;">${message_checkout}</p>
                                 </div>    
-
-                                <div><input maxlength="13" type="text" placeholder="Card number"></div> <br>
-                                <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC">
-                                    <input style="width: 15%" maxlength="2" type="text" placeholder="MM"> / 
-                                    <input style="width: 15%" maxlength="2" type="text" placeholder="YY"></div> <br>
-
+                                
                                 <form action="Checkout" method="post">
+                                    
+                                    <div><input maxlength="13" type="text" placeholder="Card number" required pattern="[0-9]{13}"></div> <br>
+                                    <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC" required pattern="[0-9]{3}">
+                                        <input style="width: 15%" maxlength="2" type="text" placeholder="MM" required pattern="[0-9]{2}"> / 
+                                        <input style="width: 15%" maxlength="2" type="text" placeholder="YY" required pattern="[0-9]{2}"></div> <br>
 
                                     <div class="col-13 mb-3 ">                                    
                                         <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
