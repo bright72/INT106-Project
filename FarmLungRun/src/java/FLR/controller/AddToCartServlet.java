@@ -45,6 +45,7 @@ public class AddToCartServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(true);
+        String page = request.getParameter("page");
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
         if (cart == null) {
             cart = new ShoppingCart();
@@ -59,7 +60,26 @@ public class AddToCartServlet extends HttpServlet {
             cart.add(product);
         }
         //getServletContext().getRequestDispatcher("/ProductList").forward(request, response);
-        response.sendRedirect("Shop");
+        if (page.equals("shop")) {
+          response.sendRedirect("Shop");  
+        } else if (page.equals("vegetable")){
+            response.sendRedirect("Shop?catagories=vegetable");
+        } else if (page.equals("fruit")){
+            response.sendRedirect("Shop?catagories=fruit");
+        } else if (page.equals("meat")){
+            response.sendRedirect("Shop?catagories=meat");
+        } else if (page.equals("Dairy Product")){
+            response.sendRedirect("Shop?catagories=Dairy Product");
+        } else if (page.equals("egg")){
+            response.sendRedirect("Shop?catagories=egg");
+        } else if (page.equals("mushroom")){
+            response.sendRedirect("Shop?catagories=mushroom");
+        } else if (page.equals("all")){
+            response.sendRedirect("Shop");
+        } else {
+            response.sendRedirect("Product?productCode="+page);
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

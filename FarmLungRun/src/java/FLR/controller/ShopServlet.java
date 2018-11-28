@@ -79,31 +79,38 @@ public class ShopServlet extends HttpServlet {
             if (catagories.equalsIgnoreCase("vegetable")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Vegetable");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "vegetable");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("fruit")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Fruit");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "fruit");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("meat")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Meat");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "meat");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("Dairy Product")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Dairy");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "Dairy Product");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("egg")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Egg");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "egg");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             } else if (catagories.equalsIgnoreCase("mushroom")) {
                 List<Product> foundProduct = productCtrl.findByProducttype("Mushroom");
                 request.setAttribute("product", foundProduct);
+                request.setAttribute("page", "mushroom");
                 request.getRequestDispatcher("/shop.jsp").forward(request, response);
             }
         } else {
             List<Product> product = productCtrl.findProductEntities();
             request.setAttribute("product", product);
+            request.setAttribute("page", "all");
             request.getRequestDispatcher("/shop.jsp").forward(request, response);
         }
 

@@ -115,7 +115,7 @@
                                     <!-- Ratings & Cart -->
                                     <div class="ratings-cart text-right">                   
                                         <div class="cart">
-                                            <a href="AddToCart?productCode=${p.productcode}&&quantity=1" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                            <a href="AddToCart?productCode=${p.productcode}&&quantity=1&&page=${page}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
