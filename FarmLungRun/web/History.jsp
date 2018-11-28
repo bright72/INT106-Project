@@ -9,28 +9,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en th">
-
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
         <!-- Title  -->
         <title>Farm LungRun | Order History</title>
-
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
     </head>
 
     <body>
         <jsp:include page="include/nav.jsp?page=History"/>
-
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
                 <div>
@@ -45,8 +40,6 @@
                                         <th>Total Price</th>                   
                                     </tr>
                                 </thead>
-
-
                                 <c:forEach items="${accountorders}" var="o" varStatus="n">
                                     <tbody>
                                         <tr style="text-align: center">
@@ -73,33 +66,11 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <!--                    <div class="col-12 col-lg-4">
-                                            <div class="cart-summary">
-                                                <h5>Cart Total</h5>
-                                                <ul class="summary-table">
-                                                    <li><span>subtotal:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
-                                                    <li><span>delivery:</span> <span>Free</span></li>
-                                                    <li><span>total:</span> <span>${sessionScope.cart == null ? "0 " : " "}${cart.totalPrice}฿</span></li>
-                                                </ul>             
-                                                <div class="cart-btn">
-                    <c:if test="${cart==null}">
-                        <p style="color: red;">${message_checkout}</p>
-                        <a href="Checkout" class="btn amado-btn w-100">Checkout</a>
-                    </c:if>
-                    <c:if test="${cart!=null}">
-                        <a href="checkout.jsp" class="btn amado-btn w-100">Checkout</a>
-                    </c:if>
-                </div>
-            </div>
-        </div>-->
                 </div>
             </div>
         </div>
     </div>
 </body>
-
 <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
 <script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
@@ -110,8 +81,6 @@
 <script src="js/plugins.js"></script>
 <!-- Active js -->
 <script src="js/active.js"></script>
-
 <jsp:include page="include/footer.jsp?page=Cart"/>
-
 </html>  
 

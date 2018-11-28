@@ -8,34 +8,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en th">
-
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <!-- Title  -->
         <title>Farm LungRun | Home</title>
-
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
-
     </head>
-
     <body>
-
-
         <jsp:include page="include/nav.jsp?page=Home"/>
-
         <!-- Product Catagories Area Start -->
         <div class="products-catagories-area clearfix">
             <div class="amado-pro-catagory clearfix">
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="Shop">
@@ -48,7 +38,6 @@
                         </div>
                     </a>
                 </div>
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="Product?productCode=V_1005">
@@ -61,7 +50,6 @@
                         </div>
                     </a>
                 </div>
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="About">
@@ -74,7 +62,6 @@
                         </div>
                     </a>
                 </div>
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="Shop?catagories=Dairy Product">
@@ -87,7 +74,6 @@
                         </div>
                     </a>
                 </div>
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="Shop?catagories=Meat">
@@ -100,7 +86,6 @@
                         </div>
                     </a>
                 </div>
-
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
                     <a href="Shop?catagories=Fruit">
@@ -113,13 +98,11 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
         <!-- Product Catagories Area End -->
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
-
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->

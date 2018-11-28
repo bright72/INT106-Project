@@ -27,7 +27,6 @@
                 <div style="margin-top: 5%; width: auto"><h1 style="color: red">${message}</h1></div>
                 <br>
             </c:if>
-
             <div style="width: 60%">
                 <c:if test="${param.search=='true'}">
                     <div style="margin: 3%"><h1>${message}</h1>
@@ -46,7 +45,6 @@
                                                 <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
                                             </a>
                                         </div>
-
                                         <!-- Product Description -->
                                         <div class="product-description d-flex align-items-center justify-content-between">
                                             <!-- Product Meta Data -->
@@ -73,17 +71,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </c:forEach>
                         </div>
-
                     </c:if>
                 </div>
             </div>
         </div>
-
-
         <jsp:include page="include/footer.jsp"/>
         <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
         <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -95,7 +88,5 @@
         <script src="js/plugins.js"></script>
         <!-- Active js -->
         <script src="js/active.js"></script>
-
-
     </body>
 </html>

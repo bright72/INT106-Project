@@ -15,21 +15,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
         <!-- Title  -->
         <title>Farm LungRun | Cart</title>
-
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
     </head>
 
     <body>
         <jsp:include page="include/nav.jsp?page=Cart"/>
-
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
                 <div class="row">
@@ -37,7 +33,6 @@
                         <div class="cart-title mt-50">
                             <h2>Shopping Cart</h2>
                         </div>
-
                         <div class="cart-table clearfix">
                             <table class="table table-responsive">
                                 <thead>
@@ -48,8 +43,6 @@
                                         <th>Quantity</th>                   
                                     </tr>
                                 </thead>
-
-
                                 <c:forEach items="${sessionScope.cart.lineItems}" var="p" varStatus="n">
                                     <tbody>
                                         <tr style="text-align: center">
@@ -110,7 +103,6 @@
         </div>
     </div>
 </body>
-
 <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
 <script src="js/jquery/jquery-2.2.4.min.js"></script>
 <!-- Popper js -->
@@ -121,7 +113,5 @@
 <script src="js/plugins.js"></script>
 <!-- Active js -->
 <script src="js/active.js"></script>
-
 <jsp:include page="include/footer.jsp?page=Cart"/>
-
 </html>  

@@ -11,14 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Farm LungRun | Register</title></title>
-
     <!-- Favicon  -->
     <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
     <link rel="icon" href="img/LOGO.PNG">
-
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
-
 </head>
 <body>
     <c:if test="${success == null}">

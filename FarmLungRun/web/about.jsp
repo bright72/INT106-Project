@@ -10,43 +10,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Farm LungRun | About</title></title>
-
     <!-- Favicon  -->
     <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
     <link rel="icon" href="img/LOGO.PNG">
-
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">   
 </head>
 
 <body>
     <div>
-        <jsp:include page="include/nav.jsp?page=About"/>
-        <!--        <div style="width: 75%; padding :2%">
-                    <h1>About Page</h1>  
-                    <br>
-                    <h5>Our story</h5>
-                    <p>We founded in 2018</p>
-                    <p>FarmLungRun made by Run Earn Bright</p>
-                    <br>
-                    <h5>Location</h5>
-                    <div style="width: 70%; height: 50% ; "><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=13.6526803,100.4937294&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Add map to website</a></iframe></div>
-                </div>-->
-
-        <!--        <div class=" mt-50">
-                    <div class="cart-title">
-                        <h2>About Page</h2>
-                    </div>
-                    <div>
-                        <h5>Our story</h5>
-                        <p>We founded in 2018</p>
-                        <p>FarmLungRun made by Run Earn Bright</p>
-                        <br>
-                        <h5>Location</h5>
-                        <div style="width: 70%; height: 50% ; "><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=13.6526803,100.4937294&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/create-google-map/">Add map to website</a></iframe></div>
-                    </div>                
-                </div>-->
-
+        <jsp:include page="include/nav.jsp?page=About"/>        
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
                 <div class="row">             
@@ -54,7 +27,6 @@
                         <div class="cart-title">
                             <h2>About Page</h2>
                         </div>
-
                         <div>
                             <h5>Our story</h5>
                             <p>We founded in 2018</p>

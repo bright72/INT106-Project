@@ -15,14 +15,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
         <!-- Title  -->
         <title>Farm LungRun | Checkout</title>
-
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
 
@@ -79,9 +76,7 @@
             <jsp:include page="include/footer.jsp?page=Checkout"/>         
         </body>   
     </c:if> 
-
     <!-- ##### Main Content Wrapper End ##### -->
-
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->

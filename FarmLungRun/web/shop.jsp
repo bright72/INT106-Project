@@ -24,10 +24,9 @@
 
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
-
     </head>
-
     <body>
+        <div>
         <jsp:include page="include/nav.jsp?page=Shop"/>
 
         <div class="shop_sidebar_area">
@@ -50,12 +49,10 @@
                     </ul>
                 </div>
             </div>
-
             <!-- ##### Single Widget ##### -->
             <div class="widget price mb-50">
                 <!-- Widget Title -->
                 <h6 class="widget-title mb-30">Price Range</h6>
-
                 <div class="widget-desc">
                     <form action="Shop">
                         <select name="range">
@@ -70,8 +67,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-
+        </div>       
         <div class="amado_product_area section-padding-100" style="padding:1%">
             <div class="container-fluid" style="width: 109%">
                 <div class="row">
@@ -81,16 +77,12 @@
                             <div class="total-products">
                                 <h3>Product</h3> 
                             </div>
-
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <c:forEach  items="${product}" var="p" varStatus="n">
-
                         <!-- Single Product Area -->
-
                         <div class="col-12 col-sm-6 col-md-12 col-xl-6" style="margin: auto">
                             <div class="single-product-wrapper">
                                 <!-- Product Image -->
@@ -101,7 +93,6 @@
                                     <img class="hover-img" style="transform: scale(1.0)" src="img/${p.productcode}.png" alt="">
                                     </a>
                                 </div>
-
                                 <!-- Product Description -->
                                 <div class="product-description d-flex align-items-center justify-content-between">
                                     <!-- Product Meta Data -->
@@ -122,28 +113,12 @@
                             </div>
                         </div>
                     </c:forEach>
-                </div>                
-<!--                <div class="row">
-                    <div class="col-12">
-                         Pagination 
-                        <nav aria-label="navigation">
-                            <ul class="pagination justify-content-end mt-50">
-                                <li class="page-item active"><a class="page-link" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item"><a class="page-link" href="#">04</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>-->
+                </div> 
             </div>   
         </div>
     </div>
-
     <!-- ##### Main Content Wrapper End ##### -->
-
     <jsp:include page="include/footer.jsp?page=Shop"/>
-
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
@@ -154,7 +129,5 @@
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-
 </body>
-
 </html>

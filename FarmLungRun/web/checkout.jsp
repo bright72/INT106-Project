@@ -15,14 +15,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
         <!-- Title  -->
         <title>Farm LungRun | Checkout</title>
-
         <!-- Favicon  -->
         <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
         <link rel="icon" href="img/LOGO.PNG">
-
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
 
@@ -38,7 +35,6 @@
                                 <div class="cart-title">
                                     <h2>Checkout</h2>
                                 </div>
-
                                 <div>
                                     <h5>Your Address information</h5>
                                     <p>${sessionScope.account.fname} ${sessionScope.account.lname}</p>
@@ -63,7 +59,6 @@
                                             <input name="Country" type="text" class="form-control" placeholder="Country" required>
                                         </div>
                                     </div>
-
                                     <div class="cart-btn">
                                         <input type="submit"class="btn amado-btn w-100"value="Update My Address">
                                     </div>
@@ -85,22 +80,18 @@
                                         <label class="custom-control-label" for="paypal">Credit Card <img class="ml-15" src="img/core-img/paypal.png" alt=""></label>
                                     </div>
                                     <p style="color:red;">${message_checkout}</p>
-                                </div>    
-                                
-                                <form action="Checkout" method="post">
-                                    
+                                </div>                                  
+                                <form action="Checkout" method="post">                                    
                                     <div><input maxlength="13" type="text" placeholder="Card number" required pattern="[0-9]{13}"></div> <br>
                                     <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC" required pattern="[0-9]{3}">
                                         <input style="width: 15%" maxlength="2" type="text" placeholder="MM" required pattern="[0-9]{2}"> / 
                                         <input style="width: 15%" maxlength="2" type="text" placeholder="YY" required pattern="[0-9]{2}"></div> <br>
-
                                     <div class="col-13 mb-3 ">                                    
                                         <textarea name="comment" class="form-control w-100" id="comment" cols="10" rows="3" placeholder="Leave a comment about your order"></textarea>
                                     </div>
                                     <div class="cart-btn">
                                         <input type="submit"class="btn amado-btn w-100"value="Checkout">
                                     </div>
-
                                 </form>
                             </div>
                         </div> 
@@ -110,12 +101,9 @@
         </div>
         <jsp:include page="include/footer.jsp?page=Checkout"/>
         </body>
-
     </c:if>
-
     <c:if test="${success != null}">
-        <body style="background-color: #565656" >
-        
+        <body style="background-color: #565656" >        
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -131,10 +119,7 @@
             </div>
         </body>
     </c:if>
-
     <!-- ##### Main Content Wrapper End ##### -->
-
-
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
