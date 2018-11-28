@@ -75,6 +75,8 @@ insert into product values
 insert into product values
 ('E_4003','Quail Egg',74,'Egg','Quail Eggs from our farm are fresh and good for everybody life, why? because we take care our quails with our love <3');
 insert into product values
+('E_4004','Goose Egg',240,'Egg','Goose Eggs from our farm are fresh and good for everybody life, why? because we take care our geese with our love <3');
+insert into product values
 ('M_5001','Pork',139,'Meat','Pork from our farm is fresh and good for everybody life, why? because we take care our pigs with our love <3');
 insert into product values
 ('M_5002','Beef',985,'Meat','Beef from our farm is fresh and good for everybody life, why? because we take care our cows with our love <3');
