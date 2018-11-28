@@ -25,11 +25,12 @@
 
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
-
+        
     </head>
     <c:if test="${success == null}">
-        <body>
-            <jsp:include page="include/nav.jsp?page=Checkout"/>
+        <body>  
+            <div>
+            <jsp:include page="include/nav.jsp?page=Checkout"/>               
             <div class="cart-table-area section-padding-100">
                 <div class="container-fluid">
                     <div class="row">             
@@ -37,7 +38,6 @@
                             <div class="cart-title">
                                 <h2>My Account</h2>
                             </div>
-
                             <div>
                                 <h5>Your Address information</h5>
                                 <p>${sessionScope.account.fname} ${sessionScope.account.lname}</p>
@@ -62,7 +62,6 @@
                                         <input name="Country" type="text" class="form-control" placeholder="Country" required>
                                     </div>
                                 </div>
-
                                 <div class="cart-btn">
                                     <input type="submit"class="btn amado-btn w-100"value="Update My Address">
                                 </div>
@@ -70,13 +69,13 @@
                         </div>                        
                     </div>                
                 </div>
+            </div> 
             </div>
-        <jsp:include page="include/footer.jsp?page=Checkout"/>
-    </body>
-</c:if>
+        <jsp:include page="include/footer.jsp?page=Checkout"/>         
+    </body>   
+</c:if> 
 
 <!-- ##### Main Content Wrapper End ##### -->
-
 
 <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
 <script src="js/jquery/jquery-2.2.4.min.js"></script>
@@ -88,5 +87,4 @@
 <script src="js/plugins.js"></script>
 <!-- Active js -->
 <script src="js/active.js"></script>
-</body>
 </html>
