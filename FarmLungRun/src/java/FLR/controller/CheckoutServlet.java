@@ -22,6 +22,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -71,15 +72,10 @@ public class CheckoutServlet extends HttpServlet {
             OrdersJpaController ordersCtrl = new OrdersJpaController(utx, emf);
             OrderdetailJpaController orderdetailCtrl = new OrderdetailJpaController(utx, emf);
             String comment = request.getParameter("comment");
-
-            List<LineItem> lineItemList = cart.getLineItems();
-
+            List<LineItem> lineItemList = cart.getLineItems(); 
             Orders orders = new Orders();
-            if (ordersCtrl.getOrdersCount() == 0) {
-                orders.setOrderid(1);
-            } else {
-                orders.setOrderid(ordersCtrl.getOrdersCount() + 1);
-            }
+
+            orders.setOrderid(genOrderId());
             orders.setComment(comment);
             orders.setOrderdate(new Date());
             orders.setUsername(account);
@@ -123,6 +119,24 @@ public class CheckoutServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/checkout.jsp").forward(request, response);
         }
 
+    }
+
+    private int genOrderId() {
+        Random rd = new Random();
+        String orderId = "1001";
+        int intorderId = 0;
+        OrdersJpaController ordersCtrl = new OrdersJpaController(utx, emf);
+        Orders order = new Orders();
+        while(order != null){
+        while(orderId.length() !=7) {
+            int code = rd.nextInt(10);
+            String stCode = String.valueOf(code);
+            orderId = orderId + stCode;
+            intorderId = Integer.parseInt(orderId);
+        }
+        order = ordersCtrl.findOrders(intorderId);
+        }
+        return intorderId;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
