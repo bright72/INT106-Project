@@ -123,9 +123,9 @@
                         </div>
                     </c:forEach>
                 </div>                
-                <div class="row">
+<!--                <div class="row">
                     <div class="col-12">
-                        <!-- Pagination -->
+                         Pagination 
                         <nav aria-label="navigation">
                             <ul class="pagination justify-content-end mt-50">
                                 <li class="page-item active"><a class="page-link" href="#">01</a></li>
@@ -135,7 +135,7 @@
                             </ul>
                         </nav>
                     </div>
-                </div>
+                </div>-->
             </div>   
         </div>
     </div>
