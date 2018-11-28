@@ -24,8 +24,8 @@
         <link rel="stylesheet" href="css/core-style.css">
 
     </head>
-     <c:if test="${success == null}">
-    <body>
+    <c:if test="${success == null}">
+        <body>
             <jsp:include page="include/nav.jsp?page=Checkout"/>
             <div class="cart-table-area section-padding-100">
                 <div class="container-fluid">
@@ -100,35 +100,39 @@
             </div>
         </div>
         <jsp:include page="include/footer.jsp?page=Checkout"/>
-        </body>
-    </c:if>
-    <c:if test="${success != null}">
-        <body style="background-color: #565656" >        
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Success Checkout</h5>                    
+    </body>
+</c:if>
+<c:if test="${success != null}"> 
+    <body>
+        <div style="padding:5%" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Success Checkout</h5>                    
+                </div>
+                <div class="modal-body" style="padding:4%" >
+                    <div style="text-align: center">
+                        <img src="img/checked.png" width="128px" height="128px"><br>		   		   
+                    <p class="text-center text-muted">Your order has been successful!</p>
+                    <div class="text-center">
+                        <a href="History"> <button type="submit" class="btn btn-primary">See my order</button></a>                    
                     </div>
-                    <div class="modal-body">
-                        <p class="text-center text-muted">Your order has been successful!</p>
-                        <div class="text-center">
-                            <a href="History"> <button type="submit" class="btn btn-primary">See my order</button></a>                    
-                        </div>
                     </div>
                 </div>
             </div>
-        </body>
-    </c:if>
-    <!-- ##### Main Content Wrapper End ##### -->
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+        </div>
+        <jsp:include page="include/footer.jsp?page=Home"/>
+</body>
+</c:if>
+<!-- ##### Main Content Wrapper End ##### -->
+<!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="js/plugins.js"></script>
+<!-- Active js -->
+<script src="js/active.js"></script>
 </body>
 </html>
