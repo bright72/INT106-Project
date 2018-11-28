@@ -64,7 +64,9 @@
                                             </td>
                                             <td class="cart_product_desc" >   
                                                 <div class="quantity">
+                                                    <a class="qty-minus"><i class="fa fa-minus" aria-hidden="true"></i></a>
                                                     <span>${p.quantity}</span>
+                                                    <a class="qty-plus" href="AddToCart?productCode=${p.product.productcode}&&quantity=1&&page=cart"><i class="fa fa-plus" aria-hidden="true"></i></a>
                                                     <a href="RemoveFromCart?productcode=${p.product.productcode}">
                                                        <button type="button" class="close" >
                                                             <span aria-hidden="true">&times;</span>

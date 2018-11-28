@@ -76,6 +76,8 @@ public class AddToCartServlet extends HttpServlet {
             response.sendRedirect("Shop?catagories=mushroom");
         } else if (page.equals("all")){
             response.sendRedirect("Shop");
+        } else if (page.equals("cart")){
+            response.sendRedirect("Cart");
         } else {
             response.sendRedirect("Product?productCode="+page);
         }
