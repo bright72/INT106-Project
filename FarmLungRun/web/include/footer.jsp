@@ -35,7 +35,6 @@
                             <!-- Footer Menu -->
                             <div class="footer_menu">
                                 <nav class="navbar navbar-expand-lg justify-content-end">
-         
                                     <div >
                                         <ul class="navbar-nav ml-auto">
                                             <li class="nav-item ${param.page == "Home" ? "active" : ""}">
