@@ -117,28 +117,6 @@
             </div>
         </div>
         <!-- Product Catagories Area End -->
-
-        <!--         Product Catagories Area Start 
-                <div class="products-catagories-area clearfix">
-                    <div class="amado-pro-catagory clearfix">
-        
-        <c:forEach items="${product}" var="p" varStatus="n">
-            <div class="single-products-catagory clearfix">
-                <a href="shop.html">
-                    <a href="Product?productCode=${p.productcode}"><img src="img/${p.productcode}.png" alt=""></a>
-                     Hover Content 
-                    <div class="hover-content">
-                        <div class="line"></div>
-                        <p>From ${p.productprice} ฿</p>
-                        <h4>${p.productname}</h4>
-                    </div>
-                </a>
-            </div>
-        </c:forEach>
-
-    </div>
-</div>-->
-        <!-- Product Catagories Area End -->
     </div>
     <!-- ##### Main Content Wrapper End ##### -->
 

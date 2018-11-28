@@ -18,8 +18,8 @@
         <!-- Core Style CSS -->
         <link rel="stylesheet" href="css/core-style.css">
     </head>
-    <body style="background-color: #565656" >
-<div style="padding:5%">
+    <body>
+        <div style="padding:5%">
             <div class="modal-content"  >
                 <div class="modal-header">
                     <h5 class="modal-title">Customer login</h5>
@@ -28,7 +28,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </a>
-                    <!--<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>-->
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="Login" method="post">
@@ -47,11 +47,12 @@
                     </form>
                     <p class="text-center text-muted">Not registered yet?</p>
                     <div class="text-center">
-                        <!--<button type="submit" class="btn btn-primary" href="Register"><i class="fa fa-user-md"></i> Register</button>-->
+                        <button type="submit" class="btn btn-primary" href="Register"><i class="fa fa-user-md"></i> Register</button>
                         <a href="Register"><button class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button></a>
                     </div>
                 </div>
             </div>
      </div>
-    </body>
+     <jsp:include page="include/footer.jsp?page=Home"/>
+</body>
 </html>
