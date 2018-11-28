@@ -104,6 +104,10 @@
         <servlet-name>AccountDetailServlet</servlet-name>
         <servlet-class>FLR.controller.AccountDetailServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MinusFromCartServlet</servlet-name>
+        <servlet-class>FLR.controller.MinusFromCartServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -167,6 +171,10 @@
     <servlet-mapping>
         <servlet-name>AccountDetailServlet</servlet-name>
         <url-pattern>/AccountDetail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MinusFromCartServlet</servlet-name>
+        <url-pattern>/MinusFromCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
