@@ -86,6 +86,10 @@ insert into product values
 ('M_5005','Duck Meat',390,'Meat','Duck Meat from our farm is fresh and good for everybody life, why? because we take care our ducks with our love <3');
 insert into product values
 ('M_5006','Salmon',630,'Meat','Salmon from our farm is fresh and good for everybody life, why? because we take care our salmons with our love <3');
+insert into product values
+('R_6001','Eringii Mushroom',250,'Mushroom','Mushroom from our farm is fresh and good for everybody life, why? because we growth our mushroom with our love <3');
+insert into product values
+('R_6002','Shitake Mushroom',250,'Mushroom','Mushroom from our farm is fresh and good for everybody life, why? because we growth our mushroom with our love <3');
 
 drop table orderDetail;
 
