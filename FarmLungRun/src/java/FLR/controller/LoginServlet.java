@@ -78,8 +78,11 @@ public class LoginServlet extends HttpServlet {
                         } else if(page.equals("shop")){
                             response.sendRedirect("Shop");
                             return;
-                        } else {
+                        } else if(page.equals("home")){
                             response.sendRedirect("Home");
+                            return;
+                        } else {
+                            response.sendRedirect("Product?productCode="+page);
                             return;
                         }
                     } else {

@@ -49,6 +49,7 @@ public class ProductDetail extends HttpServlet {
         } else {
             ProductJpaController productCtrl = new ProductJpaController(utx, emf);
             Product product = productCtrl.findProduct(productCode);
+            session.setAttribute("page", productCode);
             session.setAttribute("product", product);
             getServletContext().getRequestDispatcher("/product-details.jsp").forward(request, response);
         }

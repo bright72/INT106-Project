@@ -90,7 +90,7 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="Shop?catagories=meat">
+                    <a href="Shop?catagories=Meat">
                         <img src="img/banner/5.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
@@ -103,7 +103,7 @@
 
                 <!-- Single Catagory -->
                 <div class="single-products-catagory clearfix">
-                    <a href="Shop?catagories=fruit">
+                    <a href="Shop?catagories=Fruit">
                         <img src="img/banner/6.jpg" alt="">
                         <!-- Hover Content -->
                         <div class="hover-content">
