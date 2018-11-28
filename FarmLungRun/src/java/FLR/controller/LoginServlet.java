@@ -47,15 +47,15 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+        String page = (String) session.getAttribute("page");
+        System.out.println(page);
+
 //        String url = null;
 //        if (request.getHeader("Referer") != "http://localhost:8080/FarmLungRun/Login" ) {
 //           url = request.getHeader("Referer"); 
 //           System.out.println(">>"+url);
 //        }
-        
-        
-        if (session.getAttribute("account") != null){
+        if (session.getAttribute("account") != null) {
             session.setAttribute("message", "");
             response.sendRedirect("Home");
             return;
@@ -67,18 +67,25 @@ public class LoginServlet extends HttpServlet {
                 AccountJpaController accountCtrl = new AccountJpaController(utx, emf);
                 Account account = accountCtrl.findAccount(username);
                 if (account != null) {
-                    if (cryptWithMD5(password).equals(account.getEncryptedpassword())){
-                        
+                    if (cryptWithMD5(password).equals(account.getEncryptedpassword())) {
+
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
                         //session.setMaxInactiveInterval(60*60); //เพิ่ม session timeout
-                        response.sendRedirect("Home");
-                        //response.sendRedirect(url);
-                        return;
+                        if (page.equals("about")) {
+                            response.sendRedirect("About");
+                            return;
+                        } else if(page.equals("shop")){
+                            response.sendRedirect("Shop");
+                            return;
+                        } else {
+                            response.sendRedirect("Home");
+                            return;
+                        }
                     } else {
                         session.setAttribute("message", "invalid password");
-                    getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
-                    } 
+                        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+                    }
                 } else {
                     session.setAttribute("message", "invalid username");
                     getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);

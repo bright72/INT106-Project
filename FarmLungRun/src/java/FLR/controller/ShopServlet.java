@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 /**
@@ -44,6 +45,7 @@ public class ShopServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         String range = request.getParameter("range");
         String catagories = request.getParameter("catagories");
         ProductJpaController productCtrl = new ProductJpaController(utx, emf);
@@ -52,6 +54,9 @@ public class ShopServlet extends HttpServlet {
 //        List<Product> product = productJpaCtrl.findProductEntities();
 //        request.setAttribute("product", product);
 //        getServletContext().getRequestDispatcher("/shop.jsp").forward(request, response);
+
+        session.setAttribute("page", "shop");
+
         if (range != null) {
             if (range.equalsIgnoreCase("1")) {
                 List<Product> foundProduct = productCtrl.findByProductprice("1", "50");

@@ -40,12 +40,12 @@
                     <ul>
                         <form action="Shop">
                             <li class="${param.catagories == null ? "active" : ""}"><a href="Shop">All</a></li>
-                            <li class="${param.catagories == "vegetable" ? "active" : ""}"><a href="Shop?catagories=vegetable">Vegetables</a></li>
-                            <li class="${param.catagories == "fruit" ? "active" : ""}"><a href="Shop?catagories=fruit">Fruits</a></li>
-                            <li class="${param.catagories == "meat" ? "active" : ""}"><a href="Shop?catagories=meat">Meat</a></li>
+                            <li class="${param.catagories == "Vegetable" ? "active" : ""}"><a href="Shop?catagories=Vegetable">Vegetables</a></li>
+                            <li class="${param.catagories == "Fruit" ? "active" : ""}"><a href="Shop?catagories=Fruit">Fruits</a></li>
+                            <li class="${param.catagories == "Meat" ? "active" : ""}"><a href="Shop?catagories=Meat">Meat</a></li>
                             <li class="${param.catagories == "Dairy Product" ? "active" : ""}"><a href="Shop?catagories=Dairy Product">Dairy</a></li>
-                            <li class="${param.catagories == "egg" ? "active" : ""}"><a href="Shop?catagories=egg">Eggs</a></li>
-                            <li class="${param.catagories == "mushroom" ? "active" : ""}"><a href="Shop?catagories=mushroom">Mushrooms</a></li>
+                            <li class="${param.catagories == "Egg" ? "active" : ""}"><a href="Shop?catagories=Egg">Eggs</a></li>
+                            <li class="${param.catagories == "Mushroom" ? "active" : ""}"><a href="Shop?catagories=Mushroom">Mushrooms</a></li>
                         </form>
                     </ul>
                 </div>
