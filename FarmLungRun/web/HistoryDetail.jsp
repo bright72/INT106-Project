@@ -33,8 +33,8 @@
 
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-8">
+                <div>
+                    <div>
                         <div class="cart-title mt-50">
                             <h2>Orders History</h2>
                         </div>
