@@ -71,7 +71,6 @@
                     </div>                
                 </div>
             </div>
-        </div>
         <jsp:include page="include/footer.jsp?page=Checkout"/>
     </body>
 </c:if>
