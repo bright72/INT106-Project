@@ -32,9 +32,11 @@
                             <p>We founded in 2018</p>
                             <p>FarmLungRun made by Run Earn Bright</p>
                             <br>
-                            <h5>Location</h5>                           
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d969.2712508088918!2d100.493081!3d13.652593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2fd829cd26be9e23!2sSchool+of+Information+Technology%2C+KMUTT!5e0!3m2!1sen!2sus!4v1543401179656" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                            
-                        </div>
+                            <h5>Location</h5>  
+                            <div style="text-align: center">
+                            <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d969.2712508088918!2d100.493081!3d13.652593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2fd829cd26be9e23!2sSchool+of+Information+Technology%2C+KMUTT!5e0!3m2!1sen!2sus!4v1543401179656" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                            
+                            </div>
+                            </div>
                     </div>                        
                 </div>                
             </div>

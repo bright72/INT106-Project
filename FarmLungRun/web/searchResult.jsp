@@ -23,55 +23,59 @@
         <div>
             <jsp:include page="include/nav.jsp"/>
             <br>   
-            <c:if test="${param.search!='true'}">
-                <div style="margin-top: 5%; width: auto"><h1 style="color: red">${message}</h1></div>
-                <br>
-            </c:if>
-            <div style="width: 60%">
-                <c:if test="${param.search=='true'}">
-                    <div style="margin: 3%"><h1>${message}</h1>
-                        <hr>
+            <div class="single-product-area  clearfix">
+                <div class="container-fluid">
+                    <c:if test="${param.search!='true'}">
+                        <div style="margin-top: 5%; width: auto"><h1 style="color: red">${message}</h1></div>
                         <br>
-                        <div class="row">
-                            <c:forEach items="${foundProduct}" var="fp" varStatus="fc">                           
-                                <!-- Single Product Area -->
-                                <div class="col-12 col-sm-6 col-md-12 col-xl-6">
-                                    <div class="single-product-wrapper">
-                                        <!-- Product Image -->
-                                        <div class="product-img">
-                                            <a href="Product?productCode=${fp.productcode}">
-                                                <img src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
-                                                <!-- Hover Thumb -->
-                                                <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
-                                            </a>
-                                        </div>
-                                        <!-- Product Description -->
-                                        <div class="product-description d-flex align-items-center justify-content-between">
-                                            <!-- Product Meta Data -->
-                                            <div class="product-meta-data">
-                                                <div class="line"></div>
-                                                <p class="product-price">${fp.productprice}</p>
-                                                <a href="product-details.html">
-                                                    <h6>${fp.productname}</h6>
-                                                </a>
-                                            </div>
-                                            <!-- Ratings & Cart -->
-                                            <div class="ratings-cart text-right">
-                                                <div class="ratings">
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                    </c:if>
+                    <div>
+                        <c:if test="${param.search=='true'}">
+                            <div style="margin: 3%"><h1>${message}</h1>
+                                <hr>
+                                <br>                        
+                                <div class="row">
+                                    <c:forEach items="${foundProduct}" var="fp" varStatus="fc">                           
+                                        <!-- Single Product Area -->
+                                        <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+                                            <div class="single-product-wrapper">
+                                                <!-- Product Image -->
+                                                <div class="product-img">
+                                                    <a href="Product?productCode=${fp.productcode}">
+                                                        <img src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
+                                                        <!-- Hover Thumb -->
+                                                        <img class="hover-img" src="img/${fp.productcode}.png" alt="img/${fp.productcode}.png">
+                                                    </a>
                                                 </div>
-                                                <div class="cart">
-                                                    <a href="AddToCart?productCode=${fp.productcode}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                                <!-- Product Description -->
+                                                <div class="product-description d-flex align-items-center justify-content-between">
+                                                    <!-- Product Meta Data -->
+                                                    <div class="product-meta-data">
+                                                        <div class="line"></div>
+                                                        <p class="product-price">${fp.productprice}</p>
+                                                        <a href="product-details.html">
+                                                            <h6>${fp.productname}</h6>
+                                                        </a>
+                                                    </div>
+                                                    <!-- Ratings & Cart -->
+                                                    <div class="ratings-cart text-right">
+                                                        <div class="ratings">
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                                        </div>
+                                                        <div class="cart">
+                                                            <a href="AddToCart?productCode=${fp.productcode}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </c:forEach>                                
                                 </div>
-                            </c:forEach>
+                            </div>
                         </div>
                     </c:if>
                 </div>
