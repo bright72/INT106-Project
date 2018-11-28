@@ -69,7 +69,7 @@
             </div>
         </div>       
         <div class="amado_product_area section-padding-100" style="padding:1%">
-            <div class="container-fluid" style="width: 109%">
+            <div class="container-fluid " style="width: 109%;padding-top: 5%">
                 <div class="row">
                     <div class="col-12">
                         <div class="product-topbar d-xl-flex align-items-end justify-content-between">

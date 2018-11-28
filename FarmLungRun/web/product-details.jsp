@@ -25,7 +25,7 @@
 <body>
     <jsp:include page="include/nav.jsp?page=Cart"/>
         <!-- Product Details Area Start -->
-        <div class="single-product-area section-padding-100 clearfix">
+        <div class="single-product-area clearfix">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">

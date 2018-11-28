@@ -23,7 +23,7 @@
         <div>
             <jsp:include page="include/nav.jsp"/>
             <br>   
-            <div class="single-product-area  clearfix">
+            <div class="single-product-area clearfix">
                 <div class="container-fluid">
                     <c:if test="${param.search!='true'}">
                         <div style="margin-top: 5%; width: auto"><h1 style="color: red">${message}</h1></div>
