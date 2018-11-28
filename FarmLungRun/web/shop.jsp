@@ -27,107 +27,115 @@
     </head>
     <body>
         <div>
-        <jsp:include page="include/nav.jsp?page=Shop"/>
+            <jsp:include page="include/nav.jsp?page=Shop"/>
 
-        <div class="shop_sidebar_area">
-            <!-- ##### Single Widget ##### -->
-            <div class="widget catagory mb-50">
-                <!-- Widget Title -->
-                <h6 class="widget-title mb-30">Catagories</h6>
-                <!--  Catagories  -->
-                <div class="catagories-menu">
-                    <ul>
-                        <form action="Shop">
-                            <li class="${param.catagories == null ? "active" : ""}"><a href="Shop">All</a></li>
-                            <li class="${param.catagories == "Vegetable" ? "active" : ""}"><a href="Shop?catagories=Vegetable">Vegetables</a></li>
-                            <li class="${param.catagories == "Fruit" ? "active" : ""}"><a href="Shop?catagories=Fruit">Fruits</a></li>
-                            <li class="${param.catagories == "Meat" ? "active" : ""}"><a href="Shop?catagories=Meat">Meat</a></li>
-                            <li class="${param.catagories == "Dairy Product" ? "active" : ""}"><a href="Shop?catagories=Dairy Product">Dairy</a></li>
-                            <li class="${param.catagories == "Egg" ? "active" : ""}"><a href="Shop?catagories=Egg">Eggs</a></li>
-                            <li class="${param.catagories == "Mushroom" ? "active" : ""}"><a href="Shop?catagories=Mushroom">Mushrooms</a></li>
+            <div class="shop_sidebar_area">
+                <!-- ##### Single Widget ##### -->
+                <div class="widget catagory mb-50">
+                    <!-- Widget Title -->
+                    <h6 class="widget-title mb-30">Catagories</h6>
+                    <!--  Catagories  -->
+                    <div class="catagories-menu">
+                        <ul>
+                            <form action="Shop">
+                                <li class="${param.catagories == null ? "active" : ""}"><a href="Shop">All</a></li>
+                                <li class="${param.catagories == "Vegetable" ? "active" : ""}"><a href="Shop?catagories=Vegetable">Vegetables</a></li>
+                                <li class="${param.catagories == "Fruit" ? "active" : ""}"><a href="Shop?catagories=Fruit">Fruits</a></li>
+                                <li class="${param.catagories == "Meat" ? "active" : ""}"><a href="Shop?catagories=Meat">Meat</a></li>
+                                <li class="${param.catagories == "Dairy Product" ? "active" : ""}"><a href="Shop?catagories=Dairy Product">Dairy</a></li>
+                                <li class="${param.catagories == "Egg" ? "active" : ""}"><a href="Shop?catagories=Egg">Eggs</a></li>
+                                <li class="${param.catagories == "Mushroom" ? "active" : ""}"><a href="Shop?catagories=Mushroom">Mushrooms</a></li>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ##### Single Widget ##### -->
+                <div class="widget price mb-50">
+                    <!-- Widget Title -->
+                    <h6 class="widget-title mb-30">Price Range</h6>
+                    <div class="widget-desc">
+                        <form action="Shop" id="bank">
+                            <select name="range" id="bankjirapan">
+                                <option value="0" >All Price</option>
+                                <option value="1" ${param.range == "1" ? "selected" : ""} >1-50฿</option>
+                                <option value="2" ${param.range == "2" ? "selected" : ""}>51-100฿</option>
+                                <option value="3" ${param.range == "3" ? "selected" : ""}>101-200฿</option>
+                                <option value="4" ${param.range == "4" ? "selected" : ""}>More than 200฿</option>
+                            </select>                            
                         </form>
-                    </ul>
+                    </div>
                 </div>
-            </div>
-            <!-- ##### Single Widget ##### -->
-            <div class="widget price mb-50">
-                <!-- Widget Title -->
-                <h6 class="widget-title mb-30">Price Range</h6>
-                <div class="widget-desc">
-                    <form action="Shop">
-                        <select name="range">
-                            <option value="0" >All Price</option>
-                            <option value="1" ${param.range == "1" ? "selected" : ""} >1-50฿</option>
-                            <option value="2" ${param.range == "2" ? "selected" : ""}>51-100฿</option>
-                            <option value="3" ${param.range == "3" ? "selected" : ""}>101-200฿</option>
-                            <option value="4" ${param.range == "4" ? "selected" : ""}>More than 200฿</option>
-                        </select>
-                        <br><br><br>
-                        <input class="btn btn-warning" style="color: white; height: 42px; width: 80px;" type="submit" value="Search">
-                    </form>
-                </div>
-            </div>
-        </div>       
-        <div class="amado_product_area section-padding-100" style="padding:1%">
-            <div class="container-fluid " style="width: 109%;padding-top: 5%">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="product-topbar d-xl-flex align-items-end justify-content-between">
-                            <!-- Total Products -->
-                            <div class="total-products">
-                                <h3>Product</h3> 
+            </div>   
+
+
+            <div class="amado_product_area section-padding-100" style="padding:1%">
+                <div class="container-fluid " style="width: 109%;padding-top: 5%">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                                <!-- Total Products -->
+                                <div class="total-products">
+                                    <h3>Product</h3> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <c:forEach  items="${product}" var="p" varStatus="n">
-                        <!-- Single Product Area -->
-                        <div class="col-12 col-sm-6 col-md-12 col-xl-6" style="margin: auto">
-                            <div class="single-product-wrapper">
-                                <!-- Product Image -->
-                                <div class="product-img">
-                                    <a href="Product?productCode=${p.productcode}">
-                                    <img src="img/${p.productcode}.png" alt="">
-                                    <!-- Hover Thumb -->
-                                    <img class="hover-img" style="transform: scale(1.0)" src="img/${p.productcode}.png" alt="">
-                                    </a>
-                                </div>
-                                <!-- Product Description -->
-                                <div class="product-description d-flex align-items-center justify-content-between">
-                                    <!-- Product Meta Data -->
-                                    <div class="product-meta-data">
-                                        <div class="line"></div>
-                                        <p class="product-price">${p.productprice} ฿</p>
-                                        <a href="product-details.html">
-                                            <h6>${p.productname}</h6>
+                    <div class="row">
+                        <c:forEach  items="${product}" var="p" varStatus="n">
+                            <!-- Single Product Area -->
+                            <div class="col-12 col-sm-6 col-md-12 col-xl-6" style="margin: auto">
+                                <div class="single-product-wrapper">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                        <a href="Product?productCode=${p.productcode}">
+                                            <img src="img/${p.productcode}.png" alt="">
+                                            <!-- Hover Thumb -->
+                                            <img class="hover-img" style="transform: scale(1.0)" src="img/${p.productcode}.png" alt="">
                                         </a>
                                     </div>
-                                    <!-- Ratings & Cart -->
-                                    <div class="ratings-cart text-right">                   
-                                        <div class="cart">
-                                            <a href="AddToCart?productCode=${p.productcode}&&quantity=1&&page=${page}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                    <!-- Product Description -->
+                                    <div class="product-description d-flex align-items-center justify-content-between">
+                                        <!-- Product Meta Data -->
+                                        <div class="product-meta-data">
+                                            <div class="line"></div>
+                                            <p class="product-price">${p.productprice} ฿</p>
+                                            <a href="product-details.html">
+                                                <h6>${p.productname}</h6>
+                                            </a>
+                                        </div>
+                                        <!-- Ratings & Cart -->
+                                        <div class="ratings-cart text-right">                   
+                                            <div class="cart">
+                                                <a href="AddToCart?productCode=${p.productcode}&&quantity=1&&page=${page}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </c:forEach>
-                </div> 
-            </div>   
+                        </c:forEach>
+                    </div> 
+                </div>   
+            </div>
         </div>
-    </div>
-    <!-- ##### Main Content Wrapper End ##### -->
-    <jsp:include page="include/footer.jsp?page=Shop"/>
-    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
-</body>
+        <!-- ##### Main Content Wrapper End ##### -->
+        <jsp:include page="include/footer.jsp?page=Shop"/>
+        <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="js/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugins js -->
+        <script src="js/plugins.js"></script>
+        <!-- Active js -->
+        <script src="js/active.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#bankjirapan").change(function(){
+                    $("#bank").submit();
+                })
+            })
+        </script>
+    </body>
 </html>
