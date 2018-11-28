@@ -34,6 +34,12 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>FLRFilter</filter-name>
+        <servlet-name>AccountDetailServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>FLR.controller.RegisterServlet</servlet-class>
@@ -94,6 +100,10 @@
         <servlet-name>UpdateAddressServlet</servlet-name>
         <servlet-class>FLR.controller.UpdateAddressServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountDetailServlet</servlet-name>
+        <servlet-class>FLR.controller.AccountDetailServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/Register</url-pattern>
@@ -153,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>UpdateAddressServlet</servlet-name>
         <url-pattern>/UpdateAddress</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountDetailServlet</servlet-name>
+        <url-pattern>/AccountDetail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -83,7 +83,8 @@
                     </div>
                 </c:if> 
                 <c:if test="${sessionScope.account != null}">
-                    <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.fname}</div><br>
+                    <a href="AccountDetail"> <div style="text-align: center" class="hover active amado-btn navbar-collapse d-lg-block " id="basket-overview" >Hello ${sessionScope.account.fname}</div></a><br>
+
                     <div class="amado-btn-group ">
                         <a href="Logout" class="btn amado-btn navbar-collapse d-lg-block" id="basket-overview">Logout</a><br>
                     </div><br>
@@ -104,8 +105,8 @@
                         <li>
                         </c:if>
                         <a href="Shop">Shop</a></li>
-                        
-                        <c:if test="${param.page == 'History'}">
+
+                    <c:if test="${param.page == 'History'}">
                         <li class="active">
                         </c:if>
                         <c:if test="${param.page != 'History'}">
@@ -120,7 +121,7 @@
                         <li>
                         </c:if>
                         <a href="About">About</a></li>
-                        
+
                 </ul>
             </nav>
             <!-- Button Group -->

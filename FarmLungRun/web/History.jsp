@@ -33,12 +33,9 @@
 
         <div class="cart-table-area section-padding-100">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-8">
-                        <div class="cart-title mt-50">
-                            <h2>Orders History</h2>
-                        </div>
-
+                <div>
+                    <div>
+                        <h2>Orders History</h2>                 
                         <div class="cart-table clearfix">
                             <table class="table table-responsive">
                                 <thead>
@@ -76,6 +73,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!--                    <div class="col-12 col-lg-4">
                                             <div class="cart-summary">
                                                 <h5>Cart Total</h5>
