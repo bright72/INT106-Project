@@ -82,7 +82,7 @@
                                     <p style="color:red;">${message_checkout}</p>
                                 </div>                                  
                                 <form action="Checkout" method="post">                                    
-                                    <div><input maxlength="13" type="text" placeholder="Card number" required pattern="[0-9]{13}"></div> <br>
+                                    <div><input maxlength="16" type="text" placeholder="Card number" required pattern="[0-9]{16}"></div> <br>
                                     <div><input style="width: 30%" maxlength="3" type="text" placeholder="CVC" required pattern="[0-9]{3}">
                                         <input style="width: 15%" maxlength="2" type="text" placeholder="MM" required pattern="[0-9]{2}"> / 
                                         <input style="width: 15%" maxlength="2" type="text" placeholder="YY" required pattern="[0-9]{2}"></div> <br>
