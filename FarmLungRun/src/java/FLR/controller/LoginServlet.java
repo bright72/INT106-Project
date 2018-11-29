@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 
                         session.setAttribute("message", "");
                         session.setAttribute("account", account);
-                        //session.setMaxInactiveInterval(60*60); //เพิ่ม session timeout
+                        session.setMaxInactiveInterval(30*60); //เพิ่ม session timeout
                         if (page.equals("about")) {
                             response.sendRedirect("About");
                             return;
