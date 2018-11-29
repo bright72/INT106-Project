@@ -63,17 +63,17 @@ public class AddToCartServlet extends HttpServlet {
         if (page.equals("shop")) {
           response.sendRedirect("Shop");  
         } else if (page.equals("vegetable")){
-            response.sendRedirect("Shop?catagories=vegetable");
+            response.sendRedirect("Shop?catagories=Vegetable");
         } else if (page.equals("fruit")){
-            response.sendRedirect("Shop?catagories=fruit");
+            response.sendRedirect("Shop?catagories=Fruit");
         } else if (page.equals("meat")){
-            response.sendRedirect("Shop?catagories=meat");
+            response.sendRedirect("Shop?catagories=Meat");
         } else if (page.equals("Dairy Product")){
             response.sendRedirect("Shop?catagories=Dairy Product");
         } else if (page.equals("egg")){
-            response.sendRedirect("Shop?catagories=egg");
+            response.sendRedirect("Shop?catagories=Egg");
         } else if (page.equals("mushroom")){
-            response.sendRedirect("Shop?catagories=mushroom");
+            response.sendRedirect("Shop?catagories=Mushroom");
         } else if (page.equals("all")){
             response.sendRedirect("Shop");
         } else if (page.equals("cart")){
