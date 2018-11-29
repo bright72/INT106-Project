@@ -90,6 +90,7 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br><br><br><br><br><br>
     </c:if>
     <jsp:include page="include/footer.jsp?page=Home"/>
 </body>
