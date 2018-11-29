@@ -73,7 +73,8 @@
                     </form>
                 </div>
             </div>
-        </div>                    
+        </div>   
+        <jsp:include page="include/footer.jsp?page=Home"/>
     </c:if>
     <c:if test="${success != null}">
         <div class="modal-dialog modal-sm">
@@ -90,8 +91,19 @@
                 </div>
             </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br>
+        <div class="footer">
+            <jsp:include page="include/footer.jsp?page=Home"/>
+        </div>
     </c:if>
-    <jsp:include page="include/footer.jsp?page=Home"/>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style> 
 </body>
 </html>
