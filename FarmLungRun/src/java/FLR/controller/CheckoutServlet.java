@@ -123,12 +123,12 @@ public class CheckoutServlet extends HttpServlet {
 
     private int genOrderId() {
         Random rd = new Random();
-        String orderId = "1001";
+        String orderId = "999";
         int intorderId = 0;
         OrdersJpaController ordersCtrl = new OrdersJpaController(utx, emf);
         Orders order = new Orders();
         while(order != null){
-        while(orderId.length() !=7) {
+        while(orderId.length() !=9) {
             int code = rd.nextInt(10);
             String stCode = String.valueOf(code);
             orderId = orderId + stCode;

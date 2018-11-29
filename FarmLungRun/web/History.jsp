@@ -44,7 +44,7 @@
                                     <tbody>
                                         <tr style="text-align: center">
                                             <td class="orders_id">
-                                                <h5>OD${o.orderid}</h5>
+                                                <h5>FLR${o.orderid}</h5>
                                             </td>
                                             <td class="orders_date">
                                                 <h5>${o.orderdate}</h5>
