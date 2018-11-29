@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%-- 
     Document   : cart
     Created on : Nov 2, 2018, 11:05:32 AM
@@ -47,7 +48,7 @@
                                                 <h5>FLR${o.orderid}</h5>
                                             </td>
                                             <td class="orders_date">
-                                                <h5>${o.orderdate}</h5>
+                                                <h5><fmt:formatDate value="${o.orderdate}" type="date"/></h5>
                                             </td>
                                             <td class="orders_totalPrice">
                                                 <h5>${o.totalprice} ฿</h5>
