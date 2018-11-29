@@ -22,11 +22,8 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Customer login</h5>
                     <a href="Home">
-                        <button type="button" class="close" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                     </a>
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
                     <form action="Login" method="post">
@@ -49,7 +46,7 @@
                     </div>
                 </div>
             </div>
-     </div>
-     <jsp:include page="include/footer.jsp?page=Home"/>
-</body>
+        </div>
+        <jsp:include page="include/footer.jsp?page=Home"/>
+    </body>
 </html>
