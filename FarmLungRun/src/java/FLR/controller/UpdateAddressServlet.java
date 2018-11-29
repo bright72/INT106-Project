@@ -48,6 +48,7 @@ public class UpdateAddressServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(true);
+        String page = request.getParameter("page");
         String Address = request.getParameter("Address");
         String Province = request.getParameter("Province");
         String PostalCode = request.getParameter("PostalCode");
@@ -64,7 +65,14 @@ public class UpdateAddressServlet extends HttpServlet {
         try {
             ajc.edit(nAcc);
             session.setAttribute("account", nAcc);
-            response.sendRedirect("checkout.jsp");
+            if (page.equalsIgnoreCase("checkout")) {
+                response.sendRedirect("checkout.jsp");
+                return;
+            } else if (page.equalsIgnoreCase("accdetail")){
+                response.sendRedirect("AccountDetail");
+                return;
+            }
+            
         } catch (NonexistentEntityException ex) {
             Logger.getLogger(UpdateAddressServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (RollbackFailureException ex) {

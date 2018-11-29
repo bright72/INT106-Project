@@ -47,7 +47,7 @@
                                     <a href="History" class="btn amado-btn">My History</a>
                                 </div>
                                 <br><br>
-                                <form action="UpdateAddress" method="post">                                
+                                <form action="UpdateAddress?page=accdetail" method="post">                                
                                     <h5>If your address is incorrect, please update new address below.</h5>
                                     <div>${message}</div>
                                     <div class="row">                                

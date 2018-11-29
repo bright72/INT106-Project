@@ -42,7 +42,7 @@
                                     <p>${sessionScope.account.province}, ${sessionScope.account.country}, ${sessionScope.account.postalcode}</p>
                                 </div>
                                 <br>
-                                <form action="UpdateAddress" method="post">                                
+                                <form action="UpdateAddress?page=checkout" method="post">                                
                                     <h5>If your address is incorrect, please update new address below.</h5>
                                     <div>${message}</div>
                                     <div class="row">                                
