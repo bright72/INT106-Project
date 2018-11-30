@@ -49,7 +49,7 @@
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
-                <a href="Home.jsp"><img src="img/core-img/logo.png" alt=""></a>
+                <a href="Home.jsp"><img src="img/LOGO.PNG" alt=""></a>
             </div>
             <!-- Navbar Toggler -->
             <div class="amado-navbar-toggler">
