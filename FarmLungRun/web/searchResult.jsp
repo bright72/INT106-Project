@@ -60,7 +60,7 @@
                                                     <!-- Ratings & Cart -->
                                                     
                                                         <div class="cart">
-                                                            <a href="AddToCart?productCode=${fp.productcode}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
+                                                            <a href="AddToCart?productCode=${fp.productcode}&&quantity=1&&page=shop" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="img/core-img/cart.png" alt=""></a>
                                                         </div>
                                                     
                                                 </div>
